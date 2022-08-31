@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { Suspense } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
 import { Environment, OrbitControls } from "@react-three/drei"
@@ -10,7 +9,7 @@ const Model = () => {
     return (
         <>
             {/* Use scale to control the size of the 3D model */}
-            <primitive object={gltf.scene} scale={0.2} />
+            <primitive object={gltf.scene} scale={0.25} />
         </>
     );
 };
@@ -18,14 +17,14 @@ const Model = () => {
 const VoxelComputer = () => {
     return (
         <div>
-            <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 20 }} style={{height: '250px'}}>
+            <Canvas shadows dpr={[1, 2]} camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '200px'}}>
                 <ambientLight intensity={0.7} />
-                <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow/>
+                <spotLight intensity={0.5} angle={0.1} penumbra={1} castShadow/>
                 <Suspense fallback={null}>
                     <Model />
                     <Environment preset="city" />
                 </Suspense>
-                <OrbitControls autoRotate />
+                <OrbitControls autoRotate enableZoom={false} />
             </Canvas>
         </div>
     )
