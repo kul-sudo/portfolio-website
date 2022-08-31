@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Cyril Nicholson</title>
-        <meta name="description" content="My person cool-looking portfolio"/>
+        <title>Cyril's portfolio</title>
+        <meta name="description" content="My personal cool-looking portfolio"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
@@ -25,8 +25,8 @@ const Home = () => {
               <div className="flex justify-center text-center mt-6">
                 <span className="font-[700] skew-x-[-15deg]">Technologies</span>
               </div>
-              <div className="flex items-center justify-center text-center align-middle mt-6">
-                <span className="flex skew-x-[-15deg]">Follow the deadline<br/>Follow the law<br/>A good reputation<br/>Not let people down</span>
+              <div className="flex items-center justify-center text-center align-middle mt-1">
+                <span className="flex skew-x-[-15deg]">NextJS<br/>React<br/>JavaScript<br/>Python<br/>SQL</span>
               </div>
             </div>
           </div>
