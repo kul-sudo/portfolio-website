@@ -24,7 +24,7 @@ const VoxelComputer = () => {
                     <Model />
                     <Environment preset="city" />
                 </Suspense>
-                <OrbitControls autoRotate enableZoom={false} />
+                <OrbitControls autoRotate enableZoom={false} enablePan={false}/>
             </Canvas>
         </div>
     )

@@ -55,7 +55,7 @@ const Home = () => {
             </div>
             <div className="flex items-center justify-center text-center align-middle mt-6">
               <span className="flex skew-x-[-15deg]">
-                Glorious English<br/>
+                Solid English<br/>
                 Stress tolerance
               </span>
             </div>
