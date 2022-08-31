@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Cyril's portfolio</title>
+        <title>Cyril&apos;s portfolio</title>
         <meta name="description" content="My personal cool-looking portfolio"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
@@ -38,8 +38,8 @@ const Home = () => {
               </div>
               <div className="flex items-center justify-center text-center align-middle mt-5">
                 <span className="skew-x-[-15deg]">
-                  <a href="https://github.com/kul-sudo/eportal" target="_blank" className="underline">eportal</a><br/>
-                  <a href="https://github.com/kul-sudo/Smiling-Zombies" target="_blank" className="underline">smiling zombies</a>
+                  <a href="https://github.com/kul-sudo/eportal" rel="noreferrer" target="_blank" className="underline">eportal</a><br/>
+                  <a href="https://github.com/kul-sudo/Smiling-Zombies" rel="noreferrer" target="_blank" className="underline">smiling zombies</a>
                 </span>
               </div>
             </div>
