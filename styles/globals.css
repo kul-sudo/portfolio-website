@@ -6,11 +6,11 @@
 
 
 html {
-    background-color: #222;
+  background-color: #222;
 }
 
 body {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 ::-moz-selection {
@@ -23,7 +23,7 @@ body {
   background: white;
 }
 
-#mouse:active, #dark-mode-toggle:active {
+#mouse:active, #change-theme-svg:active, #moon:active, #sun:active {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -33,7 +33,7 @@ body {
 }
 
 .bright {
-  background-color: #fff;
+  background-color: #e4e4e4;
 }
 
 .change-theme-svg-bright {
