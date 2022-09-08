@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -23,7 +24,7 @@ body {
   background: white;
 }
 
-#mouse:active, #change-theme-svg:active, #moon:active, #sun:active {
+#mouse:active, #change-theme-svg:active, #moon:active, #sun:active, .example-container div:active {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -38,4 +39,19 @@ body {
 
 .change-theme-svg-bright {
   fill: #f5fffa;
+}
+
+.example-container div {
+  background: #525252;
+  border-radius: 0.75rem;
+  width: 20rem;
+  height: 3rem;
+}
+
+.refresh {
+  background: white;
+  border-radius: 10px;
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
 }

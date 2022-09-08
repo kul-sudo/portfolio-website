@@ -2,7 +2,7 @@ import Head from 'next/head'
 import GraphicsComputer from '../components/voxel-computer'
 import useTheme from '../lib/theme'
 import { useEffect } from 'react'
-import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+import { SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
 
 const Home = () => {
@@ -12,13 +12,11 @@ const Home = () => {
   useEffect(() => {
     if (dark) {
       document.querySelector('html').classList.add('bright')
-      document.getElementById('caption').style.color = 'black'
       document.getElementById('github').style.color = 'black'
       document.getElementById('sun').style.display = 'none'
       document.getElementById('moon').style.display = 'block'
     } else {
       document.querySelector('html').classList.remove('bright')
-      document.getElementById('caption').style.color = 'white'
       document.getElementById('github').style.color = 'white'
       document.getElementById('sun').style.display = 'block'
       document.getElementById('moon').style.display = 'none'
@@ -33,28 +31,29 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <div className="z-[1]">
-        <GraphicsComputer></GraphicsComputer>
-      </div>
       
       <div className="flex justify-center align-middle fixed bottom-10 right-10 z-[1] 830px:block">
         <a className="font-quicksand" href="https://github.com/kul-sudo" id="github" target="_blank" rel="noopener noreferrer">GitHub</a>
         <div className="flex justify-center before-830px:ml-3 mt-[0.05rem]">
-          <div id="sun">
+          <div className="hidden" id="sun">
             <IconButton onClick={toggleDarkMode} icon={<SunIcon/>} style={{width: '20px', height: '20px', color: 'white'}}/>
           </div>
 
-          <div id="moon">
+          <div className="hidden" id="moon">
             <IconButton onClick={toggleDarkMode} icon={<MoonIcon/>} style={{width: '20px', height: '20px', color: 'black'}}/>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center backdrop-blur-[0.625rem] z-[0]">
-        <span className="text-7xl text-white text-center font-quicksand select-none" id="caption">Cyril</span>
+      <div className="flex mt-5 justify-center">
+        <span className="flex items-center justify-center text-[1.5rem] text-center font-quicksand select-none bg-[#525252] rounded-xl w-[30rem] h-[5rem] text-white">Hello! I am a UI developer called Cyril.</span>
       </div>
 
-      <div className="830px:flex 830px:justify-center mt-[3rem] font-quicksand 830px:mt-8 z-[0]">
+      <div className="z-[1] mt-3">
+        <GraphicsComputer></GraphicsComputer>
+      </div>
+
+      <div className="830px:flex 830px:justify-center font-quicksand 830px:mt-8 z-[0]">
         <div className="flex justify-center items-center before-830px:space-x-[15rem] 830px:block 830px:space-y-[1rem]">
           <div className="flex justify-center items-center align-middle w-[13rem] h-[16rem] rounded-[0.3rem] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 skew-x-[15deg]">
             <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]">
@@ -98,6 +97,24 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className="flex mt-10 justify-center">
+        <div className="flex items-center justify-center bg-[#525252] rounded-xl w-[20rem] h-[3rem]">
+          <span className="text-[1.7rem] text-white font-quicksand select-none">Let's dive deeper</span>
+          <ChevronDownIcon style={{width: '30px', height: '30px', color: 'white'}}/>
+        </div>
+      </div>
+
+      {/* <div className="flex justify-center mt-10">
+        <div className="example-container">
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1 }}>
+            <div className="flex justify-center items-center">
+              <span className="text-[1.7rem] text-white font-quicksand select-none">Let's dive deeper</span>
+              <ChevronDownIcon style={{width: '30px', height: '30px', color: 'white'}}/>
+            </div>
+          </motion.div>
+        </div>
+      </div> */}
     </>
   )
 }

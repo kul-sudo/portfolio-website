@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'quicksand': ['Quicksand', 'sans-serif']
+        'quicksand': ['Quicksand', 'sans-serif'],
       },
       colors: {
         'transculent': 'rgba(255, 255, 255, 0.05)'
