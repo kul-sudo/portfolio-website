@@ -4,6 +4,7 @@ import useTheme from '../lib/theme'
 import { useEffect } from 'react'
 import { SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 const Home = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
@@ -15,11 +16,17 @@ const Home = () => {
       document.getElementById('github').style.color = 'black'
       document.getElementById('sun').style.display = 'none'
       document.getElementById('moon').style.display = 'block'
+      document.getElementById('to-add-shadow1').classList.add('shadow-lg')
+      document.getElementById('to-add-shadow2').classList.add('shadow-lg')
+      document.getElementById('to-add-shadow3').classList.add('shadow-lg')
     } else {
       document.querySelector('html').classList.remove('bright')
       document.getElementById('github').style.color = 'white'
       document.getElementById('sun').style.display = 'block'
       document.getElementById('moon').style.display = 'none'
+      document.getElementById('to-add-shadow1').classList.remove('shadow-lg')
+      document.getElementById('to-add-shadow2').classList.remove('shadow-lg')
+      document.getElementById('to-add-shadow3').classList.remove('shadow-lg')
     }
   }, [dark])
 
@@ -56,7 +63,7 @@ const Home = () => {
       <div className="830px:flex 830px:justify-center font-quicksand 830px:mt-8 z-[0]">
         <div className="flex justify-center items-center before-830px:space-x-[15rem] 830px:block 830px:space-y-[1rem]">
           <div className="flex justify-center items-center align-middle w-[13rem] h-[16rem] rounded-[0.3rem] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 skew-x-[15deg]">
-            <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]">
+            <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]" id="to-add-shadow1">
               <div className="flex justify-center text-center mt-6">
                 <span className="font-[700] skew-x-[-15deg]">Technologies</span>
               </div>
@@ -67,7 +74,7 @@ const Home = () => {
           </div>
 
           <div className="flex justify-center items-center align-middle w-[13rem] h-[16rem] rounded-[0.3rem] bg-gradient-to-r from-pink-500 to-yellow-500 skew-x-[15deg]">
-            <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]">
+            <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]" id="to-add-shadow2">
               <div className="flex justify-center text-center mt-6">
                 <span className="font-[700] skew-x-[-15deg]">My projects</span>
               </div>
@@ -84,7 +91,7 @@ const Home = () => {
 
       <div className="flex justify-center mt-[4rem] 830px:mt-[1rem] font-quicksand">
         <div className="flex justify-center items-center align-middle w-[13rem] h-[16rem] rounded-[0.3rem] bg-gradient-to-r from-[#4dff03] to-[#00d0ff] skew-x-[15deg]">
-          <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]">
+          <div className="absolute justify-center items-center align-middle w-[18rem] h-[12rem] bg-transculent backdrop-blur-[0.625rem] rounded-[0.3rem]" id="to-add-shadow3">
             <div className="flex justify-center text-center mt-6">
               <span className="font-[700] skew-x-[-15deg]">Hard skills</span>
             </div>
@@ -98,14 +105,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex mt-10 justify-center">
+      {/* <div className="flex mt-10 justify-center">
         <div className="flex items-center justify-center bg-[#525252] rounded-xl w-[20rem] h-[3rem]">
           <span className="text-[1.7rem] text-white font-quicksand select-none">Let's dive deeper</span>
           <ChevronDownIcon style={{width: '30px', height: '30px', color: 'white'}}/>
         </div>
-      </div>
+      </div> */}
 
-      {/* <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10">
         <div className="example-container">
           <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 1 }}>
             <div className="flex justify-center items-center">
@@ -114,7 +121,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
