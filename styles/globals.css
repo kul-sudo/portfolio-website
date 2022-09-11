@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600;700&display=swap');
+  
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 html {
+  overflow: scroll;
+  overflow-x: hidden;
   background-color: #222;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 body {
@@ -46,12 +54,4 @@ body {
   border-radius: 0.75rem;
   width: 20rem;
   height: 3rem;
-}
-
-.refresh {
-  background: white;
-  border-radius: 10px;
-  width: 50px;
-  height: 20px;
-  cursor: pointer;
 }
