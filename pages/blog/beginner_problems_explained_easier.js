@@ -8,7 +8,7 @@ import { obsidian } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Blog = () => {
   const for_loop_list = `# let's create a list
@@ -30,20 +30,19 @@ const Blog = () => {
   
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
+  const [moonShow, setMoonShow] = useState(false)
 
   useEffect(() => {
     if (dark) {
       document.querySelector('html').classList.add('bright')
       document.getElementById('navbar').style.color = 'black'
-      document.getElementById('sun').style.display = 'none'
-      document.getElementById('moon').style.display = 'block'
+      setMoonShow(true)
       document.getElementById('for-loops').style.color = 'black'
       document.getElementById('date-published').style.color = 'black'
     } else {
       document.querySelector('html').classList.remove('bright')
       document.getElementById('navbar').style.color = 'white'
-      document.getElementById('sun').style.display = 'block'
-      document.getElementById('moon').style.display = 'none'
+      setMoonShow(false)
       document.getElementById('for-loops').style.color = 'white'
       document.getElementById('date-published').style.color = 'white'
     }
@@ -57,24 +56,28 @@ const Blog = () => {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <div className="flex justify-center align-middle fixed bottom-10 right-10 z-[1] 830px:block font-[600]" id="navbar">
-        <div className="space-x-2">
+      <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
+        <div className="flex justify-center space-x-2">
           <Link href="/"><span className="font-quicksand cursor-pointer">Home</span></Link>
-          <Link href="../../blog"><span className="font-quicksand cursor-pointer">Blog</span></Link>
+          <Link href="/blog"><span className="font-quicksand cursor-pointer">Blog</span></Link>
           <a className="font-quicksand" href="https://github.com/kul-sudo" id="github" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <div className="flex justify-center before-830px:ml-3 mt-[0.05rem]">
-          <div className="hidden" id="sun">
-            <IconButton onClick={toggleDarkMode} icon={<SunIcon/>} style={{width: '20px', height: '20px', color: 'white'}}/>
-          </div>
+        <div className="flex justify-center before-830px:ml-3 mt-[0.05rem] 830px:mt-[0.2rem]">
+          {(moonShow === false) &&
+            (
+              <IconButton onClick={toggleDarkMode} icon={<SunIcon/>} style={{width: '20px', height: '20px', color: 'white'}}/>
+            )
+          }
 
-          <div className="hidden" id="moon">
-            <IconButton onClick={toggleDarkMode} icon={<MoonIcon/>} style={{width: '20px', height: '20px', color: 'black'}}/>
-          </div>
+          {moonShow && 
+            (
+              <IconButton onClick={toggleDarkMode} icon={<MoonIcon/>} style={{width: '20px', height: '20px', color: 'black'}}/>
+            )
+          }
         </div>
       </div>
       
-      <div className="flex justify-center mt-5 text-4xl font-quicksand text-white font-[600]">
+      <div className="flex justify-center mt-20 text-4xl font-quicksand text-white font-[600]">
         <div className="block">
           <div className="select-none w-[30rem] h-auto">
             <Image src={Keyboard} quality={100} draggable={false} className="rounded-xl"/>

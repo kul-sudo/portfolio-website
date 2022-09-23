@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import GraphicsComputer from '../components/voxel-computer'
 import useTheme from '../lib/theme'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import GithubLogo from '../public/github-logo.png'
 import Image from 'next/image'
@@ -13,21 +12,20 @@ import TealDivider from '../components/divider'
 const Home = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
+  const [moonShow, setMoonShow] = useState(false)
 
   useEffect(() => {
     if (dark) {
       document.querySelector('html').classList.add('bright')
       document.getElementById('navbar').style.color = 'black'
-      document.getElementById('sun').style.display = 'none'
-      document.getElementById('moon').style.display = 'block'
+      setMoonShow(true)
       document.getElementById('to-add-shadow1').classList.add('shadow-lg')
       document.getElementById('to-add-shadow2').classList.add('shadow-lg')
       document.getElementById('to-add-shadow3').classList.add('shadow-lg')
     } else {
       document.querySelector('html').classList.remove('bright')
       document.getElementById('navbar').style.color = 'white'
-      document.getElementById('sun').style.display = 'block'
-      document.getElementById('moon').style.display = 'none'
+      setMoonShow(false)
       document.getElementById('to-add-shadow1').classList.remove('shadow-lg')
       document.getElementById('to-add-shadow2').classList.remove('shadow-lg')
       document.getElementById('to-add-shadow3').classList.remove('shadow-lg')
@@ -43,25 +41,29 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       
-      <div className="flex justify-center align-middle fixed bottom-10 right-10 z-[1] 830px:block font-[600]" id="navbar">
-        <div className="space-x-2">
-          <Link href="/blog"><span className="font-quicksand cursor-pointer">Home</span></Link>
+      <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
+        <div className="flex justify-center space-x-2">
+          <Link href="/"><span className="font-quicksand cursor-pointer">Home</span></Link>
           <Link href="/blog"><span className="font-quicksand cursor-pointer">Blog</span></Link>
           <a className="font-quicksand" href="https://github.com/kul-sudo" id="github" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <div className="flex justify-center before-830px:ml-3 mt-[0.05rem]">
-          <div className="hidden" id="sun">
-            <IconButton onClick={toggleDarkMode} icon={<SunIcon/>} style={{width: '20px', height: '20px', color: 'white'}}/>
-          </div>
+        <div className="flex justify-center before-830px:ml-3 mt-[0.05rem] 830px:mt-[0.2rem]">
+          {(moonShow === false) &&
+            (
+              <IconButton onClick={toggleDarkMode} icon={<SunIcon/>} style={{width: '20px', height: '20px', color: 'white'}}/>
+            )
+          }
 
-          <div className="hidden" id="moon">
-            <IconButton onClick={toggleDarkMode} icon={<MoonIcon/>} style={{width: '20px', height: '20px', color: 'black'}}/>
-          </div>
+          {moonShow && 
+            (
+              <IconButton onClick={toggleDarkMode} icon={<MoonIcon/>} style={{width: '20px', height: '20px', color: 'black'}}/>
+            )
+          }
         </div>
       </div>
 
-      <div className="flex mt-5 justify-center">
-        <span className="flex items-center justify-center text-[1.5rem] text-center font-quicksand select-none bg-[#525252] rounded-xl w-[30rem] h-[5rem] text-white">Hello! I am a UI developer called Cyril.</span>
+      <div className="flex mt-[3.7rem] justify-center 830px:mt-[5rem]">
+        <span className="flex items-center justify-center text-[1.5rem] overflow-auto text-center font-quicksand select-none bg-[#525252] rounded-xl w-[30rem] min-h-[5rem] h-[120%] text-white">Hello! I am a UI developer called Cyril.</span>
       </div>
 
       <div className="z-[1] mt-3">
@@ -120,7 +122,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      <Link href="#dive-deeper">
+      {/* <Link href="#dive-deeper">
         <div className="flex justify-center mt-10">
           <div className="example-container">
             <motion.div whileHover={{ scale: 1.1 }}>
@@ -131,7 +133,7 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       <div className="flex justify-center mt-[8rem]">
         <TealDivider/>
