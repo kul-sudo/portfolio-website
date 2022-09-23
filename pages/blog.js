@@ -55,7 +55,7 @@ const Blog = () => {
         </div>
       </div>
       
-      <div className="grid gap-5 mt-[8rem] grid-cols-1 text-white font-quicksand font-[600] text-center place-items-center">
+      <div className="grid gap-5 mt-[5rem] grid-cols-1 text-white font-quicksand font-[600] text-center place-items-center">
         <Link href="/blog/beginner_problems_explained_easier">
           <div className="bg-black w-[20rem] h-[30rem] rounded-xl hover:translate-y-[-5px] cursor-pointer" style={{transition: '0.2s'}}>
             <div className="select-none">
