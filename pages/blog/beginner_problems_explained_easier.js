@@ -50,7 +50,7 @@ const Blog = () => {
   return (
     <>
       <Head>
-        <title>Cyril&apos;s portfolio</title>
+        <title>Tasman&apos;s portfolio</title>
         <meta name="description" content="All of the problems of beginners explained easier"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" href="/favicon.ico"/>

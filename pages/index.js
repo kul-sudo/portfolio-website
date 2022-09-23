@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="font-[600]">
       <Head>
-        <title>Cyril&apos;s portfolio</title>
+        <title>Tasman&apos;s portfolio</title>
         <meta name="description" content="My personal cool-looking portfolio"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" href="/favicon.ico"/>
@@ -63,7 +63,7 @@ const Home = () => {
       </div>
 
       <div className="flex mt-[3.7rem] justify-center 830px:mt-[5rem]">
-        <span className="flex items-center justify-center text-[1.5rem] overflow-auto text-center font-quicksand select-none bg-[#525252] rounded-xl w-[30rem] min-h-[5rem] h-[120%] text-white">Hello! I am a UI developer called Cyril.</span>
+        <span className="flex items-center justify-center text-[1.5rem] overflow-auto text-center font-quicksand select-none bg-[#525252] rounded-xl w-[30rem] min-h-[5rem] h-[120%] text-white">Hello! I am a backend developer.</span>
       </div>
 
       <div className="z-[1] mt-3">
