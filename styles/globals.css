@@ -34,7 +34,7 @@ body {
   background: white;
 }
 
-#mouse:active, #change-theme-svg:active, #moon:active, #sun:active, .example-container div:active {
+#mouse:active, #keyboard:active, #change-theme-svg:active, #moon:active, #sun:active, .example-container div:active {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

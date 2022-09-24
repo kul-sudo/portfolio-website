@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import useTheme from '../lib/theme'
-import Keyboard from '../public/keyboard.jpg'
-import TealDivider from '../components/divider'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import Keyboard from '../public/my_keyboard.png'
+import Chair from '../public/my_chair.png'
 
-const Blog = () => {
+const WhatIUse = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
   const [moonShow, setMoonShow] = useState(false)
@@ -26,14 +26,14 @@ const Blog = () => {
   }, [dark])
 
   return (
-    <>
+    <div className="font-[600]">
       <Head>
         <title>Tasman&apos;s portfolio</title>
-        <meta name="description" content="The blog of my personal portfolio"/>
+        <meta name="description" content="My personal cool-looking portfolio"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-
+      
       <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
         <div className="flex justify-center space-x-2">
           <Link href="/what_i_use"><span className="font-quicksand cursor-pointer">What I use</span></Link>
@@ -55,28 +55,27 @@ const Blog = () => {
           }
         </div>
       </div>
-      
-      <div className="grid gap-5 mt-[5rem] grid-cols-1 text-white font-quicksand font-[600] text-center place-items-center">
-        <Link href="/blog/beginner_problems_explained_easier">
-          <div className="bg-black w-[20rem] h-[30rem] rounded-xl hover:translate-y-[-5px] cursor-pointer" style={{transition: '0.2s'}}>
-            <div className="select-none">
-              <Image src={Keyboard} quality={100} draggable={false}/>
+        <div className="grid grid-cols-1 grid-rows-3 place-items-center mt-[4rem] gap-y-10">
+          <Link href="/what_i_use/keyboard">
+            <div className="flex flex-col justify-center items-center select-none space-y-2 bg-[#000000] rounded-xl cursor-pointer hover:translate-y-[-5px]" style={{transition: '0.2s'}}>
+              <div className="h-auto w-[28rem]">
+                <Image src={Keyboard} quality={100} draggable={false} className="rounded-xl"/>
+              </div>
+              <a className="font-quicksand text-2xl text-white pb-4">Razor RZ03-0274</a>
             </div>
-            <div className="pt-8 text-3xl">
-              <span>9/10/2022</span>
-            </div>
-            <div className="flex justify-center pt-5">
-              <TealDivider/>
-            </div>
+          </Link>
 
-            <div className="pt-4">
-              <span className="text-4xl">All of the problems of beginners explained easier</span>
+          <Link href="/what_i_use/chair">
+            <div className="flex flex-col justify-center items-center select-none space-y-2 bg-[#000000] rounded-xl cursor-pointer hover:translate-y-[-5px]" style={{transition: '0.2s'}}>
+              <div className="h-auto w-[28rem]">
+                <Image src={Chair} quality={100} draggable={false} className="rounded-xl"/>
+              </div>
+              <a className="font-quicksand text-2xl text-white pb-4">ThunderX3 TC3BK Black</a>
             </div>
-          </div>
-        </Link>
-      </div>
-    </>
+          </Link>
+        </div>
+    </div>
   )
 }
 
-export default Blog
+export default WhatIUse

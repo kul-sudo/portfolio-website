@@ -3,13 +3,11 @@ import { Canvas, useLoader } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Html } from '@react-three/drei'
-import Loader from '../components/loader'
+import Loader from './loader'
 
 const Model = () => {
   return (
-	<>
-	  <primitive object={useLoader(GLTFLoader, 'computer_mouse.glb').scene} scale={0.25}/>
-	</>
+	  <primitive object={useLoader(GLTFLoader, '/computer_mouse.glb').scene} scale={0.25}/>
   );
 };
 

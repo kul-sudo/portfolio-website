@@ -58,6 +58,7 @@ const Blog = () => {
 
       <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
         <div className="flex justify-center space-x-2">
+          <Link href="/what_i_use"><span className="font-quicksand cursor-pointer">What I use</span></Link>
           <Link href="/"><span className="font-quicksand cursor-pointer">Home</span></Link>
           <Link href="/blog"><span className="font-quicksand cursor-pointer">Blog</span></Link>
           <a className="font-quicksand" href="https://github.com/kul-sudo" id="github" target="_blank" rel="noopener noreferrer">GitHub</a>

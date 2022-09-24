@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import GraphicsComputer from '../components/voxel-computer'
+import GraphicsComputer from '../components/mouse-graphics'
 import useTheme from '../lib/theme'
 import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons'
@@ -43,6 +43,7 @@ const Home = () => {
       
       <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
         <div className="flex justify-center space-x-2">
+          <Link href="/what_i_use"><span className="font-quicksand cursor-pointer">What I use</span></Link>
           <Link href="/"><span className="font-quicksand cursor-pointer">Home</span></Link>
           <Link href="/blog"><span className="font-quicksand cursor-pointer">Blog</span></Link>
           <a className="font-quicksand" href="https://github.com/kul-sudo" id="github" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -67,7 +68,7 @@ const Home = () => {
       </div>
 
       <div className="z-[1] mt-3">
-        <GraphicsComputer></GraphicsComputer>
+        <GraphicsComputer/>
       </div>
 
       <div className="830px:flex 830px:justify-center font-quicksand 830px:mt-8 z-[0]">
@@ -141,11 +142,11 @@ const Home = () => {
 
       <div className="flex justify-center items-center mt-[8rem] flex-col space-y-10 select-none" id="dive-deeper">
         <Link href="/blog">
-          <div className="flex justify-center items-center bg-[#525252] w-[15rem] h-[7rem] rounded-xl cursor-pointer hover:translate-y-[-10px]" style={{transition: '0.2s'}}>
+          <div className="flex justify-center items-center bg-[#525252] w-[14rem] h-[5rem] rounded-xl cursor-pointer hover:translate-y-[-10px]" style={{transition: '0.2s'}}>
             <span className="text-3xl text-white font-quicksand">Blog</span>
           </div>
         </Link>
-        <a href="https://github.com/kul-sudo" target="_blank" rel="noreferrer" className="flex justify-center items-center bg-[#525252] w-[15rem] h-[7rem] rounded-xl hover:translate-y-[-10px] space-x-2" style={{transition: '0.2s'}}>
+        <a href="https://github.com/kul-sudo" target="_blank" rel="noreferrer" className="flex justify-center items-center bg-[#525252] w-[14rem] h-[5rem] rounded-xl hover:translate-y-[-10px] space-x-2" style={{transition: '0.2s'}}>
           <Image src={GithubLogo} height={30} width={30} alt="github-icon"/>
           <span className="text-3xl text-white font-quicksand text-center">GitHub</span>
         </a>

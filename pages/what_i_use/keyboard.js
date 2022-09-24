@@ -1,14 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import useTheme from '../lib/theme'
-import Keyboard from '../public/keyboard.jpg'
-import TealDivider from '../components/divider'
-import Link from 'next/link'
+import useTheme from '../../lib/theme'
+import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import GraphicsKeyboard from '../../components/keyboard-graphics'
 
-const Blog = () => {
+const Home = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
   const [moonShow, setMoonShow] = useState(false)
@@ -17,23 +15,25 @@ const Blog = () => {
     if (dark) {
       document.querySelector('html').classList.add('bright')
       document.getElementById('navbar').style.color = 'black'
+      document.getElementById('desc').style.color = 'black'
       setMoonShow(true)
     } else {
       document.querySelector('html').classList.remove('bright')
       document.getElementById('navbar').style.color = 'white'
+      document.getElementById('desc').style.color = 'white'
       setMoonShow(false)
     }
   }, [dark])
 
   return (
-    <>
+    <div className="font-[600]">
       <Head>
         <title>Tasman&apos;s portfolio</title>
-        <meta name="description" content="The blog of my personal portfolio"/>
+        <meta name="description" content="My personal cool-looking portfolio"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-
+      
       <div className="flex justify-center select-none left-[50%] top-0 pt-4 pb-2 w-[100%] translate-x-[-50%] backdrop-blur-[0.625rem] fixed z-[1] 830px:block font-[600]" id="navbar">
         <div className="flex justify-center space-x-2">
           <Link href="/what_i_use"><span className="font-quicksand cursor-pointer">What I use</span></Link>
@@ -55,28 +55,18 @@ const Blog = () => {
           }
         </div>
       </div>
-      
-      <div className="grid gap-5 mt-[5rem] grid-cols-1 text-white font-quicksand font-[600] text-center place-items-center">
-        <Link href="/blog/beginner_problems_explained_easier">
-          <div className="bg-black w-[20rem] h-[30rem] rounded-xl hover:translate-y-[-5px] cursor-pointer" style={{transition: '0.2s'}}>
-            <div className="select-none">
-              <Image src={Keyboard} quality={100} draggable={false}/>
-            </div>
-            <div className="pt-8 text-3xl">
-              <span>9/10/2022</span>
-            </div>
-            <div className="flex justify-center pt-5">
-              <TealDivider/>
-            </div>
 
-            <div className="pt-4">
-              <span className="text-4xl">All of the problems of beginners explained easier</span>
-            </div>
-          </div>
-        </Link>
+      <div className="z-[0] mt-[1rem]">
+        <GraphicsKeyboard/>
       </div>
-    </>
+
+      <div className="flex justify-center z-[1] backdrop-blur-[0.625rem] mt-[-0.05rem]">
+        <div className="flex flex-col text-center font-quicksand text-white w-[56.5rem] backdrop-blur-[0.625rem]">
+          <span className="font-quicksand text-3xl text-white" id="desc">I truly like <a href="https://www.amazon.com/Razer-Cynosa-Lite-Gaming-Keyboard/dp/B087C98QJJ" target="_blank" rel="noreferrer" className="underline">this</a> keyboard as it is good everything you might be doing: gaming, programming, surfing the Internet.<br/>I have used it for a year or so and I can say that I still haven't had any problems with it.</span>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default Blog
+export default Home
