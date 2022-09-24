@@ -18,7 +18,7 @@ const GraphicsComputer = () => {
 	  <Canvas shadows dpr={[1, 2]} camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '200px'}} id="mouse">
 		<ambientLight/>
 		<spotLight/>
-		<Suspense fallback={<Html center><Loader/></Html>}>
+		<Suspense fallback={<Html center><Loader mb="0"/></Html>}>
 		  <Model/>
 		  <Environment preset="city"/>
 		</Suspense>

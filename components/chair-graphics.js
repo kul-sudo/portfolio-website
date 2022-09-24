@@ -17,7 +17,7 @@ const GraphicsKeyboard = () => {
       <Canvas shadows dpr={[1, 2]} camera={{ position: [2, 5, 4], fov: 5 }} style={{height: '600px'}} id="keyboard">
         <ambientLight/>
         <spotLight/>
-        <Suspense fallback={<Html center><Loader/></Html>}>
+        <Suspense fallback={<Html center><Loader mb="13rem"/></Html>}>
           <Model/>
           <Environment preset="city"/>
         </Suspense>
