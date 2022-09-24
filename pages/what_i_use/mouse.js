@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
-import GraphicsChair from '../../components/chair-graphics'
+import GraphicsMouse from '../../components/use-mouse-graphics'
 
-const Chair = () => {
+const Mouse = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
   const [moonShow, setMoonShow] = useState(false)
@@ -56,17 +56,17 @@ const Chair = () => {
         </div>
       </div>
 
-      <div className="z-[0] mt-[4rem]">
-        <GraphicsChair/>
+      <div className="z-[0] mt-[1rem]">
+        <GraphicsMouse/>
       </div>
 
-      <div className="flex justify-center z-[1] backdrop-blur-[0.625rem] mt-[-14rem]">
-        <div className="flex flex-col text-center font-quicksand text-white w-[56.5rem]">
-          <span className="font-quicksand text-3xl text-white" id="desc">The <a href="https://amzn.eu/d/7iicHBD" target="_blank" rel="noreferrer" className="underline">ThunderX3 TC3BK Black</a> chair is tremendously cosy and snug. All of the parts of your body that can start to pain if you sit in front of your computer for too long are propped on the chair and do not start to pain indeed. At times, it is immensely relaxing to move your backrest backwards, close your eyes and relax, and this chair allows you to do it. Periodically I have to sit in front of my computer coding for several hours and what's great is that my back feels <i>entirely</i> OK when I stand up.</span>
+      <div className="flex justify-center z-[1] backdrop-blur-[0.625rem] mt-[-5rem]">
+        <div className="flex flex-col text-center font-quicksand text-white w-[56.5rem] backdrop-blur-[0.625rem]">
+          <span className="font-quicksand text-3xl text-white" id="desc"><a href="https://amzn.eu/d/9u9NtXv" target="_blank" rel="noreferrer" className="underline">Bloody A70</a> turned out to be a solid choice. If you need a relatively inexpensive and immensely reliable (I have used it for 2 years with utterly no problems) mouse, then I would definitely recommend you to buy this mouse.</span>
         </div>
       </div>
     </div>
   )
 }
 
-export default Chair
+export default Mouse

@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import GraphicsComputer from '../components/mouse-graphics'
+import GraphicsMouse from '../components/mouse-graphics'
 import useTheme from '../lib/theme'
 import { useEffect, useState } from 'react'
-import { SunIcon, MoonIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 import GithubLogo from '../public/github-logo.png'
@@ -68,7 +68,7 @@ const Home = () => {
       </div>
 
       <div className="z-[1] mt-3">
-        <GraphicsComputer/>
+        <GraphicsMouse/>
       </div>
 
       <div className="830px:flex 830px:justify-center font-quicksand 830px:mt-8 z-[0]">

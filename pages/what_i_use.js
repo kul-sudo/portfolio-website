@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Keyboard from '../public/my_keyboard.png'
 import Chair from '../public/my_chair.png'
+import Mouse from '../public/my_mouse.png'
 
 const WhatIUse = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
@@ -59,7 +60,7 @@ const WhatIUse = () => {
           <Link href="/what_i_use/keyboard">
             <div className="flex flex-col justify-center items-center select-none space-y-2 bg-[#000000] rounded-xl cursor-pointer hover:translate-y-[-5px]" style={{transition: '0.2s'}}>
               <div className="h-auto w-[28rem]">
-                <Image src={Keyboard} quality={100} draggable={false} className="rounded-xl"/>
+                <Image src={Keyboard} quality={100} draggable={false} loading="eager" className="rounded-xl"/>
               </div>
               <a className="font-quicksand text-2xl text-white pb-4">Razor RZ03-0274</a>
             </div>
@@ -68,9 +69,18 @@ const WhatIUse = () => {
           <Link href="/what_i_use/chair">
             <div className="flex flex-col justify-center items-center select-none space-y-2 bg-[#000000] rounded-xl cursor-pointer hover:translate-y-[-5px]" style={{transition: '0.2s'}}>
               <div className="h-auto w-[28rem]">
-                <Image src={Chair} quality={100} draggable={false} className="rounded-xl"/>
+                <Image src={Chair} quality={100} draggable={false} loading="eager" className="rounded-xl"/>
               </div>
               <a className="font-quicksand text-2xl text-white pb-4">ThunderX3 TC3BK Black</a>
+            </div>
+          </Link>
+
+          <Link href="/what_i_use/mouse">
+            <div className="flex flex-col justify-center items-center select-none space-y-2 bg-[#000000] rounded-xl cursor-pointer hover:translate-y-[-5px]" style={{transition: '0.2s'}}>
+              <div className="h-auto w-[28rem]">
+                <Image src={Mouse} quality={100} draggable={false} loading="eager" className="rounded-xl"/>
+              </div>
+              <a className="font-quicksand text-2xl text-white pb-4">Bloody A70</a>
             </div>
           </Link>
         </div>

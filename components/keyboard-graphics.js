@@ -7,7 +7,7 @@ import Loader from './loader'
 
 const Model = () => {
   return (
-    <primitive object={useLoader(GLTFLoader, '/keyboard-graphics.glb').scene} scale={0.14}/>
+    <primitive object={useLoader(GLTFLoader, '/keyboard-graphics.glb').scene} scale={0.13}/>
   );
 };
 

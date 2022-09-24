@@ -7,14 +7,14 @@ import Loader from './loader'
 
 const Model = () => {
   return (
-	  <primitive object={useLoader(GLTFLoader, '/computer_mouse.glb').scene} scale={0.25}/>
+	  <primitive object={useLoader(GLTFLoader, '/my_mouse_graphics.glb').scene} scale={5}/>
   );
 };
 
-const GraphicsMouse = () => {
+const UseMouseGraphics = () => {
   return (
 	<>
-	  <Canvas shadows dpr={[1, 2]} camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '200px'}} id="mouse">
+	  <Canvas shadows dpr={[1, 2]} camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '400px'}} id="use-mouse">
 		<ambientLight/>
 		<spotLight/>
 		<Suspense fallback={<Html center><Loader mb="0"/></Html>}>
@@ -27,4 +27,4 @@ const GraphicsMouse = () => {
 	)
 }
 
-export default GraphicsMouse
+export default UseMouseGraphics

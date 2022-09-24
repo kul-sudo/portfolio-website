@@ -6,7 +6,7 @@ import { IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 import GraphicsKeyboard from '../../components/keyboard-graphics'
 
-const Home = () => {
+const Keyboard = () => {
   const toggleDarkMode = useTheme((state) => state.toggleMode)
   const dark = useTheme((state) => state.dark)
   const [moonShow, setMoonShow] = useState(false)
@@ -62,11 +62,11 @@ const Home = () => {
 
       <div className="flex justify-center z-[1] backdrop-blur-[0.625rem] mt-[-0.05rem]">
         <div className="flex flex-col text-center font-quicksand text-white w-[56.5rem] backdrop-blur-[0.625rem]">
-          <span className="font-quicksand text-3xl text-white" id="desc">I truly like <a href="https://www.amazon.com/Razer-Cynosa-Lite-Gaming-Keyboard/dp/B087C98QJJ" target="_blank" rel="noreferrer" className="underline">this</a> keyboard as it is good everything you might be doing: gaming, programming, surfing the Internet.<br/>I have used it for a year or so and I can say that I still haven't had any problems with it.</span>
+          <span className="font-quicksand text-3xl text-white" id="desc">I truly like <a href="https://amzn.eu/d/6IorxY9" target="_blank" rel="noreferrer" className="underline">this</a> keyboard as it is good everything you might be doing: gaming, programming, surfing the Internet.<br/>I have used it for a year or so and I can say that I still haven't had any problems with it.</span>
         </div>
       </div>
     </div>
   )
 }
 
-export default Home
+export default Keyboard
