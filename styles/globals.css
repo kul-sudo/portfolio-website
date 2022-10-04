@@ -1,3 +1,7 @@
+body {
+  padding-bottom: 2rem;
+}
+
 ::-moz-selection {
   color: black;
   background: white;
@@ -37,7 +41,7 @@
 }
 
 @media screen and (max-width: 790px) {
-  #hello {
+  #upper-desc {
     margin-left: 1rem;
     margin-right: 1rem
   }
@@ -46,5 +50,11 @@
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 2rem;
+  }
+}
+
+@media screen and (min-height: 1080px) {
+  #upper-desc {
+    margin-top: 2.7rem;
   }
 }

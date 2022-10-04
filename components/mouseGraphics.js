@@ -13,17 +13,17 @@ const Model = () => {
 
 const GraphicsMouse = () => {
   return (
-	<>
-	  <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '200px'}} id="mouse">
-      <ambientLight/>
-      <spotLight/>
-      <Suspense fallback={<Html center><Spinner boxSize={50}/></Html>}>
-        <Model/>
-        <Environment preset="city"/>
-      </Suspense>
-      <OrbitControls autoRotate enableZoom={false} enablePan={false}/>
-	  </Canvas>
-	</>
+    <>
+      <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{height: '200px'}} id="mouse">
+        <ambientLight/>
+        <spotLight/>
+        <Suspense fallback={<Html center><Spinner boxSize={50}/></Html>}>
+          <Model/>
+          <Environment preset="city"/>
+        </Suspense>
+        <OrbitControls autoRotate enableZoom={false} enablePan={false}/>
+      </Canvas>
+    </>
 	)
 }
 

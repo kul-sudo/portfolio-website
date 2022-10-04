@@ -1,13 +1,11 @@
 import Head from 'next/head'
-import NextLink from 'next/link'
-import { HStack, VStack, Stack, Grid, GridItem, Link, Center, Box, IconButton, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import MouseGraphics from '../components/mouseGraphics'
+import { VStack, Text, Grid, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
+import MouseGraphics from '../components/MouseGraphics'
+import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
 
 const Home = () => {
-  const { toggleColorMode } = useColorMode()
   return (
     <>
       <Head>
@@ -16,18 +14,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar/>
+
       <Center mt="1rem">
-        <HStack spacing={4} userSelect="none" align="center">
-          <NextLink href="/" passHref>
-            <Link href="/" textDecoration="none">Home</Link>
-          </NextLink>
-          <Link href="https://github.com/kul-sudo" isExternal textDecoration="none">GitHub</Link>
-          <IconButton colorScheme={useColorModeValue('purple', 'blue')} onClick={toggleColorMode} icon={useColorModeValue(<MoonIcon/>, <SunIcon/>)} />
-        </HStack>
-      </Center>
-      
-      <Center mt="1rem">
-        <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" id="hello">
+        <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" id="upper-desc">
           <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer</Text>
         </Box>
       </Center>
@@ -47,7 +37,7 @@ const Home = () => {
           <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}} id="my-projects">
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
               <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>My projects</Text>
-              <VStack pt="1rem" fontWeight="600" textAlign="center" textDecoration="underline">
+              <VStack pt="1.1rem" fontWeight="600" textAlign="center" textDecoration="underline">
                 <Link color="black" href="https://github.com/kul-sudo/eportal" isExternal style={{transform: 'skew(-15deg)'}}>eportal</Link> 
                 <Link color="black" href="https://github.com/kul-sudo/Smiling-Zombies" isExternal style={{transform: 'skew(-15deg)'}}>smiling zombies</Link>
               </VStack>
@@ -60,7 +50,7 @@ const Home = () => {
         <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
           <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
             <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Hard skills</Text>
-            <Box pt="1rem">
+            <Box pt="1.5rem">
               <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>Solid English<br/>Stress tolerance</Text> 
             </Box>
           </VStack>
