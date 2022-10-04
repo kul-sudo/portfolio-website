@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import { VStack, Text, Grid, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
-import MouseGraphics from '../components/MouseGraphics'
+import { Text, Center, Box } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
@@ -21,7 +20,6 @@ const Home = () => {
           <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">My blog</Text>
         </Box>
       </Center>
-
     </>
   )
 }
