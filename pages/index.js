@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { VStack, Text, Grid, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
-import MouseGraphics from '../components/MouseGraphics'
+import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
@@ -23,7 +23,7 @@ const Home = () => {
       </Center>
 
       <Box mt={5}>
-        <MouseGraphics/>
+        <GraphicsMouse/>
       </Box>
       <Center>
         <Grid templateRows="repeat(1, 1fr)" templateColumns="repeat(2, 1fr)" gap="10rem" id="gradient-boxes">
