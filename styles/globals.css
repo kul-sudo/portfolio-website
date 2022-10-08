@@ -58,3 +58,10 @@ body {
     margin-top: 2.7rem;
   }
 }
+
+@media screen and (max-width: 741px) {
+  #use-items {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr)
+  }
+}

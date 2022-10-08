@@ -10,7 +10,7 @@ import {
   MenuItem,
   useColorMode,
   useColorModeValue } from '@chakra-ui/react'
-import { MoonIcon, SunIcon, HamburgerIcon, InfoIcon } from '@chakra-ui/icons'
+import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode()
@@ -27,7 +27,8 @@ const Navbar = () => {
             as={IconButton}
             icon={<HamburgerIcon />}
             variant="outline"
-            />
+            _active={{borderColor: "#ffffff", borderWidth: "2px", outlineColor: "#6366f1", outlineWidth: "2px", outlineOffset: "1px"}}
+          />
           <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg">
             <NextLink href="/what_i_use">
               <MenuItem>
