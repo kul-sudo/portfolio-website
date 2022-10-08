@@ -23,7 +23,13 @@
     "three": "^0.145.0"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

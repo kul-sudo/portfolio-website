@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
 
-const Home = () => {
+const WhatIUse = () => {
   return (
     <>
       <Head>
@@ -75,4 +75,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default WhatIUse
