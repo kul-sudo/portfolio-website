@@ -28,14 +28,14 @@ const Navbar = () => {
             icon={<HamburgerIcon />}
             variant="outline"
             />
-          <MenuList>
-            <NextLink href="/blog">
-              <MenuItem icon={<InfoIcon />}>
+          <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg">
+            <NextLink href="/what_i_use">
+              <MenuItem>
                 What I use
               </MenuItem>
             </NextLink>
-            <NextLink href="/blog">
-              <MenuItem icon={<InfoIcon />}>
+            <NextLink href="/what_i_use">
+              <MenuItem>
                 Blog
               </MenuItem>
             </NextLink>
