@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { VStack, Grid, Text, Center, Box, Divider, Link, useColorModeValue } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { Grid, Center, Box, Divider, Link } from '@chakra-ui/react'
 import {
   Popover,
   PopoverTrigger,
@@ -26,79 +27,11 @@ const WhatIUse = () => {
 
       <Center mt="5rem">
         <Grid templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" rowGap="5rem" columnGap="10rem" id="use-items">
-          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
-            <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00063_lpixuq.jpg" 
-              alt="mouse"
-              width="270%"
-              height="190%"
-              draggable={false}
-              loading="eager"
-              quality="100"
-              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
-            />
-            <Divider mt="-0.35rem"/>
-            <Box display="flex" justifyContent="center" h="5rem">
-              <Link color="white" href="https://a.co/d/18y6Mmg" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Bloody A70</Link>
-            </Box>
-          </Box>
-
-          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
-            <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316764/DSC00073_iwnxdb.jpg" 
-              alt="chair"
-              width="270%"
-              height="190%"
-              draggable={false}
-              loading="eager"
-              quality="100"
-              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
-            />
-            <Divider mt="-0.35rem"/>
-            <Box display="flex" justifyContent="center" h="5rem">
-              <Link color="white" href="https://a.co/d/10niyHY" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>ThunderX3 TC3BK</Link>
-            </Box>
-          </Box>
-
-          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
-            <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00066_mdlw8e.jpg" 
-              alt="keyboard"
-              width="270%"
-              height="190%"
-              draggable={false}
-              loading="eager"
-              quality="100"
-              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
-            />
-            <Divider mt="-0.35rem"/>
-            <Box display="flex" justifyContent="center" h="5rem">
-              <Link color="white" href="https://a.co/d/bXnjhv7" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Razer Cynosa Lite</Link>
-            </Box>
-          </Box>
-
-          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
-            <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00089_ayxnxv.jpg" 
-              alt="headphones"
-              width="270%"
-              height="190%"
-              draggable={false}
-              loading="eager"
-              quality="100"
-              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
-              />
-            <Divider mt="-0.35rem"/>
-            <Box display="flex" justifyContent="center" h="5rem">
-              <Link color="white" href="https://amzn.eu/d/00AiAx7" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Sennheiser HD 206</Link>
-            </Box>
-          </Box>
-          
-          <Popover>
+          <NextLink href="what_i_use/bloody-a70">
             <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
               <Image 
-                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665319733/DSC00075_ygqgow_wlspi8.jpg" 
-                alt="monitor"
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00063_lpixuq.jpg" 
+                alt="mouse"
                 width="270%"
                 height="190%"
                 draggable={false}
@@ -108,40 +41,107 @@ const WhatIUse = () => {
                 />
               <Divider mt="-0.35rem"/>
               <Box display="flex" justifyContent="center" h="5rem">
-                <PopoverTrigger>
-                  <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">AOC i2475Pxqu</Link>
-                </PopoverTrigger>
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">Bloody A70</Link>
               </Box>
             </Box>
-            <PopoverContent boxShadow="lg" bg="#27272a">
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverBody color="white">Unfortunately, no link available</PopoverBody>
-            </PopoverContent>
-          </Popover>
-        
-          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
-            <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00093_bufdoq.jpg" 
-              alt="headphones"
-              width="270%"
-              height="190%"
-              draggable={false}
-              loading="eager"
-              quality="100"
-              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
-              />
-            <Divider mt="-0.35rem"/>
-            <Box display="flex" justifyContent="center" h="5rem">
-              <Link color="white" href="https://amzn.eu/d/gJP6YRx" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Marantz Pro</Link>
+          </NextLink>
+
+          <NextLink href="what_i_use/thunderx3-tc3bk">
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316764/DSC00073_iwnxdb.jpg" 
+                alt="chair"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">ThunderX3 TC3BK</Link>
+              </Box>
             </Box>
-          </Box>
+          </NextLink>
+
+          <NextLink href="what_i_use/razer-cynosa-lite">
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00066_mdlw8e.jpg" 
+                alt="keyboard"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">Razer Cynosa Lite</Link>
+              </Box>
+            </Box>
+          </NextLink>
+
+          <NextLink href="what_i_use/sennheiser-hd-206">
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00089_ayxnxv.jpg" 
+                alt="headphones"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">Sennheiser HD 206</Link>
+              </Box>
+            </Box>
+          </NextLink>
+          
+          <NextLink href="what_i_use/aoc-i2475pxqu">
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665319733/DSC00075_ygqgow_wlspi8.jpg" 
+                alt="headphones"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">AOC i2475Pxqu</Link>
+              </Box>
+            </Box>
+          </NextLink>
+
+          <NextLink href="what_i_use/marantz-pro">
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00093_bufdoq.jpg" 
+                alt="headphones"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">Marantz Pro</Link>
+              </Box>
+            </Box>
+          </NextLink>
         </Grid>
       </Center>
-
-      <VStack spacing={3}>
-        <Text display="inline-block" color="white" borderRadius="xl" py="0.2rem" px="0.5rem" bg="#181818" mt="2.5rem" fontSize="2rem">Why do I have this setup?</Text>
-      </VStack>
     </>
   )
 }
