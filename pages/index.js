@@ -23,7 +23,7 @@ const Home = () => {
       </Center>
 
       <Box mt={0.5}>
-        <GraphicsMouse/>
+        <GraphicsMouse />
       </Box>
       
       <Center>
