@@ -1,6 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Grid, Text, Center, Stack, Box, Divider, Link, useColorModeValue, VStack } from '@chakra-ui/react'
+import { VStack, Grid, Text, Center, Box, Divider, Link, useColorModeValue } from '@chakra-ui/react'
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
@@ -20,12 +31,13 @@ const WhatIUse = () => {
         <Grid templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" rowGap="5rem" columnGap="10rem" id="use-items">
           <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
             <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665162054/DSC00030_f9cckt.jpg" 
+              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00063_lpixuq.jpg" 
               alt="mouse"
-              width="255%"
+              width="270%"
               height="190%"
               draggable={false}
               loading="eager"
+              quality="100"
               style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
             />
             <Divider mt="-0.35rem"/>
@@ -36,12 +48,13 @@ const WhatIUse = () => {
 
           <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
             <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665227302/DSC00038_pv6wun.jpg" 
+              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316764/DSC00073_iwnxdb.jpg" 
               alt="chair"
-              width="255%"
+              width="270%"
               height="190%"
               draggable={false}
               loading="eager"
+              quality="100"
               style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
             />
             <Divider mt="-0.35rem"/>
@@ -52,17 +65,78 @@ const WhatIUse = () => {
 
           <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
             <Image 
-              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665166147/my_keyboard_pxdmqw.jpg" 
-              alt="chair"
-              width="255%"
+              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00066_mdlw8e.jpg" 
+              alt="keyboard"
+              width="270%"
               height="190%"
               draggable={false}
               loading="eager"
+              quality="100"
               style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
             />
             <Divider mt="-0.35rem"/>
             <Box display="flex" justifyContent="center" h="5rem">
               <Link color="white" href="https://a.co/d/bXnjhv7" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Razer Cynosa Lite</Link>
+            </Box>
+          </Box>
+
+          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+            <Image 
+              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00089_ayxnxv.jpg" 
+              alt="headphones"
+              width="270%"
+              height="190%"
+              draggable={false}
+              loading="eager"
+              quality="100"
+              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+              />
+            <Divider mt="-0.35rem"/>
+            <Box display="flex" justifyContent="center" h="5rem">
+              <Link color="white" href="https://amzn.eu/d/00AiAx7" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Sennheiser HD 206</Link>
+            </Box>
+          </Box>
+          
+          <Popover>
+            <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+              <Image 
+                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665319733/DSC00075_ygqgow_wlspi8.jpg" 
+                alt="monitor"
+                width="270%"
+                height="190%"
+                draggable={false}
+                loading="eager"
+                quality="100"
+                style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+                />
+              <Divider mt="-0.35rem"/>
+              <Box display="flex" justifyContent="center" h="5rem">
+                <PopoverTrigger>
+                  <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">AOC i2475Pxqu</Link>
+                </PopoverTrigger>
+              </Box>
+            </Box>
+            <PopoverContent boxShadow="lg" bg="#27272a">
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverBody color="white">Unfortunately, no link available</PopoverBody>
+            </PopoverContent>
+          </Popover>
+        
+          <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
+            <Image 
+              src="https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00093_bufdoq.jpg" 
+              alt="headphones"
+              width="270%"
+              height="190%"
+              draggable={false}
+              loading="eager"
+              quality="100"
+              style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
+              />
+            <Divider mt="-0.35rem"/>
+            <Box display="flex" justifyContent="center" h="5rem">
+              <Link color="white" href="https://amzn.eu/d/gJP6YRx" alignSelf="center" textAlign="center" fontSize="1.5rem" isExternal>Marantz Pro</Link>
             </Box>
           </Box>
         </Grid>
