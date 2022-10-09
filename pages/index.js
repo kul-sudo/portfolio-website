@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { VStack, Text, Grid, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
-import GraphicsMouse from '../components/MouseGraphics'
+import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'

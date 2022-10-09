@@ -2,14 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { Grid, Center, Box, Divider, Link } from '@chakra-ui/react'
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-} from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
