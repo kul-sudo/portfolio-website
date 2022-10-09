@@ -13,7 +13,7 @@ const Model = () => {
 
 const GraphicsMouse = () => {
   return (
-    <Stack display="flex" align="center" mt={5}>
+    <Stack display="flex" align="center" mt={0.5}>
       <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{width: "181px", height: "200px"}} id="mouse">
         <ambientLight />
         <spotLight />

@@ -15,8 +15,8 @@ import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
 const Navbar = () => {
   const { toggleColorMode } = useColorMode()
   return (
-    <Center mt="1rem">
-      <HStack spacing={4} userSelect="none" align="center">
+    <Center top="0" position="fixed" py="0.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
+      <HStack spacing={4} userSelect="none" py="0.4rem"> 
         <NextLink href="/" passHref>
           <Link href="/" textDecoration="none">Home</Link>
         </NextLink>
@@ -28,7 +28,7 @@ const Navbar = () => {
             icon={<HamburgerIcon />}
             variant="outline"
             _active={{borderColor: "#ffffff", borderWidth: "2px", outlineColor: "#6366f1", outlineWidth: "2px", outlineOffset: "1px"}}
-          />
+            />
           <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg">
             <NextLink href="/what_i_use">
               <MenuItem>

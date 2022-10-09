@@ -5,12 +5,9 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
 } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
@@ -25,9 +22,9 @@ const WhatIUse = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar/>
+      <Navbar />
 
-      <Center mt="2.5rem">
+      <Center mt="5rem">
         <Grid templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" rowGap="5rem" columnGap="10rem" id="use-items">
           <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
             <Image 
