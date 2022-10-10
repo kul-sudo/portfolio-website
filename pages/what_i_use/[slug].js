@@ -1,14 +1,12 @@
+import { useRouter } from 'next/router'
 import { Text } from '@chakra-ui/react'
 
-// export const getStaticPaths = async = () => {
+const Device = props => {
 
-// }
-//
-
-const Device = () => {
   return (
     <Text>ff</Text>
   )
 }
+
 
 export default Device
