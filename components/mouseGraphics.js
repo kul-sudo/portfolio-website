@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Html, Preload } from '@react-three/drei'
+import { Html } from '@react-three/drei'
 import { Stack, Spinner } from '@chakra-ui/react'
 
 const Model = () => {
@@ -19,7 +19,6 @@ const GraphicsMouse = () => {
         <spotLight />
         <Suspense fallback={<Html center><Spinner boxSize={50} /></Html>}>
           <Model />
-          <Preload all />
           <Environment preset="city" />
         </Suspense>
         <OrbitControls autoRotate enableZoom={false} enablePan={false} />
