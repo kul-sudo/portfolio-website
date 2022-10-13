@@ -7,14 +7,14 @@ import { Stack, Spinner } from '@chakra-ui/react'
 
 const Model = () => {
   return (
-	  <primitive object={useLoader(GLTFLoader, '/computer_mouse.glb').scene} scale={0.25} />
+	  <primitive object={useLoader(GLTFLoader, '/computer_mouse.glb').scene} scale={0.28} />
   );
 };
 
 const GraphicsMouse = () => {
   return (
     <Stack display="flex" align="center">
-      <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{width: "181px", height: "200px"}} id="mouse">
+      <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{width: "181px", height: "180px"}} id="mouse">
         <ambientLight />
         <spotLight />
         <Suspense fallback={<Html center><Spinner boxSize={50} /></Html>}>
