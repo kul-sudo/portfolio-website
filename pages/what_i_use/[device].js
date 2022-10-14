@@ -20,7 +20,7 @@ const DevicePage = () => {
       <Navbar />
       <Stack display="flex" justifyContent="center" alignItems="center" mt="5rem">
         <Image 
-          src={paths[device].at(1)} 
+          src={paths[device][1]} 
           alt="mouse"
           width="270%"
           height="190%"
@@ -29,7 +29,7 @@ const DevicePage = () => {
           quality="100"
           style={{borderRadius: "5%", userSelect: "none"}}
           />
-        <Text fontSize="3rem">{paths[device].at(0)}</Text>
+        <Text fontSize="3rem">{paths[device][0]}</Text>
       </Stack>
     </>
   )
