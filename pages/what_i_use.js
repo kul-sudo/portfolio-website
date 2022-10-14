@@ -20,11 +20,11 @@ const WhatIUse = () => {
 
       <Center mt="5rem">
         <Grid templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" rowGap="5rem" columnGap="10rem" id="use-items">
-          {Object.keys(Paths).map(device => (
-            <NextLink href={"what_i_use/"+device}>
+          {Object.keys(Paths).map((key, index) => (
+            <NextLink href={"what_i_use/"+key}>
               <Box borderRadius="5%" w="16rem" bg="#181818" _hover={{transform: "translateY(-3px)"}} transition="0.2s">
                 <Image 
-                  src={Paths[device][1]} 
+                  src={Paths[key][1]} 
                   alt="device"
                   width="270%"
                   height="190%"
@@ -36,7 +36,7 @@ const WhatIUse = () => {
                   />
                 <Divider mt="-0.35rem"/>
                 <Box display="flex" justifyContent="center" h="5rem">
-                  <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">{Paths[device][0]}</Link>
+                  <Link color="white" alignSelf="center" textAlign="center" fontSize="1.5rem">{Paths[key][0]}</Link>
                 </Box>
               </Box>
             </NextLink>
