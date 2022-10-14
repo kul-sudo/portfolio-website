@@ -25,6 +25,7 @@ const DevicePage = () => {
           draggable={false}
           loading="eager"
           quality="100"
+          priority
           style={{borderRadius: "5%", userSelect: "none"}}
           />
         <Text fontSize="3rem">{Paths[device][0]}</Text>
