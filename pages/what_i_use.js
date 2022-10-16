@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import { Grid, Center, Box, Divider, Link } from '@chakra-ui/react'
+import { Grid, Center, Text, Box, Divider, Link } from '@chakra-ui/react'
 import Paths from '../lib/device_posts.json'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'

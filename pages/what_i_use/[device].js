@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Paths from '../../lib/device_posts.json'
-import { Stack, Text } from '@chakra-ui/react'
+import { VStack, Text } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
 import '@fontsource/quicksand/600.css'
 
@@ -16,7 +16,7 @@ const DevicePage = () => {
   return (
     <>
       <Navbar />
-      <Stack display="flex" justifyContent="center" alignItems="center" mt="5rem">
+      <VStack display="flex" justifyContent="center" alignItems="center" mt="5rem">
         <Image 
           src={Paths[device][1]} 
           alt="mouse"
@@ -28,8 +28,9 @@ const DevicePage = () => {
           priority
           style={{borderRadius: "5%", userSelect: "none"}}
           />
-        <Text fontSize="3rem">{Paths[device][0]}</Text>
-      </Stack>
+        <Text textAlign="center" fontSize="2.5rem">{Paths[device][0]}</Text>
+        <Text textAlign="center" fontSize="1.8rem" pt="2%" maxW="50rem" px="1rem">{Paths[device][2]}</Text>
+      </VStack>
     </>
   )
 }

@@ -8,8 +8,8 @@ import { Stack, Spinner } from '@chakra-ui/react'
 const Model = () => {
   return (
 	  <primitive object={useLoader(GLTFLoader, '/computer_mouse.glb').scene} scale={0.28} />
-  );
-};
+  )
+}
 
 const GraphicsMouse = () => {
   return (

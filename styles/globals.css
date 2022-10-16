@@ -43,7 +43,7 @@ body {
 @media all and (max-width: 790px) {
   #upper-desc {
     margin-left: 1rem;
-    margin-right: 1rem
+    margin-right: 1rem;
   }
 
   #gradient-boxes {
@@ -56,7 +56,7 @@ body {
 @media all and (max-width: 741px) {
   #use-items {
     grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(1, 1fr)
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

@@ -1,8 +1,32 @@
 {
-  "bloody-a70": ["Bloody A70", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00063_lpixuq.jpg"],
-  "thunderx3-tc3bk": ["ThunderX3 TC3BK", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316764/DSC00073_iwnxdb.jpg"],
-  "razer-cynosa-lite": ["Razer Cynosa Lite", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00066_mdlw8e.jpg"],
-  "sennheiser-hd-206": ["Sennheiser HD 206", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00089_ayxnxv.jpg"],
-  "aoc-i2475pxqu": ["AOC i2475Pxqu", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665319733/DSC00075_ygqgow_wlspi8.jpg"],
-  "marantz-pro": ["Marantz Pro", "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00093_bufdoq.jpg"]
+  "bloody-a70": [
+    "Bloody A70",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00063_lpixuq.jpg",
+    "I have always been happy when it comes to the mouse. I've had it for a long time and there hasn't been a single problem with it."
+  ],
+  "thunderx3-tc3bk": [
+    "ThunderX3 TC3BK",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316764/DSC00073_iwnxdb.jpg",
+    "This chair is surprisingly inexpensive and good. I can move my backrest backwards and lie on it like on a bed. It initially creaks slightly but as it is used, it creaks less and less, and eventually stops creaking totally."
+  ],
+  "razer-cynosa-lite": [
+    "Razer Cynosa Lite",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00066_mdlw8e.jpg",
+    "I had always wanted to buy this keyboard before I finally bought it and it was worth it."
+  ],
+  "sennheiser-hd-206": [
+    "Sennheiser HD 206",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316757/DSC00089_ayxnxv.jpg",
+    "I have always been happy when it comes to the mouse. I've had it for a long time and there hasn't been a single problem with it."
+  ],
+  "aoc-i2475pxqu": [
+    "AOC i2475Pxqu",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665319733/DSC00075_ygqgow_wlspi8.jpg",
+    "I have always been happy when it comes to the mouse. I've had it for a long time and there hasn't been a single problem with it."
+  ],
+  "marantz-pro": [
+    "Marantz Pro",
+    "https://res.cloudinary.com/dsliut4oh/image/upload/v1665316756/DSC00093_bufdoq.jpg",
+    "I have always been happy when it comes to the mouse. I've had it for a long time and there hasn't been a single problem with it."
+  ]
 }
