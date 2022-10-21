@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Paths from '../../lib/device_posts.json'
 import { VStack, Text } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
+import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
 
 const DevicePage = () => {
@@ -27,9 +28,10 @@ const DevicePage = () => {
           quality="100"
           priority
           style={{borderRadius: "5%", userSelect: "none"}}
-          />
-        <Text textAlign="center" fontSize="2.5rem">{Paths[device][0]}</Text>
-        <Text textAlign="center" fontSize="1.8rem" pt="2%" maxW="50rem" px="1rem">{Paths[device][2]}</Text>
+        />
+        <Text textAlign="center" fontSize="2.5rem" fontWeight="600">{Paths[device][0]}</Text>
+        <Text textAlign="center" fontSize="1.5rem" fontWeight="500">{Paths[device][3]}</Text>
+        <Text textAlign="center" fontSize="1.5rem" pt="2%" maxW="50rem" px="1rem" fontWeight="500">{Paths[device][2]}</Text>
       </VStack>
     </>
   )

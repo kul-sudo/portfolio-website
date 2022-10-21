@@ -11,12 +11,13 @@ import {
   useColorMode,
   useColorModeValue } from '@chakra-ui/react'
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
+import '@fontsource/quicksand/600.css'
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode()
   return (
     <Center top="0" position="fixed" py="0.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
-      <HStack spacing={4} userSelect="none" py="0.5rem"> 
+      <HStack spacing={4} userSelect="none" py="0.5rem" fontWeight="600"> 
         <NextLink href="/" passHref>
           <Link href="/" textDecoration="none">Home</Link>
         </NextLink>
