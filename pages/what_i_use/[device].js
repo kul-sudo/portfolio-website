@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Head from 'next/head'
 import Paths from '../../lib/device_posts.json'
-import { VStack, Text } from '@chakra-ui/react'
+import { Text, VStack } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
 import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
+import PageNotFound from '../../components/404Page'
 
 const DevicePage = () => {
   const router = useRouter()
@@ -13,9 +15,19 @@ const DevicePage = () => {
   if (!router.isReady) {
     return
   }
+  
+  if (!Object.keys(Paths).includes(device)) {
+    return <PageNotFound />
+  }
 
   return (
     <>
+      <Head>
+        <title>Cyril Tasman</title>
+        <meta name="description" content="My personal portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Navbar />
       <VStack display="flex" justifyContent="center" alignItems="center" mt="5rem">
         <Image 
