@@ -14,7 +14,7 @@ const Model = () => {
 const GraphicsMouse = () => {
   return (
     <Stack display="flex" align="center">
-      <Canvas camera={{ position: [2, 5, 4], fov: 10 }} style={{width: "181px", height: "180px"}} id="mouse">
+      <Canvas camera={{ position: [1, 5, -4], fov: 10 }} style={{width: "181px", height: "180px"}} id="mouse">
         <ambientLight />
         <spotLight />
         <Suspense fallback={<Html center><Spinner boxSize={50} /></Html>}>

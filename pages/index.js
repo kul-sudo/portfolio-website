@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { VStack, Text, Grid, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
+import { VStack, Text, Grid, Flex, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
@@ -26,16 +26,16 @@ const Home = () => {
         <GraphicsMouse />
       </Box>
       
-      <Center>
-        <Grid templateRows="repeat(1, 1fr)" templateColumns="repeat(2, 1fr)" gap="10rem" id="gradient-boxes">
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}} id="technologies">
+      <Center mt="1.4rem">
+        <Flex direction="row" gap="10rem" id="gradient-boxes">
+          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
               <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Technologies</Text>
               <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>NextJS<br/>React<br/>JavaScript<br/>Python<br/>SQL</Text> 
             </VStack>
           </VStack>
 
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}} id="my-projects">
+          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
               <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>My projects</Text>
               <VStack pt="1.1rem" fontWeight="600" textAlign="center" textDecoration="underline">
@@ -44,19 +44,17 @@ const Home = () => {
               </VStack>
             </VStack>
           </VStack>
-        </Grid>
+          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
+            <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
+              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Hard skills</Text>
+              <Box pt="1.5rem">
+                <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>Solid English<br/>Stress tolerance</Text> 
+              </Box>
+            </VStack>
+          </VStack>
+        </Flex>
       </Center>
 
-      <Center mt="2rem">
-        <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
-          <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-            <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Hard skills</Text>
-            <Box pt="1.5rem">
-              <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>Solid English<br/>Stress tolerance</Text> 
-            </Box>
-          </VStack>
-        </VStack>
-      </Center>
     </>
   )
 }
