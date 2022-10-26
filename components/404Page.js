@@ -12,7 +12,7 @@ const PageNotFound = () => {
 
       <Navbar />
 
-      <Box mt="6rem">
+      <Box mt="5rem">
         <GraphicsMouse />
       </Box>
 

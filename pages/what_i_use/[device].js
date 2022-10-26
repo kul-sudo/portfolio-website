@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 import Head from 'next/head'
 import Paths from '../../lib/device_posts.json'
-import { Text, VStack } from '@chakra-ui/react'
+import { Text, VStack, Image } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
+import PageNotFound from '../../components/404Page'
 import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
-import PageNotFound from '../../components/404Page'
 
 const DevicePage = () => {
   const router = useRouter()
@@ -32,13 +31,10 @@ const DevicePage = () => {
       <VStack display="flex" justifyContent="center" alignItems="center" mt="5rem">
         <Image 
           src={Paths[device][1]} 
-          alt="mouse"
-          width="270%"
-          height="190%"
-          draggable={false}
+          alt="device"
+          width="18rem"
+          height="auto"
           loading="eager"
-          quality="100"
-          priority
           style={{borderRadius: "5%", userSelect: "none"}}
         />
         <Text textAlign="center" fontSize="2.5rem" fontWeight="600">{Paths[device][0]}</Text>
