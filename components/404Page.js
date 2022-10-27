@@ -2,7 +2,6 @@ import { Box, Text, Button, VStack } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
 import NextLink from 'next/link'
-import '@fontsource/quicksand/600.css'
 
 const PageNotFound = () => {
   return (

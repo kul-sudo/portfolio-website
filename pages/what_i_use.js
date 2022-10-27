@@ -3,7 +3,6 @@ import NextLink from 'next/link'
 import { Grid, Center, Box, Divider, Link, Image, useColorModeValue } from '@chakra-ui/react'
 import Paths from '../lib/device_posts.json'
 import Navbar from '../components/Navbar'
-import '@fontsource/quicksand/600.css'
 
 const WhatIUse = () => {
   return (

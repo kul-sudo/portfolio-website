@@ -4,8 +4,6 @@ import Paths from '../../lib/device_posts.json'
 import { Text, VStack, Image } from '@chakra-ui/react'
 import Navbar from '../../components/Navbar'
 import PageNotFound from '../../components/404Page'
-import '@fontsource/quicksand/500.css'
-import '@fontsource/quicksand/600.css'
 
 const DevicePage = () => {
   const router = useRouter()

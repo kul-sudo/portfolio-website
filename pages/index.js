@@ -2,8 +2,6 @@ import Head from 'next/head'
 import { VStack, Text, Link, Center, Box, useColorModeValue, Stack } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
-import '@fontsource/quicksand/600.css'
-import '@fontsource/quicksand/700.css'
 
 const Home = () => {
   return (

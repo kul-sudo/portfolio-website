@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../lib/theme'
 import '../styles/globals.css'
+import '@fontsource/quicksand/500.css'
+import '@fontsource/quicksand/600.css'
+import '@fontsource/quicksand/700.css'
 
 const Hydrated = ({ children }) => {
   const [hydration, setHydration] = useState(false);
