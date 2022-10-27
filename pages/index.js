@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { VStack, Text, Flex, Link, Center, Box, useColorModeValue } from '@chakra-ui/react'
+import { VStack, Text, Link, Center, Box, useColorModeValue, Stack } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import Navbar from '../components/Navbar'
 import '@fontsource/quicksand/600.css'
@@ -17,7 +17,7 @@ const Home = () => {
       <Navbar />
 
       <Center mt="4.8rem">
-        <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" id="upper-desc">
+        <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
           <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer</Text>
         </Box>
       </Center>
@@ -27,7 +27,7 @@ const Home = () => {
       </Box>
       
       <Center mt="1rem">
-        <Flex direction="row" gap="10rem" id="gradient-boxes">
+        <Stack direction={{ base: 'column', '741px': 'row' }} spacing={{ base: '2rem', '741px': '10rem' }}>
           <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
               <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Technologies</Text>
@@ -44,7 +44,7 @@ const Home = () => {
               </VStack>
             </VStack>
           </VStack>
-        </Flex>
+        </Stack>
       </Center>
 
       <Center mt="2rem">

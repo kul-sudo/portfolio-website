@@ -44,41 +44,6 @@ body {
   padding-bottom: 2rem;
 }
 
-@media all and (max-width: 1100px) {
-  #gradient-boxes {
-    -ms-flex-direction: column;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  #upper-desc {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
-@media all and (max-width: 741px) {
-  #use-items {
-    -ms-grid-columns: (1fr)[1];
-    -ms-grid-rows: (1fr)[1];
-    -ms-grid-columns: (1fr)[1];
-    grid-template-columns: repeat(1,1fr);
-    -ms-grid-rows: (1fr)[1];
-    grid-template-rows: repeat(1,1fr);
-  }
-  #use-items > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-
-  #use-items > :nth-child(1) {
-    -ms-grid-column: 1;
-    -ms-grid-row: 1;
-  }
-}
-
 @media all and (display-mode: fullscreen) {
   #upper-desc {
     margin-top: 3%;

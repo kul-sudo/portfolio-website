@@ -17,7 +17,7 @@ const WhatIUse = () => {
       <Navbar />
 
       <Center mt="5rem">
-        <Grid templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" rowGap="5rem" columnGap="10rem" id="use-items">
+        <Grid templateColumns={{ base: "repeat(1, 1fr)", "741px": "repeat(2, 1fr)" }} rowGap="5rem" columnGap="10rem" id="use-items">
           {Object.keys(Paths).map((key) => (
             <NextLink href={"what_i_use/"+key}>
               <Box borderRadius="5%" w="16rem" bg={useColorModeValue('#212121', '#e3e3e3')} _hover={{transform: "translateY(-3px)"}} transition="0.2s" cursor="pointer">
