@@ -30,6 +30,11 @@
   border-radius: 8px;
 }
 
+::-moz-selection {
+  background:#fff;
+  color: #000;
+}
+
 ::selection {
   background:#fff;
   color: #000;
@@ -58,8 +63,14 @@ body {
   #use-items {
     -ms-grid-columns: (1fr)[1];
     -ms-grid-rows: (1fr)[1];
+    -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1,1fr);
+    -ms-grid-rows: (1fr)[1];
     grid-template-rows: repeat(1,1fr);
+  }
+  #use-items > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
   }
 
   #use-items > :nth-child(1) {
