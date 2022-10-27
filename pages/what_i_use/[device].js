@@ -9,11 +9,12 @@ import '@fontsource/quicksand/600.css'
 
 const DevicePage = () => {
   const router = useRouter()
-  const { device } = router.query
   
   if (!router.isReady) {
     return
   }
+
+  const { device } = router.query
   
   if (!Object.keys(Paths).includes(device)) {
     return <PageNotFound />
