@@ -31,12 +31,12 @@ const Navbar = () => {
           />
           <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg">
             <NextLink href="/what_i_use">
-              <MenuItem>
+              <MenuItem fontWeight="600">
                 What I use
               </MenuItem>
             </NextLink>
             <NextLink href="/what_i_use">
-              <MenuItem>
+              <MenuItem fontWeight="600">
                 Blog
               </MenuItem>
             </NextLink>
