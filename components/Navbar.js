@@ -30,14 +30,14 @@ const Navbar = () => {
             _active={{borderColor: "#ffffff", borderWidth: "2px", outlineColor: "#6366f1", outlineWidth: "2px", outlineOffset: "1px"}}
           />
           <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg">
-            <NextLink href="/what_i_use">
+            <NextLink href="/">
               <MenuItem fontWeight="600">
-                What I use
+                Home page
               </MenuItem>
             </NextLink>
             <NextLink href="/what_i_use">
               <MenuItem fontWeight="600">
-                Blog
+                What I use
               </MenuItem>
             </NextLink>
           </MenuList>

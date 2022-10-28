@@ -8,7 +8,7 @@ const WhatIUse = () => {
   return (
     <>
       <Head>
-        <title>Cyril Tasman</title>
+        <title>Cyril Tasman - What I use</title>
         <link rel="icon" href="https://res.cloudinary.com/dsliut4oh/image/upload/v1666902603/logo_sta6iy.png" />
       </Head>
 
@@ -22,7 +22,7 @@ const WhatIUse = () => {
                 <Image
                   src={Paths[key][1]} 
                   alt="device"
-                  loading="eager"
+                  loading="lazy"
                   style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
                 />
                 <Divider />
