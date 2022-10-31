@@ -4,7 +4,6 @@ import NextLink from 'next/link'
 import Paths from '../../lib/device_posts.json'
 import { Text, VStack, Box, Image, HStack, Link, Center } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import Navbar from '../../components/Navbar'
 import PageNotFound from '../../components/404Page'
 
 const DevicePage = () => {
@@ -26,8 +25,6 @@ const DevicePage = () => {
         <title>{`Cyril Tasman - ${Paths[device][0]}`}</title>
         <link rel="icon" href="https://res.cloudinary.com/dsliut4oh/image/upload/v1666902603/logo_sta6iy.png" />
       </Head>
-      
-      <Navbar />
       
       <Center mt="7rem">
         <HStack textAlign="center" fontWeight="700" fontSize="1.05rem">

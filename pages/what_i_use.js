@@ -2,7 +2,6 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import { Grid, Center, Box, Divider, Link, Image, useColorModeValue } from '@chakra-ui/react'
 import Paths from '../lib/device_posts.json'
-import Navbar from '../components/Navbar'
 
 const WhatIUse = () => {
   return (
@@ -12,8 +11,6 @@ const WhatIUse = () => {
         <link rel="icon" href="https://res.cloudinary.com/dsliut4oh/image/upload/v1666902603/logo_sta6iy.png" />
       </Head>
 
-      <Navbar />
-
       <Center mt="5rem">
         <Grid templateColumns={{ base: "repeat(1, 1fr)", "741px": "repeat(2, 1fr)" }} rowGap="5rem" columnGap="10rem" id="use-items">
           {Object.keys(Paths).map((key) => (
@@ -22,7 +19,7 @@ const WhatIUse = () => {
                 <Image
                   src={Paths[key][1]} 
                   alt="device"
-                  loading="lazy"
+                  loading="eager"
                   style={{borderTopLeftRadius: "5%", borderTopRightRadius: "5%", userSelect: "none"}}
                 />
                 <Divider />

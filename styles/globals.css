@@ -5,11 +5,6 @@
   user-select: none;
 }
 
-::-moz-selection {
-  background: #fff;
-  color: #000;
-}
-
 ::-webkit-scrollbar {
   width: 16px;
 }

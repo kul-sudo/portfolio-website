@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { VStack, Text, Link, Center, Box, useColorModeValue, Stack } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
-import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
@@ -11,8 +10,6 @@ const Home = () => {
         <meta name="description" content="My personal portfolio" />
         <link rel="icon" href="https://res.cloudinary.com/dsliut4oh/image/upload/v1666902603/logo_sta6iy.png" />
       </Head>
-
-      <Navbar />
 
       <Center mt="4.8rem">
         <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">

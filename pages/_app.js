@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../lib/theme'
+import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Hydrated>
       <ChakraProvider theme={theme}>
+        <Navbar />
         <Component {...pageProps} />
       </ChakraProvider>
     </Hydrated>
