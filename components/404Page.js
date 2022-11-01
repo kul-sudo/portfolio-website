@@ -9,8 +9,6 @@ const PageNotFound = () => {
       <title>Cyril Tasman</title>
       <link rel="icon" href="https://res.cloudinary.com/dsliut4oh/image/upload/v1666902603/logo_sta6iy.png" />
 
-      <Navbar />
-
       <Box mt="5rem">
         <GraphicsMouse />
       </Box>
