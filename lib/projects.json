@@ -1,0 +1,12 @@
+{
+  "eportal": {
+    "full-name": "eportal",
+    "icon": "https://res.cloudinary.com/dsliut4oh/image/upload/v1667590002/evolution-plant_meur26.png",
+    "icon-dark-mode": "https://res.cloudinary.com/dsliut4oh/image/upload/v1667590002/evolution-plant_meur26.png"
+  },
+  "smiling-zombies": {
+    "full-name": "Smiling Zombies",
+    "icon": "https://res.cloudinary.com/dsliut4oh/image/upload/v1667589790/logo_3_bzlwki.png",
+    "icon-dark-mode": "https://res.cloudinary.com/dsliut4oh/image/upload/v1667591831/logo_3_bzlwki_nkqwaa.png"
+  }
+}

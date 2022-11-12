@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { VStack, Text, Link, Center, Box, useColorModeValue, Stack } from '@chakra-ui/react'
+import { VStack, Text, Link, Center, Box, Stack, useColorModeValue } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 
 const Home = () => {

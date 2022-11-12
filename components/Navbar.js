@@ -35,9 +35,9 @@ const Navbar = () => {
                 Home page
               </MenuItem>
             </NextLink>
-            <NextLink href="/what_i_use">
+            <NextLink href="/my_projects">
               <MenuItem fontWeight="600">
-                What I use
+                My projects
               </MenuItem>
             </NextLink>
           </MenuList>
