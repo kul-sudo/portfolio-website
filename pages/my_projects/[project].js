@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import Projects from '../../lib/projects.json'
-import { Text, VStack, Box, Image, HStack, Link, Center, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, UnorderedList, ListItem, useColorModeValue } from '@chakra-ui/react'
+import { Text, VStack, Box, Image, HStack, Link, Center, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, useColorModeValue } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import PageNotFound from '../../components/404Page'
 
@@ -19,9 +19,7 @@ const DevicePage = () => {
     return <PageNotFound />
   }
 
-  const projectIsEportal = project === 'eportal'
-
-  return (
+ return (
     <>
       <Head>
         <title>{`Cyril Tasman - ${Projects[project]['full-name']}`}</title>
