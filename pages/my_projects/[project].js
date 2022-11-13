@@ -50,18 +50,18 @@ const DevicePage = () => {
       </VStack>
 
       <Center>
-        <Accordion allowToggle allowMultiple mt="2rem" w="35%">
+        <Accordion allowMultiple mt="2rem" w="35%">
           <AccordionItem>
             <h2>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  {projectIsEportal ? 'How I came up with the brainchild' : 'How I came up with the idea of creating a new version of eportal'}
+                  How I came up with the brainchild
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {projectIsEportal ? 'Trying to stick to the right branch of programming, I found out about AI. I needed to come up with a solid brainchild which could be subtly related to the AI and be relatively simple. At that time I was really interested in the evolution of species, so I combined those two interests and got this brainchild.' : 'Eportal resembles a research dedicated to evolution and I thought that many people would not be interested in it, so I decided to make a game dedicated to evolution which would be able to be actually played. Not to lose the productiveness I decided to go with the same team as when it came to eportal.'}
+              {Projects[project]['how-i-came-up-with-the-brainchild']}
             </AccordionPanel>
           </AccordionItem>
 
@@ -75,7 +75,7 @@ const DevicePage = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {projectIsEportal ? 'Every single day I went to school (I was 12 years old then), came back home, ate some food, did my homework and coded immensely hard with almost no rest. And in a few months of coding and constantly rebuilding the game I managed to release it and right away get around 10 stars on GitHub and 30 likes in the community where it was promoted.' : 'Making this project was relatively easier than making the original version of it as the graphics had already been coded. Turning this project into a game was still quite hard, though.'}
+              {Projects[project]['how-the-coding-went']}
             </AccordionPanel>
           </AccordionItem>
 
@@ -89,7 +89,7 @@ const DevicePage = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {projectIsEportal ? 'I needed to find a free way to promote the game, and I eventually came up with the idea of asking the admin of a community in which projects of beginners where posted to post my game. The admin did it, and the idea turned out to be really successful.' : 'I did not want to risk the success of the previous version of this game, so I decided to do the same: I came up with the idea of asking the admin of a community in which projects of beginners where posted to post my game.'}
+              {Projects[project]['how-i-promoted-the-game']}
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
