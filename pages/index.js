@@ -22,19 +22,19 @@ const Home = () => {
       
       <Center mt="1rem">
         <Stack direction={{ base: 'column', '741px': 'row' }} spacing={{ base: '2rem', '741px': '10rem' }}>
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
+          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Technologies</Text>
-              <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>NextJS<br/>React<br/>JavaScript<br/>Python<br/>SQL</Text> 
+              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Technologies</Text>
+              <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>NextJS<br />React<br />JavaScript<br />Python<br />SQL</Text> 
             </VStack>
           </VStack>
 
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
+          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>My projects</Text>
+              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>My projects</Text>
               <VStack pt="1.1rem" fontWeight="600" textAlign="center" textDecoration="underline">
-                <Link color="black" href="https://github.com/kul-sudo/eportal" isExternal style={{transform: 'skew(-15deg)'}}>eportal</Link> 
-                <Link color="black" href="https://github.com/kul-sudo/Smiling-Zombies" isExternal style={{transform: 'skew(-15deg)'}}>smiling zombies</Link>
+                <Link color="black" href="https://github.com/kul-sudo/eportal" isExternal style={{ transform: 'skew(-15deg)' }}>eportal</Link> 
+                <Link color="black" href="https://github.com/kul-sudo/Smiling-Zombies" isExternal style={{ transform: 'skew(-15deg)' }}>smiling zombies</Link>
               </VStack>
             </VStack>
           </VStack>
@@ -42,11 +42,11 @@ const Home = () => {
       </Center>
 
       <Center mt="2rem">
-        <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{transform: 'skew(15deg)'}}>
+        <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
           <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-            <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{transform: 'skew(-15deg)'}}>Hard skills</Text>
+            <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Hard skills</Text>
             <Box pt="1.5rem">
-              <Text color="black" fontWeight="600" textAlign="center" style={{transform: 'skew(-15deg)'}}>Solid English<br/>Stress tolerance</Text> 
+              <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Solid English<br/>Stress tolerance</Text> 
             </Box>
           </VStack>
         </VStack>

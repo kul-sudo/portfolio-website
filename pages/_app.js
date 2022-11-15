@@ -8,13 +8,13 @@ import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
 
 const Hydrated = ({ children }) => {
-  const [hydration, setHydration] = useState(false);
+  const [hydration, setHydration] = useState(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setHydration(true);
+      setHydration(true)
     }
-  }, []);
+  }, [])
 
   return hydration ? children : null
 }
