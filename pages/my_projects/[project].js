@@ -5,8 +5,34 @@ import Projects from '../../lib/projects.json'
 import { Text, VStack, Box, Image, HStack, Link, Center, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, useColorModeValue } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import PageNotFound from '../../components/404Page'
+import useLanguage from '../../lib/language'
+
+const languageSettings = {
+  'routes': {
+    'my_projects': {
+      'english': 'My projects',
+      'spanish': 'Mis proyectos'
+    } 
+  },
+  'accordion': {
+    'how_i_came_up_with_the_brainchild': {
+      'english': 'How I came up with the brainchild',
+      'spanish': 'Cómo se me ocurrió la idea'
+    },
+    'how_the_coding_went': {
+      'english': 'How the coding went',
+      'spanish': 'Cómo fue la codificación'
+    },
+    'how_i_promoted_the_game': {
+      'english': 'How I promoted the game',
+      'spanish': 'Cómo promocioné el juego'
+    }
+  }
+}
 
 const DevicePage = () => {
+  const language = useLanguage(state => state.language)
+  
   const router = useRouter()
   
   if (!router.isReady) {
@@ -27,7 +53,7 @@ const DevicePage = () => {
       
       <Center mt="7rem">
         <HStack textAlign="center" fontWeight="700" fontSize="1.05rem">
-          <Link><NextLink href="/my_projects">My projects</NextLink></Link>
+          <Link><NextLink href="/my_projects">{languageSettings.routes.my_projects[language]}</NextLink></Link>
           <ChevronRightIcon boxSize="2rem" />
           <Link><NextLink href={`/my_projects/${project}`}>{Projects[project]['full-name']}</NextLink></Link>
         </HStack>
@@ -53,13 +79,13 @@ const DevicePage = () => {
             <h2>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  How I came up with the brainchild
+                  {languageSettings.accordion.how_i_came_up_with_the_brainchild[language]}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {Projects[project]['how-i-came-up-with-the-brainchild']}
+              {Projects[project]['how-i-came-up-with-the-brainchild'][language]}
             </AccordionPanel>
           </AccordionItem>
 
@@ -67,13 +93,13 @@ const DevicePage = () => {
             <h2>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  How the coding went
+                  {languageSettings.accordion.how_the_coding_went[language]}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {Projects[project]['how-the-coding-went']}
+              {Projects[project]['how-the-coding-went'][language]}
             </AccordionPanel>
           </AccordionItem>
 
@@ -81,13 +107,13 @@ const DevicePage = () => {
             <h2>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  How I promoted the game
+                  {languageSettings.accordion.how_i_promoted_the_game[language]}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {Projects[project]['how-i-promoted-the-game']}
+              {Projects[project]['how-i-promoted-the-game'][language]}
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
