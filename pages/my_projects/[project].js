@@ -74,7 +74,7 @@ const DevicePage = () => {
       </VStack>
 
       <Center>
-        <Accordion allowMultiple mt="2rem" w="35%">
+        <Accordion allowMultiple mt="2rem" w="40rem" mx="1rem">
           <AccordionItem>
             <h2>
               <AccordionButton>

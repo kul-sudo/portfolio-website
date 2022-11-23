@@ -31,13 +31,13 @@ const languageSettings = {
   'navbar': {
     'home': {
       'english': 'Home',
-      'spanish': 'Página de inicio'
+      'spanish': 'Portada'
     } 
   },
   'menu': {
     'home': {
       'english': 'Home',
-      'spanish': 'Página de inicio'
+      'spanish': 'Portada'
     },
     'my_projects': {
       'english': 'My projects',
