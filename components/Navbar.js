@@ -15,7 +15,7 @@ import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
 import useLanguage from '../lib/language'
 
 const NewMenuItem = ({ children }) => {
-  return <MenuItem fontWeight="600" backgroundColor="#27272a" _hover={{ backgroundColor: "#343437" }}>{children}</MenuItem>
+  return <MenuItem fontWeight="600" bg={useColorModeValue('#e3e3e3', '#27272a')} _hover={{ bg: useColorModeValue('#f1f1f1', '#343437') }}>{children}</MenuItem>
 }
 
 const LanguageToggleIcon = () => {
