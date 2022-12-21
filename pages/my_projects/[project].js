@@ -60,7 +60,7 @@ const DevicePage = () => {
       </Center>
 
       <VStack display="flex" justifyContent="center" alignItems="center" mt="1rem">
-        <Box mx="1rem" padding="1rem" borderRadius="0.75rem" backgroundColor={useColorModeValue('#e1e1e1', '#191919')}>
+        <Box mx="1rem" padding="1rem" borderRadius="0.75rem" backgroundColor={useColorModeValue('#e1e1e1', '#1b1b1b')}>
           <Image 
             src={useColorModeValue(Projects[project].icon, Projects[project]['icon-dark-mode'])}
             alt="device"
