@@ -22,7 +22,7 @@ const WhatIUse = () => {
                   height="12rem"
                   loading="eager"
                   style={{borderRadius: "5%", userSelect: "none"}}
-                  />
+                />
                 <Text fontWeight="700" fontSize="1.8rem">{Projects[key]['full-name']}</Text>
               </VStack>
             </NextLink>
