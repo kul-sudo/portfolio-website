@@ -44,7 +44,7 @@ const Home = () => {
         <meta name="description" content="My personal portfolio" />
       </Head>
 
-      <Center mt="4.8rem">
+      <Center mt="4.7%">
         <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
           <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">{languageSettings.hello[language]}</Text>
         </Box>

@@ -9,13 +9,28 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Button,
+  Image,
   useColorMode,
-  useColorModeValue } from '@chakra-ui/react'
+  useColorModeValue 
+} from '@chakra-ui/react'
+import 'firebase/auth'
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
 import useLanguage from '../lib/language'
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import app from '../lib/firebase'
+
+export const auth = getAuth()
+const provider = new GoogleAuthProvider()
+
+export const createFirebaseUser = async () => {
+  const result = await signInWithPopup(auth, provider)
+  console.log(result.user)
+}
 
 const NewMenuItem = ({ children }) => {
-  return <MenuItem fontWeight="600" bg={useColorModeValue('#e3e3e3', '#27272a')} _hover={{ bg: useColorModeValue('#f1f1f1', '#343437') }}>{children}</MenuItem>
+  return <MenuItem fontWeight="600" backgroundColor={useColorModeValue('#e3e3e3', '#27272a')} _hover={{ backgroundColor: useColorModeValue('#f1f1f1', '#343437') }}>{children}</MenuItem>
 }
 
 const LanguageToggleIcon = () => {
@@ -52,8 +67,10 @@ const Navbar = () => {
   const language = useLanguage(state => state.language)
   const toggleLanguage = useLanguage(state => state.toggleLanguage)
 
+  const [user, setUser] = useAuthState(auth)
+
   return (
-    <Center top="0" position="fixed" py="0.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
+    <Center top="0" position="fixed" py="1rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
       <HStack spacing={4} userSelect="none" py="0.5rem" fontWeight="600"> 
         <NextLink href="/" passHref>
           <Link href="/" textDecoration="none">{languageSettings.navbar.home[language]}</Link>
@@ -67,7 +84,7 @@ const Navbar = () => {
             variant="outline"
             _active={{ borderColor: "#ffffff", borderWidth: "2px", outlineColor: "#6366f1", outlineWidth: "2px", outlineOffset: "1px" }}
           />
-          <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
+          <MenuList backgroundColor={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
             <NextLink href="/">
               <NewMenuItem>
                 {languageSettings.menu.home[language]}
@@ -82,10 +99,10 @@ const Navbar = () => {
         </Menu>
 
         <IconButton colorScheme={useColorModeValue('purple', 'blue')} onClick={toggleColorMode} icon={useColorModeValue(<MoonIcon/>, <SunIcon/>)} />
-        
+
         <Menu>
           <MenuButton><LanguageToggleIcon /></MenuButton>
-          <MenuList bg={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
+          <MenuList backgroundColor={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
             <NewMenuItem>
               <HStack spacing="0.4rem" onClick={() => toggleLanguage('english')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="auto" viewBox="0 0 512 512"><mask id="a"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#a)"><path fill="#eee" d="m0 0 8 22-8 23v23l32 54-32 54v32l32 48-32 48v32l32 54-32 54v68l22-8 23 8h23l54-32 54 32h32l48-32 48 32h32l54-32 54 32h68l-8-22 8-23v-23l-32-54 32-54v-32l-32-48 32-48v-32l-32-54 32-54V0l-22 8-23-8h-23l-54 32-54-32h-32l-48 32-48-32h-32l-54 32L68 0H0z"/><path fill="#0052b4" d="M336 0v108L444 0Zm176 68L404 176h108zM0 176h108L0 68ZM68 0l108 108V0Zm108 512V404L68 512ZM0 444l108-108H0Zm512-108H404l108 108Zm-68 176L336 404v108z"/><path fill="#d80027" d="M0 0v45l131 131h45L0 0zm208 0v208H0v96h208v208h96V304h208v-96H304V0h-96zm259 0L336 131v45L512 0h-45zM176 336 0 512h45l131-131v-45zm160 0 176 176v-45L381 336h-45z"/></g></svg>
@@ -100,7 +117,18 @@ const Navbar = () => {
             </NewMenuItem>
           </MenuList>
         </Menu>
+
+        <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
+          createFirebaseUser()
+        }}>Sign In</Button>
       </HStack>
+      
+      {user && (
+        <HStack ml="2rem" paddingX="1rem" zIndex="2">
+          <Text fontWeight="600">{user.displayName}</Text>
+          <Image src={user.photoURL} boxSize="2.5rem" rounded="xl" />
+        </HStack>
+      )}
     </Center>
   )
 }
