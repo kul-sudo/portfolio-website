@@ -118,9 +118,17 @@ const Navbar = () => {
           </MenuList>
         </Menu>
 
-        <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
-          createFirebaseUser()
-        }}>Sign In</Button>
+        {user && (
+          <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
+            auth.signOut()
+          }}>Sign out</Button>
+        )}
+
+        {!user && (
+          <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
+            createFirebaseUser()
+          }}>Sign In</Button>
+        )}
       </HStack>
       
       {user && (
