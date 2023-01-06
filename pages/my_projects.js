@@ -10,7 +10,7 @@ const WhatIUse = () => {
         <title>Cyril Tasman - My projects</title>
       </Head>
 
-      <Center mt="6rem">
+      <Center mt="0.5%">
         <Grid templateColumns={{ base: "repeat(1, 1fr)", "885px": "repeat(2, 1fr)" }} rowGap="5rem" columnGap="6rem" id="use-items">
           {Object.keys(Projects).map((key) => (
             <NextLink href={`my_projects/${key}`}>

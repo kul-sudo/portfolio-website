@@ -48,7 +48,7 @@ const Navbar = () => {
   const language = useLanguage(state => state.language)
   const toggleLanguage = useLanguage(state => state.toggleLanguage)
 
-  const [user, setUser] = useAuthState(auth)
+  const [user, authenticated] = useAuthState(auth)
 
   return (
     <Center top="0" position="sticky" py="1.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
@@ -106,7 +106,7 @@ const Navbar = () => {
           }}>Sign out</Button>
         )}
 
-        {!user && (
+        {!user && !authenticated && (
           <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
             createFirebaseUser()
           }}>Sign In</Button>

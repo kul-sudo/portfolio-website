@@ -6,11 +6,11 @@ import app from '../lib/firebase'
 const auth = getAuth()
 
 const UserProfile = () => {
-  const [user, setUser] = useAuthState(auth)
+  const [user, authenticated] = useAuthState(auth)
 
   if (user) {
     return (
-      <VStack backgroundColor={useColorModeValue('#cbcbcb', '#363636')} p="0.7rem" rounded="3xl" bottom="5" right="10" position="fixed" zIndex="2">
+      <VStack backgroundColor={useColorModeValue('#cbcbcb', '#363636')} p="0.7rem" rounded="2xl" bottom="5" right="10" position="fixed" zIndex="2">
         <Image src={user.photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
         <Text fontWeight="600">{user.displayName}</Text>
       </VStack>
