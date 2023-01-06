@@ -2,6 +2,7 @@ import NextLink from 'next/link'
 import {
   Text,
   HStack,
+  VStack,
   Link,
   Center,
   IconButton,
@@ -21,7 +22,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import app from '../lib/firebase'
 
-export const auth = getAuth()
+const auth = getAuth()
 const provider = new GoogleAuthProvider()
 
 export const createFirebaseUser = async () => {
@@ -70,8 +71,8 @@ const Navbar = () => {
   const [user, setUser] = useAuthState(auth)
 
   return (
-    <Center top="0" position="fixed" py="1rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
-      <HStack spacing={4} userSelect="none" py="0.5rem" fontWeight="600"> 
+    <Center top="0" position="fixed" py="1.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
+      <HStack spacing={4} userSelect="none" fontWeight="600"> 
         <NextLink href="/" passHref>
           <Link href="/" textDecoration="none">{languageSettings.navbar.home[language]}</Link>
         </NextLink>
@@ -130,13 +131,6 @@ const Navbar = () => {
           }}>Sign In</Button>
         )}
       </HStack>
-      
-      {user && (
-        <HStack ml="2rem" paddingX="1rem" zIndex="2">
-          <Text fontWeight="600">{user.displayName}</Text>
-          <Image src={user.photoURL} boxSize="2.5rem" rounded="xl" />
-        </HStack>
-      )}
     </Center>
   )
 }
