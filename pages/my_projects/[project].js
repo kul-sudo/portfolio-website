@@ -6,29 +6,7 @@ import { Text, VStack, Box, Image, HStack, Link, Center, Accordion, AccordionIte
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import PageNotFound from '../../components/404Page'
 import useLanguage from '../../lib/language'
-
-const languageSettings = {
-  'routes': {
-    'my_projects': {
-      'english': 'My projects',
-      'spanish': 'Mis proyectos'
-    } 
-  },
-  'accordion': {
-    'how_i_came_up_with_the_brainchild': {
-      'english': 'How I came up with the brainchild',
-      'spanish': 'Cómo se me ocurrió la idea'
-    },
-    'how_the_coding_went': {
-      'english': 'How the coding went',
-      'spanish': 'Cómo fue la codificación'
-    },
-    'how_i_promoted_the_game': {
-      'english': 'How I promoted the game',
-      'spanish': 'Cómo promocioné el juego'
-    }
-  }
-}
+import languageSettings from '../../lib/languageSettings'
 
 const DevicePage = () => {
   const language = useLanguage(state => state.language)

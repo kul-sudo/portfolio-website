@@ -2,7 +2,6 @@ import NextLink from 'next/link'
 import {
   Text,
   HStack,
-  VStack,
   Link,
   Center,
   IconButton,
@@ -11,16 +10,16 @@ import {
   MenuList,
   MenuItem,
   Button,
-  Image,
   useColorMode,
   useColorModeValue 
 } from '@chakra-ui/react'
 import 'firebase/auth'
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
-import useLanguage from '../lib/language'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import app from '../lib/firebase'
+import useLanguage from '../lib/language'
+import languageSettings from '../lib/languageSettings'
 
 const auth = getAuth()
 const provider = new GoogleAuthProvider()
@@ -43,25 +42,6 @@ const LanguageToggleIcon = () => {
   }
 }
 
-const languageSettings = {
-  'navbar': {
-    'home': {
-      'english': 'Home',
-      'spanish': 'Portada'
-    } 
-  },
-  'menu': {
-    'home': {
-      'english': 'Home',
-      'spanish': 'Portada'
-    },
-    'my_projects': {
-      'english': 'My projects',
-      'spanish': 'Mis proyectos'
-    }
-  }
-}
-
 const Navbar = () => {
   const { toggleColorMode } = useColorMode()
 
@@ -71,12 +51,8 @@ const Navbar = () => {
   const [user, setUser] = useAuthState(auth)
 
   return (
-    <Center top="0" position="fixed" py="1.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
+    <Center top="0" position="sticky" py="1.5rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
       <HStack spacing={4} userSelect="none" fontWeight="600"> 
-        <NextLink href="/" passHref>
-          <Link href="/" textDecoration="none">{languageSettings.navbar.home[language]}</Link>
-        </NextLink>
-        <Link href="https://github.com/kul-sudo" isExternal textDecoration="none">GitHub</Link>
         <Menu>
           <MenuButton
             colorScheme={useColorModeValue('gray.200', 'gray')}
@@ -96,6 +72,11 @@ const Navbar = () => {
                 {languageSettings.menu.my_projects[language]}
               </NewMenuItem>
             </NextLink>
+            <Link style={{ textDecoration: 'none' }} isExternal href="https://github.com/kul-sudo">
+              <NewMenuItem>
+                GitHub
+              </NewMenuItem>
+            </Link>
           </MenuList>
         </Menu>
 

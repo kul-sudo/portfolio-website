@@ -1,47 +1,11 @@
 import Head from 'next/head'
-import { VStack, Text, Link, Center, Box, Stack, Image, useColorModeValue } from '@chakra-ui/react'
+import { VStack, Text, Link, Center, Box, Stack, useColorModeValue } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import useLanguage from '../lib/language'
-import { getAuth } from 'firebase/auth'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import app from '../lib/firebase'
-
-const languageSettings = {
-  'hello': {
-    'english': 'Hello! I am a backend developer',
-    'spanish': '¡Hola! Soy un desarrollador back-end'
-  },
-  'captions': {
-    'technologies': {
-      'english': 'Technologies',
-      'spanish': 'Tecnologías'
-    },
-    'my_projects': {
-      'english': 'My projects',
-      'spanish': 'Mis proyectos'
-    },
-    'hard_skills': {
-      'english': 'Hard skills',
-      'spanish': 'Habilidades duras'
-    }
-  },
-  'boxes_content': {
-    'fluent_english': {
-      'english': 'Fluent English',
-      'spanish': 'Ingles fluido'
-    },
-    'stress_tolerance': {
-      'english': 'Stres tolerance',
-      'spanish': 'Tolerancia al estrés'
-    }
-  }
-}
-
-const auth = getAuth()
+import languageSettings from '../lib/languageSettings'
 
 const Home = () => {
   const language = useLanguage(state => state.language)
-  const [user, setUser] = useAuthState(auth)
 
   return (
     <>
@@ -50,7 +14,7 @@ const Home = () => {
         <meta name="description" content="My personal portfolio" />
       </Head>
 
-      <Center mt="5%">
+      <Center>
         <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
           <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">{languageSettings.hello[language]}</Text>
         </Box>
@@ -91,13 +55,6 @@ const Home = () => {
           </VStack>
         </VStack>
       </Center>
-
-      {user && (
-        <VStack backgroundColor={useColorModeValue('#cacaca', '#363636')} p="0.7rem" rounded="2xl" bottom="5" right="10" position="fixed" zIndex="2">
-          <Image src={user.photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
-          <Text fontWeight="600">{user.displayName}</Text>
-        </VStack>
-      )}
     </>
   )
 }
