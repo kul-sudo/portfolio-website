@@ -12,7 +12,7 @@ const WhatIUse = () => {
 
       <Center mt="0.5%">
         <Grid templateColumns={{ base: "repeat(1, 1fr)", "885px": "repeat(2, 1fr)" }} rowGap="5rem" columnGap="6rem" id="use-items">
-          {Object.keys(Projects).map((key) => (
+          {Object.keys(Projects).map(key => (
             <NextLink href={`my_projects/${key}`}>
               <VStack padding="1rem" borderRadius="0.75rem" transition="transform 1s" _hover={{ transform: 'scale(1.1)' }} backgroundColor={useColorModeValue('#e1e1e1', '#1b1b1b')}>
                 <Image

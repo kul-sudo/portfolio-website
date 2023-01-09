@@ -29,7 +29,7 @@ const DevicePage = () => {
         <title>{`Cyril Tasman - ${Projects[project]['full-name']}`}</title>
       </Head>
       
-      <Center mt="7rem">
+      <Center mt="1%">
         <HStack textAlign="center" fontWeight="700" fontSize="1.05rem">
           <Link><NextLink href="/my_projects">{languageSettings.routes.my_projects[language]}</NextLink></Link>
           <ChevronRightIcon boxSize="2rem" />
