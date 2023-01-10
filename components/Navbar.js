@@ -24,9 +24,8 @@ import languageSettings from '../lib/languageSettings'
 const auth = getAuth()
 const provider = new GoogleAuthProvider()
 
-export const createFirebaseUser = async () => {
-  const result = await signInWithPopup(auth, provider)
-  console.log(result.user)
+const createFirebaseUser = async () => {
+  await signInWithPopup(auth, provider)
 }
 
 const NewMenuItem = ({ children }) => {

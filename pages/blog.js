@@ -3,8 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, VStack, Box, Icon, IconButton, useToast, Text } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeNumberOfLikes, retrieveNumberOfLikes } from '../lib/firebaseLikes'
+import { useEffect } from 'react'
 import app from '../lib/firebase'
-import { useEffect, useState } from 'react'
 
 const numberOfLikesAtom = atom(0)
 const auth = getAuth()
