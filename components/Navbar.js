@@ -108,7 +108,7 @@ const Navbar = () => {
         {!user && !authenticated && (
           <Button variant="outline" colorScheme={useColorModeValue('gray.200', 'gray')} onClick={() => {
             createFirebaseUser()
-          }}>Sign In</Button>
+          }}>Sign in</Button>
         )}
       </HStack>
     </Center>

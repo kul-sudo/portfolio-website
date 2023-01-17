@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ChakraProvider, VStack, Image, Text, useColorModeValue } from '@chakra-ui/react'
+import { ChakraProvider, useColorModeValue } from '@chakra-ui/react'
 import theme from '../lib/theme'
 import Navbar from '../components/Navbar'
 import UserProfile from '../components/UserProfile'
