@@ -76,11 +76,11 @@ const Navbar = () => {
                 GitHub
               </NewMenuItem>
             </Link>
-            <Link href="/blog">
+            <NextLink href="/my_projects">
               <NewMenuItem>
                 Blog
               </NewMenuItem>
-            </Link>
+            </NextLink>
           </MenuList>
         </Menu>
 
