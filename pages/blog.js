@@ -1,12 +1,10 @@
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { HStack, Center, Image, VStack, Box, Icon, IconButton, Text, Input, useToast, Button, DarkMode, useColorModeValue } from '@chakra-ui/react'
+import { HStack, Center, Image, VStack, Box, Text, Input, Button, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments } from '../lib/firebaseComments'
-import { useEffect, useState } from 'react'
 import UserProfileBlog from '../components/UserProfileBlog'
 import app from '../lib/firebase'
-import { CldImage } from 'next-cloudinary'
 
 const commentInputAtom = atom('')
 
@@ -30,14 +28,14 @@ const Blog = ({ snapshot }) => {
     <>
       <Center>
         <VStack>
-          <CldImage
+          <Image
             width="200"
             height="200"
             src="https://res.cloudinary.com/dsliut4oh/image/upload/v1674667782/vopyan_tswgo0.jpg"
             alt="My Image"
             style={{ borderRadius: '1rem' }}
             draggable={false}
-            />
+          />
           <Text>Hello. I have a blog!<br />Keep and eye on it!</Text>
         </VStack>
       </Center>
