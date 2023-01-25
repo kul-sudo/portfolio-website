@@ -36,7 +36,7 @@ const Blog = ({ snapshot }) => {
             style={{ borderRadius: '1rem' }}
             draggable={false}
           />
-          <Text>Hello. I have a blog!<br />Keep and eye on it!</Text>
+          <Text>Hello. I have a blog!<br />Keep an eye on it!</Text>
         </VStack>
       </Center>
       <Center mt="2%">
