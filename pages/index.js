@@ -55,6 +55,7 @@ const Home = () => {
           </VStack>
         </VStack>
       </Center>
+
     </>
   )
 }
