@@ -17,9 +17,9 @@ import 'firebase/auth'
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import app from '../lib/firebase'
 import useLanguage from '../lib/language'
 import languageSettings from '../lib/languageSettings'
+import app from '../lib/firebase'
 
 const auth = getAuth()
 const provider = new GoogleAuthProvider()

@@ -75,13 +75,13 @@ const Blog = ({ snapshot }) => {
                 return (
                   Object.keys(snapshot[element]?.comments).map(element_ => {
                     return (
-                      <VStack backgroundColor="#232323" position="relative" width="30rem" height="10rem" rounded="xl">
-                        <HStack zIndex="999" position="absolute" top="2" left="2">
-                          <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
+                      <VStack backgroundColor="#232323" p="1rem" width="25rem" rounded="xl">
+                        <HStack>
+                          <Image src={snapshot[element]?.photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
                           <Text fontSize="0.9rem">{element}</Text>
                         </HStack>
-                        <Box position="absolute" top="20%" backgroundColor="#202020" p="0.5rem" w="20rem" rounded="xl">
-                          <Text w="70%">{snapshot[element]?.comments[element_].text}</Text>
+                        <Box backgroundColor="#202020" p="0.5rem" w="20rem" rounded="xl">
+                          <Text>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
                       </VStack>
                     )
