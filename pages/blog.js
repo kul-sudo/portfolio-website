@@ -28,7 +28,7 @@ const Blog = ({ snapshot }) => {
   return (
     <>
       <Head>
-        <title>Cyril Tasman</title>
+        <title>Cyril Tasman - Blog</title>
         <meta name="description" content="My personal portfolio" />
       </Head>
 
