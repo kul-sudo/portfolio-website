@@ -4,6 +4,7 @@ import { HStack, Center, Image, VStack, Box, Text, Input, Button, useToast, useC
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments } from '../lib/firebaseComments'
 import UserProfileBlog from '../components/UserProfileBlog'
+import { Head } from 'next/document'
 import app from '../lib/firebase'
 
 const commentInputAtom = atom('')
@@ -26,6 +27,11 @@ const Blog = ({ snapshot }) => {
 
   return (
     <>
+      <Head>
+        <title>Cyril Tasman</title>
+        <meta name="description" content="My personal portfolio" />
+      </Head>
+
       <Center>
         <VStack>
           <Image
