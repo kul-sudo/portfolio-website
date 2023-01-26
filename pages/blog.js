@@ -1,10 +1,10 @@
+import Head from 'next/head'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments } from '../lib/firebaseComments'
 import UserProfileBlog from '../components/UserProfileBlog'
-import Head from 'next/document'
 import app from '../lib/firebase'
 
 const commentInputAtom = atom('')
@@ -27,10 +27,6 @@ const Blog = ({ snapshot }) => {
 
   return (
     <>
-      <Head>
-        <title>Cyril Tasman - Blog</title>
-        <meta name="description" content="My personal portfolio" />
-      </Head>
 
       <Center>
         <VStack>
