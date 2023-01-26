@@ -27,6 +27,9 @@ const Blog = ({ snapshot }) => {
 
   return (
     <>
+      <Head>
+        <title>Cyril Tasman - Blog</title>
+      </Head>
 
       <Center>
         <VStack>
