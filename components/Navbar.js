@@ -51,10 +51,10 @@ const UploadIcon = () => {
   )
 }
 
-function handleFiles(event) {
-  var files = event.target.files;
+const handleFiles = event => {
+  const files = event.target.files
   document.getElementById('src').setAttribute('src', URL.createObjectURL(files[0]))
-  document.getElementById("audio").load()
+  document.getElementById('audio').load()
 }
 
 const Navbar = () => {
@@ -136,11 +136,11 @@ const Navbar = () => {
 
         </HStack>
       </Center>
-      <HStack position="fixed" bottom="5" right="5" zIndex="999">
+      <HStack position="fixed" bottom="5" left="5" zIndex="999">
         <audio id="audio" controls style={{ opacity: '1' }}>
           <source id="src" />
         </audio>
-        <label style={{ cursor: 'pointer', backgroundColor: (colorMode === 'dark' ? '#191919' : '#fff'), padding: '1rem', borderRadius: '1.5rem' }}>
+        <label style={{ cursor: 'pointer', backgroundColor: (colorMode === 'dark' ? '#383838' : '#f1f3f4'), padding: '1rem', borderRadius: '1.5rem' }}>
           <Text color={useColorModeValue('#000', '#fff')}>Upload</Text>
           <input style={{ display: 'none' }} accept="audio/*" type="file" id="upload" onChange={handleFiles} />
         </label>

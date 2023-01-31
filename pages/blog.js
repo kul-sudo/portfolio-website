@@ -61,7 +61,6 @@ const Blog = ({ snapshot }) => {
             ) : (
                 <Box backgroundColor="#2e2e2e" rounded="xl" p="0.2rem">
                   <Icon boxSize="2.2rem" viewBox="0 0 500 500" fill="#fff">
-
                     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
                       <path d="m2436 4309 c-443 -47 -825 -369 -951 -803 -122 -423 29 -906 367 -1171 42 -33 77 -63 77 -66 1 -3 -23 -16 -51 -29 -93 -42 -230 -130 -326 -208 -261 -211 -454 -509 -538 -831 -25 -96 -54 -291 -54 -362 l0 -39 158 0 158 0 13 117 c31 303 143 550 346 762 362 379 899 499 1392 311 353 -135 634 -435 752 -804 32 -98 60 -262 61 -343 l0 -43 160 0 160 0 0 53 c0 78 -27 249 -55 355 -117 439 -439 832 -837 1020 -43 21 -77 39 -77 42 0 3 27 25 61 50 127 94 269 279 336 435 294 692 -161 1473 -906 1554 -113 12 -131 12 -246 0z m242 -319 c417 -68 705 -424 679 -840 -22 -346 -248 -625 -584 -722 -103 -30 -313 -32 -413 -5 -452 125 -702 589 -555 1034 119 360 501 593 873 533z"/>
                     </g>
@@ -109,10 +108,10 @@ const Blog = ({ snapshot }) => {
                     <VStack backgroundColor="#232323" p="1rem" width="25rem" rounded="xl">
                       <HStack>
                         <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
-                        <Text fontSize="0.9rem">{element}</Text>
+                        <Text fontSize="0.9rem" color="#fff">{element}</Text>
                       </HStack>
                       <Box backgroundColor="#202020" p="0.5rem" w="20rem" rounded="xl">
-                        <Text>{snapshot[element]?.comments[element_].text}</Text>
+                        <Text color="#fff">{snapshot[element]?.comments[element_].text}</Text>
                       </Box>
                     </VStack>
                   ))
