@@ -10,7 +10,6 @@ import {
   MenuList,
   MenuItem,
   Button,
-  Icon,
   useColorMode,
   useColorModeValue
 } from '@chakra-ui/react'
@@ -42,24 +41,8 @@ const LanguageToggleIcon = () => {
   }
 }
 
-const UploadIcon = () => {
-  return (
-    <Icon viewBox="0 0 471.2 471.2" boxSize="2rem">
-      <path fill="#fff" d="M457.7,230.15c-7.5,0-13.5,6-13.5,13.5v122.8c0,33.4-27.2,60.5-60.5,60.5H87.5c-33.4,0-60.5-27.2-60.5-60.5v-124.8    c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v124.8c0,48.3,39.3,87.5,87.5,87.5h296.2c48.3,0,87.5-39.3,87.5-87.5v-122.8    C471.2,236.25,465.2,230.15,457.7,230.15z"/>
-      <path fill="#fff" d="M159.3,126.15l62.8-62.8v273.9c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V63.35l62.8,62.8c2.6,2.6,6.1,4,9.5,4    c3.5,0,6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1l-85.8-85.8c-2.5-2.5-6-4-9.5-4c-3.6,0-7,1.4-9.5,4l-85.8,85.8    c-5.3,5.3-5.3,13.8,0,19.1C145.5,131.35,154.1,131.35,159.3,126.15z"/>
-    </Icon>  
-  )
-}
-
-const handleFiles = event => {
-  const files = event.target.files
-  document.getElementById('src').setAttribute('src', URL.createObjectURL(files[0]))
-  document.getElementById('audio').load()
-}
-
 const Navbar = () => {
-  const { toggleColorMode, colorMode } = useColorMode()
-  console.log(colorMode)
+  const { toggleColorMode } = useColorMode()
 
   const language = useLanguage(state => state.language)
   const toggleLanguage = useLanguage(state => state.toggleLanguage)
@@ -136,15 +119,6 @@ const Navbar = () => {
 
         </HStack>
       </Center>
-      <HStack position="fixed" bottom="5" left="5" zIndex="999">
-        <audio id="audio" controls style={{ opacity: '1' }}>
-          <source id="src" />
-        </audio>
-        <label style={{ cursor: 'pointer', backgroundColor: (colorMode === 'dark' ? '#383838' : '#f1f3f4'), padding: '1rem', borderRadius: '1.5rem' }}>
-          <Text color={useColorModeValue('#000', '#fff')}>Upload</Text>
-          <input style={{ display: 'none' }} accept="audio/*" type="file" id="upload" onChange={handleFiles} />
-        </label>
-      </HStack>
     </>
   )
 }

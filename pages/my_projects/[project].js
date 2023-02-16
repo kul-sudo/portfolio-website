@@ -51,50 +51,33 @@ const DevicePage = () => {
         <Text textAlign="center" fontSize="2.5rem" fontWeight="500">{Projects[project]['full-name']}</Text>
       </VStack>
 
-      <Center>
-        <Accordion allowMultiple mt="2rem" w="40rem" mx="1rem">
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  {languageSettings.accordion.how_i_came_up_with_the_brainchild[language]}
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
+      <Center mt="2%">
+        <VStack width="50%" spacing="1rem">
+          <VStack alignItems="left">
+            <Text fontSize="2.8rem">
+              {languageSettings.accordion.how_i_came_up_with_the_brainchild[language]}
+            </Text>
+            <Text>
               {Projects[project]['how-i-came-up-with-the-brainchild'][language]}
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  {languageSettings.accordion.how_the_coding_went[language]}
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
+            </Text>
+          </VStack>
+          <VStack alignItems="left">
+            <Text fontSize="2.8rem">
+              {languageSettings.accordion.how_the_coding_went[language]}
+            </Text>
+            <Text>
               {Projects[project]['how-the-coding-went'][language]}
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  {languageSettings.accordion.how_i_promoted_the_game[language]}
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
+            </Text>
+          </VStack>
+          <VStack alignItems="left">
+            <Text fontSize="2.8rem">
+              {languageSettings.accordion.how_i_promoted_the_game[language]}
+            </Text>
+            <Text>
               {Projects[project]['how-i-promoted-the-game'][language]}
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
+            </Text>
+          </VStack>
+        </VStack>
       </Center>
     </>
   )

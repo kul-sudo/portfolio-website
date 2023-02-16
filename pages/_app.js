@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { ChakraProvider, useColorModeValue } from '@chakra-ui/react'
-import theme from '../lib/theme'
+import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import UserProfile from '../components/UserProfile'
+import theme from '../lib/theme'
 import '../styles/globals.css'
 import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
@@ -21,7 +21,7 @@ const Hydrated = ({ children }) => {
 }
 
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <Hydrated>
       <ChakraProvider theme={theme}>
