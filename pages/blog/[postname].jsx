@@ -40,13 +40,14 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
         <title>Cyril Tasman - Blog</title>
         <meta name="description" content="My personal portfolio" />
       </Head>
+
       <Center>
         <VStack spacing="3rem">
           <VStack alignItems="left" width={{ base: '90%', '1160px': '60%' }}>
             <Center>
               <Image
                 src={banner}
-                width="20rem"
+                width="18rem"
                 height="auto"
                 rounded="xl"
                 draggable={false}
