@@ -33,6 +33,7 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
   const toast = useToast()
 
   snapshot = snapshot.props.snapshot
+  console.log(snapshot)
 
   return (
     <>
@@ -86,24 +87,6 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
                     isClosable: true
                   })
                   return
-                  //} // if (comment.length < 8) {
-                  // toast({
-                  //  title: 'Error',
-                  //  description: 'Your comment must consist of at least 8 characters.',
-                  //  status: 'error',
-                  //  duration: 3000,
-                  //  isClosable: true
-                  //})
-                  //return
-                  //} if (comment.length > 95) {
-                  // toast({
-                  //  title: 'Error',
-                  //  description: 'Your comment must not consist of more than 95 characters.',
-                  //  status: 'error',
-                  //  duration: 3000,
-                  //  isClosable: true
-                  //})
-                  //return
                 }
                 writeComment(slug, comment, user.displayName, user.photoURL)
               }}>Send</Button>
