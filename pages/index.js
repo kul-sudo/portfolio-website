@@ -1,8 +1,10 @@
 import Head from 'next/head'
-import { VStack, Text, Link, Center, Box, Stack, useColorModeValue } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { VStack, Text, Link, Center, Box, Stack, useColorModeValue, HStack } from '@chakra-ui/react'
 import GraphicsMouse from '../components/mouseGraphics'
 import useLanguage from '../lib/language'
 import languageSettings from '../lib/languageSettings'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Home = () => {
   const language = useLanguage(state => state.language)
@@ -36,9 +38,14 @@ const Home = () => {
           <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
             <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
               <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>{languageSettings.captions.my_projects[language]}</Text>
-              <VStack pt="1.1rem" fontWeight="600" textAlign="center" textDecoration="underline">
-                <Link color="black" href="https://github.com/kul-sudo/eportal" isExternal style={{ transform: 'skew(-15deg)' }}>eportal</Link> 
-                <Link color="black" href="https://github.com/kul-sudo/Smiling-Zombies" isExternal style={{ transform: 'skew(-15deg)' }}>smiling zombies</Link>
+              <VStack spacing="0" style={{ transform: 'skew(-15deg)' }} pt="1.3rem" fontWeight="600" textAlign="center" textDecoration="none">
+                <Text color="black">Can be found in</Text>
+                <NextLink href="/my_projects" target="_blank">
+                  <HStack>
+                    <Link color="black" isExternal>my projects</Link> 
+                    <ExternalLinkIcon color="black" />
+                  </HStack>
+                </NextLink>
               </VStack>
             </VStack>
           </VStack>
