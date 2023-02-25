@@ -140,7 +140,6 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
   )
 }
 
-// Generating the paths for each post
 export async function getStaticPaths() {
   const files = readdirSync('posts')
 
@@ -152,7 +151,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
@@ -171,8 +170,7 @@ export async function getStaticProps({ params: { postname } }) {
       content,
       snapshot,
       slug
-    },
-    revalidate: 1
+    }
   }
 }
 
