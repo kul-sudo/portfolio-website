@@ -52,7 +52,7 @@ const DevicePage = () => {
       </VStack>
 
       <Center mt="2%">
-        <VStack width="50%" spacing="1rem">
+        <VStack width={{ base: '90%', '1160px': '60%' }} spacing="1rem">
           <VStack alignItems="left">
             <Text fontSize="2.8rem">
               {languageSettings.accordion.how_i_came_up_with_the_brainchild[language]}
