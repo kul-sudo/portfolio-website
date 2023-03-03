@@ -170,7 +170,7 @@ export async function getStaticProps({ params: { postname } }) {
       snapshot,
       slug
     },
-    revalidate: 20
+    revalidate: 5
   }
 }
 
