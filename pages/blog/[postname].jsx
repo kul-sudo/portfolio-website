@@ -155,7 +155,6 @@ export async function getStaticPaths() {
   }
 }
 
-
 export async function getStaticProps({ params: { postname } }) {
   const fileName = readFileSync(`posts/${postname}.md`, 'utf-8')
   const { data: frontmatter, content } = matter(fileName)
@@ -170,7 +169,8 @@ export async function getStaticProps({ params: { postname } }) {
       content,
       snapshot,
       slug
-    }
+    },
+    revalidate: 20
   }
 }
 
