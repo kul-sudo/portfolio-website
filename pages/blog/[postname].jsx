@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import { readdirSync, readFileSync } from 'fs'
-import matter from 'gray-matter'
-import md from 'markdown-it'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, useToast, useColorModeValue, Stack } from '@chakra-ui/react'
@@ -9,16 +6,15 @@ import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
 import app from '../../lib/firebase'
+import PostElement from '../../posts/g_pro_wireless'
 
 const commentInputAtom = atom('')
 
 const auth = getAuth()
 
-const Post = ({ frontmatter, content, snapshot, slug }) => {
-  const { date, introduction, banner } = frontmatter
+const Post = ({ snapshot, slug }) => {
   const [user, authenticated] = useAuthState(auth)
   const [photoURL, setPhotoURL] = useState(undefined)
-
   useEffect(() => {
     if (user) {
       auth.onAuthStateChanged(user => {
@@ -27,12 +23,11 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
     }
   })
 
+
   const [comment, setComment] = useAtom(commentInputAtom)
   const handleMessageChange = e => setComment(e.target.value)
 
   const toast = useToast()
-
-  snapshot = snapshot.props.snapshot
 
   return (
     <>
@@ -42,24 +37,8 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
       </Head>
 
       <Center>
-        <VStack spacing="3rem">
-          <VStack alignItems="left" width={{ base: '90%', '1160px': '60%' }}>
-            <Center>
-              <Image
-                src={banner}
-                width="18rem"
-                height="auto"
-                rounded="xl"
-                draggable={false}
-              />
-            </Center>
-            <VStack>
-              <Text fontWeight="700" fontSize="2rem">{date}</Text>
-              <Text fontWeight="700" fontSize="2rem" id="introduction">{introduction}</Text>
-            </VStack>
-            <div id="markdown" dangerouslySetInnerHTML={{ __html: md().render(content) }}></div>
-          </VStack>
-
+        <VStack spacing="2rem">
+          <PostElement />
           <VStack>
             <Stack>
               <HStack>
@@ -86,24 +65,6 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
                     isClosable: true
                   })
                   return
-                  //} // if (comment.length < 8) {
-                  // toast({
-                  //  title: 'Error',
-                  //  description: 'Your comment must consist of at least 8 characters.',
-                  //  status: 'error',
-                  //  duration: 3000,
-                  //  isClosable: true
-                  //})
-                  //return
-                  //} if (comment.length > 95) {
-                  // toast({
-                  //  title: 'Error',
-                  //  description: 'Your comment must not consist of more than 95 characters.',
-                  //  status: 'error',
-                  //  duration: 3000,
-                  //  isClosable: true
-                  //})
-                  //return
                 }
                 writeComment(slug, comment, user.displayName, user.photoURL)
               }}>Send</Button>
@@ -113,13 +74,13 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
                 {Object.keys(snapshot).map(element => {
                   return (
                     Object.keys(snapshot[element]?.comments).map(element_ => (
-                      <VStack bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width="25rem" rounded="xl">
+                      <VStack bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                         <HStack>
                           <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
                           <Text fontSize="0.9rem" color="#fff">{element}</Text>
                         </HStack>
-                        <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" w="20rem" rounded="xl">
-                          <Text color="#fff">{snapshot[element]?.comments[element_].text}</Text>
+                        <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
+                          <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
                       </VStack>
                     ))
@@ -140,37 +101,18 @@ const Post = ({ frontmatter, content, snapshot, slug }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const files = readdirSync('posts')
-
-  const paths = files.map(fileName => ({
-    params: {
-      postname: fileName.replace('.md', '')
-    }
-  }))
-
-  return {
-    paths,
-    fallback: 'blocking'
-  }
-}
-
-export async function getStaticProps({ params: { postname } }) {
-  const fileName = readFileSync(`posts/${postname}.md`, 'utf-8')
-  const { data: frontmatter, content } = matter(fileName)
-  const snapshot = await retrieveComments(postname).then(snapshot => {
-    return { props: { snapshot } }
+export async function getServerSideProps(context) {
+  const slug = context.query.postname
+  const snapshot = await retrieveComments(slug).then(snapshot => {
+    return snapshot
   })
-  const slug = postname
+
 
   return {
     props: {
-      frontmatter,
-      content,
       snapshot,
       slug
-    },
-    revalidate: 5
+    }
   }
 }
 
