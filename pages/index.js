@@ -2,7 +2,7 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import { VStack, Text, Link, Center, Box, Stack, useColorModeValue, HStack } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import GraphicsMouse from '../components/MouseGraphics'
+import GraphicsMouse from '../components/GraphicsMouse'
 import useLanguage from '../lib/language'
 import languageSettings from '../lib/languageSettings'
 

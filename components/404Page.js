@@ -1,5 +1,5 @@
 import { Box, Text, Button, VStack } from '@chakra-ui/react'
-import GraphicsMouse from './MouseGraphics'
+import GraphicsMouse from './GraphicsMouse'
 import NextLink from 'next/link'
 
 const PageNotFound = () => {
