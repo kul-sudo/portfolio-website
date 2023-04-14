@@ -12,10 +12,10 @@ const WhatIUse = () => {
       </Head>
 
       <Center mt="0.5%">
-        <Grid templateColumns={{ base: "repeat(1, 1fr)", "885px": "repeat(2, 1fr)" }} rowGap="5rem" columnGap="6rem" id="use-items">
+        <Grid templateColumns={{ base: "repeat(1, 1fr)", "885px": "repeat(2, 1fr)" }} rowGap="2rem" columnGap="6rem" id="use-items">
           {Object.keys(Projects).map(key => (
             <NextLink href={Projects[key].link} target="_blank">
-              <VStack justifyContent="center" width="23rem" height="15rem" borderRadius="0.75rem" transition="transform 1s" _hover={{ transform: 'scale(1.1)' }} backgroundColor={useColorModeValue('#e1e1e1', '#1b1b1b')}>
+              <VStack justifyContent="center" width="15rem" height="18rem" borderRadius="0.75rem" transition="transform 1s" _hover={{ transform: 'scale(1.1)' }} backgroundColor={useColorModeValue('#e1e1e1', '#1b1b1b')}>
                 <Image
                   src={useColorModeValue(Projects[key].icon, Projects[key]['icon-dark-mode'])} 
                   width="7rem"
@@ -23,10 +23,10 @@ const WhatIUse = () => {
                   loading="eager"
                   style={{borderRadius: "5%", userSelect: "none"}}
                 />
-                <HStack>
-                  <Text fontWeight="700" fontSize="1.8rem">{Projects[key]['full-name']}</Text>
+                <VStack>
+                  <Text fontWeight="700" fontSize="1.8rem" textAlign="center">{Projects[key]['full-name']}</Text>
                   <ExternalLinkIcon boxSize="2rem" />
-                </HStack>
+                </VStack>
               </VStack>
             </NextLink>
           ))}

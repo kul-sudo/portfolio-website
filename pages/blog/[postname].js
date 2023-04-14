@@ -1,13 +1,16 @@
 import Head from 'next/head'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, useToast, useColorModeValue, Stack, IconButton } from '@chakra-ui/react'
+import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
-import PostElement from '../../posts/g_pro_wireless'
 import { DeleteIcon } from '@chakra-ui/icons'
+import dynamic from 'next/dynamic'
 import app from '../../lib/firebase'
+
+const GProWireless = dynamic(() => import('../../posts/g_pro_wireless'))
+const ReadingStephenKing = dynamic(() => import('../../posts/reading_stephen_king'))
 
 const commentInputAtom = atom('')
 
@@ -15,6 +18,7 @@ const auth = getAuth()
 
 const Post = ({ snapshot, slug }) => {
   const [user, authenticated] = useAuthState(auth)
+
   const [photoURL, setPhotoURL] = useState(undefined)
   useEffect(() => {
     if (user) {
@@ -39,7 +43,13 @@ const Post = ({ snapshot, slug }) => {
 
       <Center>
         <VStack spacing="2rem">
-          <PostElement />
+          {(slug === 'g_pro_wireless') && (
+            <GProWireless />
+          )}
+          {(slug === 'reading_stephen_king') && (
+            <ReadingStephenKing />
+          )}
+
           <VStack>
             <Stack>
               <HStack>
@@ -67,6 +77,16 @@ const Post = ({ snapshot, slug }) => {
                   })
                   return
                 }
+                if (comment === '') {
+                  toast({
+                    title: 'Error',
+                    description: 'The comment text you have typed is empty.',
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true
+                  })
+                  return
+                }
                 writeComment(slug, comment, user.displayName, user.photoURL)
               }}>Send</Button>
             </Stack>
@@ -83,17 +103,19 @@ const Post = ({ snapshot, slug }) => {
                         <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
                           <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
-                        <IconButton
-                          position="absolute"
-                          mt={[0, '0 !important']}
-                          top="0"
-                          right="0"
-                          icon={<DeleteIcon boxSize="1.2rem" />}
-                          boxSize="2.5rem"
-                          onClick={() => {
-                            deleteComment(slug, element, element_)
-                          }}
-                        />
+                        {(user && (user.displayName === element)) && (
+                          <IconButton
+                            position="absolute"
+                            mt={[0, '0 !important']}
+                            top="0"
+                            right="0"
+                            icon={<DeleteIcon boxSize="1.2rem" />}
+                            boxSize="2.5rem"
+                            onClick={() => {
+                              deleteComment(slug, element, element_)
+                            }}
+                          />
+                        )}
                       </VStack>
                     ))
                   )
