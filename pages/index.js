@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { VStack, Text, Link, Center, Box, Stack, useColorModeValue, HStack } from '@chakra-ui/react'
-import GraphicsMouse from '../components/mouseGraphics'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import GraphicsMouse from '../components/MouseGraphics'
 import useLanguage from '../lib/language'
 import languageSettings from '../lib/languageSettings'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const Home = () => {
   const language = useLanguage(state => state.language)

@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, useToast, useColorModeValue, Stack } from '@chakra-ui/react'
+import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, useToast, useColorModeValue, Stack, IconButton } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
-import { writeComment, retrieveComments } from '../../lib/firebaseComments'
+import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
-import app from '../../lib/firebase'
 import PostElement from '../../posts/g_pro_wireless'
+import { DeleteIcon } from '@chakra-ui/icons'
+import app from '../../lib/firebase'
 
 const commentInputAtom = atom('')
 
@@ -74,7 +75,7 @@ const Post = ({ snapshot, slug }) => {
                 {Object.keys(snapshot).map(element => {
                   return (
                     Object.keys(snapshot[element]?.comments).map(element_ => (
-                      <VStack bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
+                      <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                         <HStack>
                           <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
                           <Text fontSize="0.9rem" color="#fff">{element}</Text>
@@ -82,6 +83,17 @@ const Post = ({ snapshot, slug }) => {
                         <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
                           <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
+                        <IconButton
+                          position="absolute"
+                          mt={[0, '0 !important']}
+                          top="0"
+                          right="0"
+                          icon={<DeleteIcon boxSize="1.2rem" />}
+                          boxSize="2.5rem"
+                          onClick={() => {
+                            deleteComment(slug, element, element_)
+                          }}
+                        />
                       </VStack>
                     ))
                   )

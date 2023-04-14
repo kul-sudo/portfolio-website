@@ -60,7 +60,7 @@ const Navbar = () => {
               icon={<HamburgerIcon />}
               variant="outline"
               _active={{ borderColor: "#ffffff", borderWidth: "2px", outlineColor: "#6366f1", outlineWidth: "2px", outlineOffset: "1px" }}
-              />
+            />
             <MenuList backgroundColor={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
               <NextLink href="/">
                 <NewMenuItem>
