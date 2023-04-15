@@ -44,7 +44,7 @@ const Blog = () => {
               <Image
                 width="20rem"
                 height="auto"
-                src="https://previews.dropbox.com/p/thumb/AB0FyuBEZToCgDfLes2mtM6A2eh3EDvJDOVQkFe7zg3dHrFO1n7LNo2mLsBhGvgsdXqF5msgcfsYe4pTnAVabqzyS1qnWDBcdnEdF1WQe7yiIHwLVfzYeZCoVS1OhpmAcqRyK-92pMYroCy7mTFtv6Zxc2Iv20Rn4dg51gDSelUbqrSNcyHYJ0PZDSYXGXU-zk3HeitwH_5DlmHImJoa5DVUIJkrK1rZddeQL5fqy43HGA6CC3_Xza27vS8q15V4Wh7_GoDtwr2UZet-fEvhheNYV6zfFpmFteARrh5RKuw7OueF8YiTBrB3Fju_OlgwhqBbQjG-dflYYAJ1jD7CD6ScVceEq5DncG6A0nkgWbkd1AkqJpCHP05JgYRZpnapidI/p.jpeg"
+                src="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
                 alt="My Image"
                 style={{ borderRadius: '1rem' }}
                 draggable={false}

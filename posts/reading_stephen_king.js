@@ -5,7 +5,7 @@ const Post = () => {
     <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
       <Center>
         <Image
-          src="https://previews.dropbox.com/p/thumb/AB0FyuBEZToCgDfLes2mtM6A2eh3EDvJDOVQkFe7zg3dHrFO1n7LNo2mLsBhGvgsdXqF5msgcfsYe4pTnAVabqzyS1qnWDBcdnEdF1WQe7yiIHwLVfzYeZCoVS1OhpmAcqRyK-92pMYroCy7mTFtv6Zxc2Iv20Rn4dg51gDSelUbqrSNcyHYJ0PZDSYXGXU-zk3HeitwH_5DlmHImJoa5DVUIJkrK1rZddeQL5fqy43HGA6CC3_Xza27vS8q15V4Wh7_GoDtwr2UZet-fEvhheNYV6zfFpmFteARrh5RKuw7OueF8YiTBrB3Fju_OlgwhqBbQjG-dflYYAJ1jD7CD6ScVceEq5DncG6A0nkgWbkd1AkqJpCHP05JgYRZpnapidI/p.jpeg"
+          src="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
           width="60%"
           height="auto"
           rounded="2xl"

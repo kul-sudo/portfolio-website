@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     domains: [
       'res.cloudinary.com',
-      'previews.dropbox.com'
+      'media.discordapp.net'
     ]
   }
 }
