@@ -14,7 +14,7 @@ const Post = () => {
       <VStack pl="1rem" alignItems="left">
         <Heading mt="1rem">First day</Heading>
         <Text fontSize="1.2rem">
-          After having always read Harry Potter reading a book for genuine grown-ups was incredibly unusual. To enjoy every positive and negative aspect of read such books I decided to read the very introduction of the very author to roughly get which type of language I can expect. And yes, it was worth it.
+          After having always read Harry Potter reading a book for genuine grown-ups was incredibly unusual. To enjoy every positive and negative aspect of reading such books I decided to read the very introduction of the very author to roughly get which type of language I can expect. And yes, it was worth it.
         </Text>
         <Heading pt="1rem">After a few days of consuming "Pet Sematary"</Heading>
         <Text fontSize="1.2rem">
