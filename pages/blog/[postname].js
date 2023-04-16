@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
+import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, Spinner, AbsoluteCenter, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
@@ -9,8 +9,12 @@ import { DeleteIcon } from '@chakra-ui/icons'
 import dynamic from 'next/dynamic'
 import app from '../../lib/firebase'
 
-const GProWireless = dynamic(() => import('../../posts/g_pro_wireless'))
-const ReadingStephenKing = dynamic(() => import('../../posts/reading_stephen_king'))
+const GProWireless = dynamic(() => import('../../posts/g_pro_wireless'), {
+  loading: () => <AbsoluteCenter><Spinner boxSize={50} /></AbsoluteCenter>
+})
+const ReadingStephenKing = dynamic(() => import('../../posts/reading_stephen_king'), {
+  loading: () => <AbsoluteCenter><Spinner boxSize={50} /></AbsoluteCenter>
+})
 
 const commentInputAtom = atom('')
 
