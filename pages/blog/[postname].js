@@ -94,6 +94,7 @@ const Post = ({ snapshot, slug }) => {
                 writeComment(slug, comment, user.displayName, user.photoURL)
               }}>Send</Button>
             </Stack>
+
             {snapshot !== null && (
               <VStack spacing="2rem" pt="1rem">
                 {Object.keys(snapshot).map(element => {
@@ -110,8 +111,7 @@ const Post = ({ snapshot, slug }) => {
                         {(user && (user.displayName === element)) && (
                           <IconButton
                             position="absolute"
-                            mt={[0, '0 !important']}
-                            top="0"
+                            top="-0.5rem"
                             right="0"
                             icon={<DeleteIcon boxSize="1.2rem" />}
                             boxSize="2.5rem"
@@ -126,6 +126,7 @@ const Post = ({ snapshot, slug }) => {
                 })}
               </VStack>
             )}
+
             {snapshot === null && (
               <VStack>
                 <Text>¯\_(ツ)_/¯</Text>
