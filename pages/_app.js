@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Navbar from '../components/Navbar'
+import ProgressBar from '@badrap/bar-of-progress'
 import theme from '../lib/theme'
 import '../styles/globals.css'
 import '@fontsource/quicksand/500.css'
@@ -19,8 +21,28 @@ const Hydrated = ({ children }) => {
   return hydration ? children : null
 }
 
+const progress = new ProgressBar({
+  size: 2,
+  color: 'teal',
+  className: 'bar-of-progress',
+  delay: 100
+})
 
 const MyApp = ({ Component, pageProps }) => {
+  const router = useRouter() 
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', progress.start)
+    router.events.on('routeChangeComplete', progress.finish)
+    router.events.on('routeChangeError', progress.finish)
+
+    return () => {
+      router.events.off('routeChangeStart', progress.start)
+      router.events.off('routeChangeComplete', progress.finish)
+      router.events.off('routeChangeError', progress.finish)
+    }
+  }, [router])
+
   return (
     <Hydrated>
       <ChakraProvider theme={theme}>
