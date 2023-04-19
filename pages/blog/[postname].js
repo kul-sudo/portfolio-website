@@ -6,15 +6,8 @@ import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
 import { DeleteIcon } from '@chakra-ui/icons'
-import dynamic from 'next/dynamic'
+import PostContent from '../../components/PostContent'
 import app from '../../lib/firebase'
-
-const GProWireless = dynamic(() => import('../../posts/g_pro_wireless'), {
-  loading: () => <AbsoluteCenter><Spinner boxSize={50} /></AbsoluteCenter>
-})
-const ReadingStephenKing = dynamic(() => import('../../posts/reading_stephen_king'), {
-  loading: () => <AbsoluteCenter><Spinner boxSize={50} /></AbsoluteCenter>
-})
 
 const commentInputAtom = atom('')
 
@@ -47,12 +40,7 @@ const Post = ({ snapshot, slug }) => {
 
       <Center>
         <VStack spacing="2rem">
-          {(slug === 'g_pro_wireless') && (
-            <GProWireless />
-          )}
-          {(slug === 'reading_stephen_king') && (
-            <ReadingStephenKing />
-          )}
+          <PostContent post={slug} />
 
           <VStack>
             <Stack>
