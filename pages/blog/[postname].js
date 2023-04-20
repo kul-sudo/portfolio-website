@@ -14,7 +14,7 @@ const commentInputAtom = atom('')
 const auth = getAuth()
 
 const Post = ({ snapshot, slug }) => {
-  const [user, authenticated] = useAuthState(auth)
+  const [user] = useAuthState(auth)
 
   const [photoURL, setPhotoURL] = useState(undefined)
   useEffect(() => {
@@ -24,7 +24,6 @@ const Post = ({ snapshot, slug }) => {
       })
     }
   })
-
 
   const [comment, setComment] = useAtom(commentInputAtom)
   const handleMessageChange = e => setComment(e.target.value)

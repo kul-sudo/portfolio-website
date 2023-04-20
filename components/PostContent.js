@@ -1,4 +1,4 @@
-import { Heading, Image, Text, VStack, Center } from "@chakra-ui/react"
+import { Heading, Image, Text, VStack, Center } from '@chakra-ui/react'
 
 const PostContent = ({ post }) => {
   if (post === 'reading_stephen_king') {
@@ -10,7 +10,7 @@ const PostContent = ({ post }) => {
             width="60%"
             height="auto"
             rounded="2xl"
-            />
+          />
         </Center>
         <VStack pl="1rem" alignItems="left">
           <Heading mt="1rem">First day</Heading>
@@ -37,7 +37,7 @@ const PostContent = ({ post }) => {
             width="60%"
             height="auto"
             rounded="2xl"
-            />
+          />
         </Center>
         <VStack pl="1rem" alignItems="left">
           <Heading mt="1rem">First emotions</Heading>
@@ -60,7 +60,6 @@ const PostContent = ({ post }) => {
         </VStack>
       </VStack>
     )
-
   }
 }
 
