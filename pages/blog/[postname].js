@@ -78,7 +78,7 @@ const Post = ({ snapshot, slug }) => {
                   })
                   return
                 }
-                writeComment(slug, comment, user.displayName, user.photoURL)
+                writeComment(slug, comment, user.displayName, user.uid, user.photoURL)
               }}>Send</Button>
             </Stack>
 
@@ -90,12 +90,12 @@ const Post = ({ snapshot, slug }) => {
                       <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                         <HStack>
                           <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
-                          <Text fontSize="0.9rem" color="#fff">{element}</Text>
+                          <Text fontSize="0.9rem" color="#fff">{snapshot[element]?.comments[element_].name}</Text>
                         </HStack>
                         <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
                           <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
-                        {(user && (user.displayName === element)) && (
+                        {(user && (user.uid === element)) && (
                           <IconButton
                             position="absolute"
                             top="-0.5rem"
