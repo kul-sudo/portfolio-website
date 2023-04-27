@@ -1,15 +1,26 @@
-import { Heading, Image, Text, VStack, Center } from '@chakra-ui/react'
+import { Heading, Image, Text, VStack, Center, Spinner } from '@chakra-ui/react'
+import { useState } from 'react'
 
 const PostContent = ({ post }) => {
+  const [loaded, setLoaded] = useState(false)
+
   if (post === 'reading_stephen_king') {
     return (
       <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
-        <Center>
+        <Center position="relative">
+          {!loaded && (
+            <Center position="absolute">
+              <Spinner boxSize={50} />
+            </Center>
+          )}
+
           <Image
             src="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
             width="60%"
             height="auto"
             rounded="2xl"
+            loading="lazy"
+            onLoad={() => setLoaded(true)}
           />
         </Center>
         <VStack pl="1rem" alignItems="left">
@@ -31,12 +42,20 @@ const PostContent = ({ post }) => {
   } else if (post === 'g_pro_wireless') {
     return (
       <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
-        <Center>
+        <Center position="relative">
+          {!loaded && (
+            <Center position="absolute">
+              <Spinner boxSize={50} />
+            </Center>
+          )}
+
           <Image
             src="https://res.cloudinary.com/dsliut4oh/image/upload/v1676486896/IMG20230126151627_e0nfzp.jpg"
             width="60%"
             height="auto"
             rounded="2xl"
+            loading="lazy"
+            onLoad={() => setLoaded(true)}
           />
         </Center>
         <VStack pl="1rem" alignItems="left">

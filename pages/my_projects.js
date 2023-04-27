@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
-import { Grid, Center, Text, Image, VStack, HStack, useColorModeValue, Link } from '@chakra-ui/react'
+import { Grid, Center, Text, Image, VStack, useColorModeValue } from '@chakra-ui/react'
 import Projects from '../lib/projects.json'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -19,7 +19,7 @@ const WhatIUse = () => {
                 <Image
                   src={useColorModeValue(`https://imagecropper-kul-sudo.vercel.app/?width=112&url=${Projects[key].icon}`, `https://imagecropper-kul-sudo.vercel.app/?width=112&url=${Projects[key]['icon-dark-mode']}`)} 
                   height="auto"
-                  loading="eager"
+                  loading="lazy"
                   style={{borderRadius: "5%", userSelect: "none"}}
                 />
                 <VStack>

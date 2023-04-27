@@ -12,6 +12,7 @@ const Model = () => {
 
 const GraphicsMouse = () => {
   useGLTF.preload('/computer_mouse.glb')
+
   return (
     <Stack display="flex" align="center">
       <Canvas legacy camera={{position: [-4, 4, -3], fov: 10}} style={{width: "181px", height: "180px"}} id="mouse">

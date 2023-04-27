@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
-import { VStack, Text, Link, Center, Box, Stack, useColorModeValue, HStack } from '@chakra-ui/react'
+import { VStack, Text, Link, Center, Box, Stack, HStack, useColorModeValue } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import GraphicsMouse from '../components/GraphicsMouse'
 import useLanguage from '../lib/language'

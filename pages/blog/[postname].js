@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, Spinner, AbsoluteCenter, useToast, useColorModeValue } from '@chakra-ui/react'
+import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
@@ -45,7 +45,7 @@ const Post = ({ snapshot, slug }) => {
             <Stack>
               <HStack>
                 {user ? (
-                  <Image src={photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
+                  <Image loading="lazy" src={photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
                 ) : (
                     <Box backgroundColor="#2e2e2e" rounded="xl" p="0.2rem">
                       <Icon boxSize="2.2rem" viewBox="0 0 500 500" fill="#fff">
@@ -89,7 +89,7 @@ const Post = ({ snapshot, slug }) => {
                     Object.keys(snapshot[element]?.comments).map(element_ => (
                       <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                         <HStack>
-                          <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
+                          <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} />
                           <Text fontSize="0.9rem" color="#fff">{snapshot[element]?.comments[element_].name}</Text>
                         </HStack>
                         <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">

@@ -109,7 +109,7 @@ const Navbar = () => {
           <Menu>
             <MenuButton>
               {user ? (
-                <Image src={user.photoURL} boxSize="2.2rem" rounded="full" draggable={false} />
+                <Image loading="lazy" src={user.photoURL} boxSize="2.2rem" rounded="full" draggable={false} />
               ) : (
                   <Box rounded="full">
                     <Icon boxSize="2.2rem" viewBox="0 0 500 500" fill={useColorModeValue('black', 'white')}>
