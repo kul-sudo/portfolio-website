@@ -28,9 +28,8 @@ const Blog = () => {
           <NextLink href="/blog/g_pro_wireless">
             <VStack role="group" backgroundColor={useColorModeValue('#252525', '#191919')} width={{ base: '15rem', '440px': '25rem' }} py={{ base: '0rem', '440px': '1rem' }} rounded="3xl" transition="0.3s" _hover={{ transform: 'translateY(-5px)' }}>
               <Image
-                width="20rem"
                 height="auto"
-                src="https://res.cloudinary.com/dsliut4oh/image/upload/v1676228023/IMG20230212214826_gx3xvj.jpg"
+                src="https://imagecropper-kul-sudo.vercel.app/?width=320&url=https://res.cloudinary.com/dsliut4oh/image/upload/v1676228023/IMG20230212214826_gx3xvj.jpg"
                 alt="My Image"
                 style={{ borderRadius: '1rem' }}
                 draggable={false}
@@ -42,9 +41,8 @@ const Blog = () => {
           <NextLink href="/blog/reading_stephen_king">
             <VStack role="group" backgroundColor={useColorModeValue('#252525', '#191919')} width={{ base: '15rem', '440px': '25rem' }} py={{ base: '0rem', '440px': '1rem' }} rounded="3xl" transition="0.3s" _hover={{ transform: 'translateY(-5px)' }}>
               <Image
-                width="20rem"
                 height="auto"
-                src="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
+                src="https://imagecropper-kul-sudo.vercel.app/?width=320&url=https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
                 alt="My Image"
                 style={{ borderRadius: '1rem' }}
                 draggable={false}

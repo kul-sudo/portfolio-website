@@ -11,9 +11,9 @@ import {
   MenuItem,
   Box,
   Image,
+  Icon,
   useColorMode,
-  useColorModeValue,
-  Icon
+  useColorModeValue
 } from '@chakra-ui/react'
 import 'firebase/auth'
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons'
