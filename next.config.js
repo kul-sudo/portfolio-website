@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-export const nextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   eslint: {
@@ -12,3 +12,5 @@ export const nextConfig = {
     ]
   }
 }
+
+module.exports = nextConfig

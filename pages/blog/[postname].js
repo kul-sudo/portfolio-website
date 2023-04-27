@@ -102,6 +102,9 @@ const Post = ({ snapshot, slug }) => {
                             right="0"
                             icon={<DeleteIcon boxSize="1.2rem" />}
                             boxSize="2.5rem"
+                            borderTopLeftRadius="none"
+                            borderBottomRightRadius="none"
+                            borderTopRightRadius="xl"
                             onClick={() => {
                               deleteComment(slug, element, element_)
                             }}
