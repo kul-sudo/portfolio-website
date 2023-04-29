@@ -6,6 +6,7 @@ const BlogItem = ({ href, photoSrc, text }) => {
     <NextLink href={href}>
       <VStack role="group" backgroundColor={useColorModeValue('#252525', '#191919')} width={{ base: '15rem', '440px': '25rem' }} py={{ base: '0rem', '440px': '1rem' }} rounded="3xl" transition="0.3s" _hover={{ transform: 'translateY(-5px)' }}>
         <Image
+          width="20rem"
           height="auto"
           src={photoSrc}
           alt="My Image"

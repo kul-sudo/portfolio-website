@@ -3,9 +3,9 @@ import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
-import { writeComment, retrieveComments, deleteComment } from '../../lib/firebaseComments'
+import { writeComment, retrieveComments, deleteComment, addReply } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
-import { DeleteIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
 import app from '../../lib/firebase'
 
@@ -83,10 +83,10 @@ const Post = ({ snapshot, slug }) => {
             </Stack>
 
             {snapshot !== null && (
-              <VStack spacing="2rem" pt="1rem">
-                {Object.keys(snapshot).map(element => {
-                  return (
-                    Object.keys(snapshot[element]?.comments).map(element_ => (
+              <VStack pt="1rem" alignItems="end">
+                {Object.keys(snapshot).map(element => (
+                  Object.keys(snapshot[element]?.comments).map(element_ => (
+                    <>
                       <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                         <HStack>
                           <Image src={snapshot[element]?.comments[element_].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} />
@@ -96,24 +96,62 @@ const Post = ({ snapshot, slug }) => {
                           <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_].text}</Text>
                         </Box>
                         {(user && (user.uid === element)) && (
-                          <IconButton
-                            position="absolute"
-                            top="-0.5rem"
-                            right="0"
-                            icon={<DeleteIcon boxSize="1.2rem" />}
-                            boxSize="2.5rem"
-                            borderTopLeftRadius="none"
-                            borderBottomRightRadius="none"
-                            borderTopRightRadius="xl"
-                            onClick={() => {
-                              deleteComment(slug, element, element_)
-                            }}
-                          />
+                          <>
+                            <HStack
+                              spacing="0"
+                            >
+                              <Button
+                                borderTopRightRadius="none"
+                                borderBottomRightRadius="none"
+                              >
+                                <ChevronDownIcon mr="0.2rem" />
+                                Show replies
+                              </Button>
+                              <Button
+                                borderTopLeftRadius="none"
+                                borderBottomLeftRadius="none"
+                                onClick={() => {
+                                  addReply(element_, slug, 'dd', user.displayName, user.uid, user.photoURL) 
+                                }}
+                              >
+                                Reply</Button>
+                            </HStack>
+                            <IconButton
+                              position="absolute"
+                              top="-0.5rem"
+                              right="0"
+                              icon={<DeleteIcon boxSize="1.2rem" />}
+                              boxSize="2.5rem"
+                              borderTopLeftRadius="none"
+                              borderBottomRightRadius="none"
+                              borderTopRightRadius="xl"
+                              onClick={() => {
+                                deleteComment(slug, element, element_)
+                              }}
+                            />
+                          </>
                         )}
                       </VStack>
-                    ))
-                  )
-                })}
+                      {Object.keys(snapshot[element]?.comments[element_]).map(replyItem => {
+                        if (typeof snapshot[element]?.comments[element_][replyItem] !== 'object') {
+                          return
+                        }
+                        return (
+                          <VStack bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 200%)" p="1rem" width="15rem" rounded="xl">
+                            <HStack>
+                              <Image src={snapshot[element]?.comments[element_][replyItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} />
+                              <Text fontSize="0.9rem" color="#fff">{snapshot[element]?.comments[element_][replyItem].name}</Text>
+                            </HStack>
+                            <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width="8rem" rounded="xl">
+                              <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.comments[element_][replyItem].text}</Text>
+                            </Box>
+                          </VStack>
+                        )
+                      }
+                      )}
+                    </>
+                  ))
+                ))}
               </VStack>
             )}
 

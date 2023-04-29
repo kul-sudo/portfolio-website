@@ -28,12 +28,12 @@ const Blog = () => {
         <VStack spacing="2rem">
           <BlogItem
             href="/blog/g_pro_wireless"
-            photoSrc="https://imagecropper-kul-sudo.vercel.app/?width=320&url=https://res.cloudinary.com/dsliut4oh/image/upload/v1676228023/IMG20230212214826_gx3xvj.jpg"
+            photoSrc="https://res.cloudinary.com/dsliut4oh/image/upload/v1676228023/IMG20230212214826_gx3xvj.jpg"
             text="Getting G PRO Wireless"
           />
           <BlogItem
             href="/blog/reading_stephen_king"
-            photoSrc="https://imagecropper-kul-sudo.vercel.app/?width=320&url=https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
+            photoSrc="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
             text="Reading Stephen King"
           />
         </VStack>
