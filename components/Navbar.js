@@ -43,7 +43,7 @@ const LanguageToggleIcon = () => {
   }
 }
 
-const Navbar = () => {
+export default () => {
   const { toggleColorMode } = useColorMode()
 
   const language = useLanguage(state => state.language)
@@ -134,5 +134,3 @@ const Navbar = () => {
     </>
   )
 }
-
-export default Navbar

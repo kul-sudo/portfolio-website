@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { VStack, Image, Text, useColorModeValue } from '@chakra-ui/react'
 
-const BlogItem = ({ href, photoSrc, text }) => {
+export default ({ href, photoSrc, text }) => {
   return (
     <NextLink href={href}>
       <VStack role="group" backgroundColor={useColorModeValue('#252525', '#191919')} width={{ base: '15rem', '440px': '25rem' }} py={{ base: '0rem', '440px': '1rem' }} rounded="3xl" transition="0.3s" _hover={{ transform: 'translateY(-5px)' }}>
@@ -19,5 +19,3 @@ const BlogItem = ({ href, photoSrc, text }) => {
     </NextLink>
   )
 }
-
-export default BlogItem

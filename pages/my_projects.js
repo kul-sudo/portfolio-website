@@ -4,7 +4,7 @@ import { Grid, Center, Text, Image, VStack, useColorModeValue } from '@chakra-ui
 import Projects from '../lib/projects.json'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
-const WhatIUse = () => {
+export default () => {
   return (
     <>
       <Head>
@@ -34,5 +34,3 @@ const WhatIUse = () => {
     </>
   )
 }
-
-export default WhatIUse

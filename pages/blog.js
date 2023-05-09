@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Center, Image, VStack, Text } from '@chakra-ui/react'
 import BlogItem from '../components/BlogItem'
 
-const Blog = () => {
+export default () => {
   return (
     <>
       <Head>
@@ -41,5 +41,3 @@ const Blog = () => {
     </>
   )
 }
-
-export default Blog

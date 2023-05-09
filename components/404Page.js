@@ -2,7 +2,7 @@ import { Box, Text, Button, VStack } from '@chakra-ui/react'
 import GraphicsMouse from './GraphicsMouse'
 import NextLink from 'next/link'
 
-const PageNotFound = () => {
+export default () => {
   return (
     <>
       <title>Cyril Tasman</title>
@@ -23,5 +23,3 @@ const PageNotFound = () => {
     </>
   )
 }
-
-export default PageNotFound

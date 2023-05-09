@@ -6,7 +6,7 @@ import GraphicsMouse from '../components/GraphicsMouse'
 import useLanguage from '../lib/language'
 import languageSettings from '../lib/languageSettings'
 
-const Home = () => {
+export default () => {
   const language = useLanguage(state => state.language)
 
   return (
@@ -65,5 +65,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home

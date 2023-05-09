@@ -28,7 +28,7 @@ const progress = new ProgressBar({
   delay: 100
 })
 
-const MyApp = ({ Component, pageProps }) => {
+export default ({ Component, pageProps }) => {
   const router = useRouter() 
 
   useEffect(() => {
@@ -52,5 +52,3 @@ const MyApp = ({ Component, pageProps }) => {
     </Hydrated>
   )
 }
-
-export default MyApp

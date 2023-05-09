@@ -10,7 +10,7 @@ const Model = () => {
   )
 }
 
-const GraphicsMouse = () => {
+export default () => {
   useGLTF.preload('/computer_mouse.glb')
 
   return (
@@ -27,5 +27,3 @@ const GraphicsMouse = () => {
     </Stack>
   )
 }
-
-export default GraphicsMouse
