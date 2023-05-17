@@ -5,7 +5,7 @@ import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, I
 import { atom, useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment, addReply } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
-import { ChevronDownIcon, DeleteIcon } from '@chakra-ui/icons'
+import { DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
 import app from '../../lib/firebase'
 

@@ -6,7 +6,7 @@ import { Stack, Spinner } from '@chakra-ui/react'
 
 const Model = () => {
   return (
-    <primitive object={useGLTF('/computer_mouse.glb').scene} scale={0.28} />
+    <primitive object={useGLTF('/computer_mouse.glb').scene} scale={0.3} />
   )
 }
 
@@ -15,7 +15,7 @@ export default () => {
 
   return (
     <Stack display="flex" align="center">
-      <Canvas legacy camera={{position: [-4, 4, -3], fov: 10}} style={{width: "181px", height: "180px"}} id="mouse">
+      <Canvas legacy camera={{position: [-4, 4, -3], fov: 10}} style={{ width: '300px', height: '240px' }} id="mouse">
         <ambientLight />
         <spotLight />
         <Suspense fallback={<Html center><Spinner boxSize={50} /></Html>}>

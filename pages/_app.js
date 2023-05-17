@@ -5,9 +5,6 @@ import Navbar from '../components/Navbar'
 import ProgressBar from '@badrap/bar-of-progress'
 import theme from '../lib/theme'
 import '../styles/globals.css'
-import '@fontsource/quicksand/500.css'
-import '@fontsource/quicksand/600.css'
-import '@fontsource/quicksand/700.css'
 
 const Hydrated = ({ children }) => {
   const [hydration, setHydration] = useState(false)
@@ -47,7 +44,9 @@ export default ({ Component, pageProps }) => {
     <Hydrated>
       <ChakraProvider theme={theme}>
         <Navbar />
-        <Component {...pageProps} />
+        <div style={{ marginTop: '2rem' }}>
+          <Component {...pageProps} />
+        </div>
       </ChakraProvider>
     </Hydrated>
   )
