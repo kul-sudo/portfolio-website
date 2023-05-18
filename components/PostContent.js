@@ -1,15 +1,15 @@
 import { Heading, Image, Text, VStack, Center } from '@chakra-ui/react'
 import PageNotFound from '../components/404Page'
 
-export default ({ post, postExists, setPostExists }) => {
+export default ({ post, setPostExists }) => {
   if (post === 'reading_stephen_king') {
     setPostExists(true)
     return (
       <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
-        <Center position="relative">
+        <Center>
           <Image
             src="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
-            width="60%"
+            width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
             height="auto"
             rounded="2xl"
           />
@@ -34,10 +34,10 @@ export default ({ post, postExists, setPostExists }) => {
     setPostExists(true)
     return (
       <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
-        <Center position="relative">
+        <Center>
           <Image
             src="https://res.cloudinary.com/dsliut4oh/image/upload/v1676486896/IMG20230126151627_e0nfzp.jpg"
-            width="60%"
+            width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
             height="auto"
             rounded="2xl"
           />

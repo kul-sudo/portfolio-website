@@ -48,14 +48,14 @@ export default () => {
 
   return (
     <>
-      <Center top="0" position="sticky" py="1rem" backdropFilter="auto" backdropBlur="12px" backgroundColor="hsla(0, 0%, 7%, 0.2)" width="100%" zIndex="1" borderBottomColor="#333333" borderBottomWidth="1px">
+      <Center top="0" position="sticky" py="1rem" backdropFilter="auto" backdropBlur="12px" backgroundColor={useColorModeValue('hsla(0, 15%, 7%, 0.1)', 'hsla(0, 0%, 7%, 0.2)')} width="100%" zIndex="1" borderBottomColor={useColorModeValue('blackAlpha.400', 'whiteAlpha')} borderBottomWidth="1px">
         <HStack spacing={4} userSelect="none" fontWeight="600"> 
           <Menu>
             <MenuButton
-              colorScheme={useColorModeValue('gray.200', 'gray')}
               as={IconButton}
               icon={<HamburgerIcon />}
-              variant="outline"
+              backgroundColor={useColorModeValue('#dedede', )}
+              _hover={{ backgroundColor: useColorModeValue('#d1d1d1', ) }}
             />
             <MenuList backgroundColor={useColorModeValue('#e3e3e3', '#27272a')} shadow="lg" w="5rem">
               <NextLink href="/">
@@ -81,7 +81,7 @@ export default () => {
             </MenuList>
           </Menu>
 
-          <IconButton colorScheme={useColorModeValue('blue', 'purple')} onClick={toggleColorMode} icon={useColorModeValue(<MoonIcon/>, <SunIcon/>)} />
+          <IconButton colorScheme={useColorModeValue('teal', 'purple')} onClick={toggleColorMode} icon={useColorModeValue(<MoonIcon />, <SunIcon />)} />
 
           <Menu>
             <MenuButton>

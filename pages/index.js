@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
-import { VStack, Text, Link, Center, Box, Stack, HStack, useColorModeValue, Button } from '@chakra-ui/react'
+import { VStack, Text, Link, Center, Box, Stack, HStack, useColorModeValue } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import GraphicsMouse from '../components/GraphicsMouse'
 
@@ -14,7 +14,7 @@ export default () => {
 
       <Center>
         <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
-          <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer. <br /> I love doing the under-the-hood stuff!</Text>
+          <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer. <br /> I love making the under-the-hood stuff!</Text>
         </Box>
       </Center>
 
