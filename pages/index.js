@@ -24,36 +24,42 @@ export default () => {
       
       <Center mt="1rem">
         <Stack direction={{ base: 'column', '1100px': 'row' }} spacing={{ base: '2rem', '1100px': '10rem' }}>
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
-            <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Hard skills</Text>
-              <Box pt="1.5rem">
-                <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Fluent English<br/>Stress tolerance</Text> 
-              </Box>
-            </VStack>
-          </VStack>
-
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
-            <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Technologies</Text>
-              <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>NextJS<br />React<br />JavaScript<br />Python<br />SQL</Text> 
-            </VStack>
-          </VStack>
-
-          <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w="13rem" h="16rem" style={{ transform: 'skew(15deg)' }}>
-            <VStack backdropFilter="auto" backdropBlur="0.625rem" w="17.5rem" h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
-              <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>My projects</Text>
-              <VStack spacing="0" style={{ transform: 'skew(-15deg)' }} pt="1.3rem" fontWeight="600" textAlign="center" textDecoration="none">
-                <Text color="black">Can be found in</Text>
-                <NextLink href="/my_projects" target="_blank">
-                  <HStack>
-                    <Link color="black" isExternal>my projects</Link> 
-                    <ExternalLinkIcon color="black" />
-                  </HStack>
-                </NextLink>
+          <Center>
+            <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w={{ base: '10.9rem', '356px': '13rem' }} h="16rem" style={{ transform: 'skew(15deg)' }}>
+              <VStack backdropFilter="auto" backdropBlur="0.625rem" w={{ base: '14.5rem', '356px': '17.5rem' }} h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
+                <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Hard skills</Text>
+                <Box pt="1.5rem">
+                  <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Fluent English<br/>Stress tolerance</Text> 
+                </Box>
               </VStack>
             </VStack>
-          </VStack>
+          </Center>
+
+          <Center>
+            <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w={{ base: '10.9rem', '356px': '13rem' }} h="16rem" style={{ transform: 'skew(15deg)' }}>
+              <VStack backdropFilter="auto" backdropBlur="0.625rem" w={{ base: '14.5rem', '356px': '17.5rem' }} h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
+                <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Technologies</Text>
+                <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>NextJS<br />React<br />JavaScript<br />Python<br />SQL</Text> 
+              </VStack>
+            </VStack>
+          </Center>
+
+          <Center>
+            <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #ec4899, #eab308)" borderRadius="0.3rem" w={{ base: '10.9rem', '356px': '13rem' }} h="16rem" style={{ transform: 'skew(15deg)' }}>
+              <VStack backdropFilter="auto" backdropBlur="0.625rem" w={{ base: '14.5rem', '356px': '17.5rem' }} h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
+                <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>My projects</Text>
+                <VStack spacing="0" style={{ transform: 'skew(-15deg)' }} pt="1.3rem" fontWeight="600" textAlign="center" textDecoration="none">
+                  <Text color="black">Can be found in</Text>
+                  <NextLink href="/my_projects" target="_blank">
+                    <HStack>
+                      <Link color="black" isExternal>my projects</Link> 
+                      <ExternalLinkIcon color="black" />
+                    </HStack>
+                  </NextLink>
+                </VStack>
+              </VStack>
+            </VStack>
+          </Center>
         </Stack>
       </Center>
     </>
