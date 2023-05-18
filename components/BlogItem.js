@@ -11,7 +11,8 @@ export default ({ href, photoSrc, text }) => {
           src={photoSrc}
           alt="My Image"
           loading="lazy"
-          style={{ borderRadius: '1rem' }}
+          rounded="1rem"
+          roundedBottom={{ base: 'none', '440px': '1rem' }}
           draggable={false}
         />
         <Text textAlign="center" fontSize="1.5rem" fontWeight="700" transition="0.3s" _groupHover={{ color: '#ef6029' }}>{text}</Text>
