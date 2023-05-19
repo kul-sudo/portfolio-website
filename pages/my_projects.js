@@ -17,7 +17,8 @@ export default () => {
             <NextLink href={Projects[key].link} target="_blank">
               <VStack justifyContent="center" width="15rem" height="18rem" borderRadius="0.75rem" transition="transform 1s" _hover={{ transform: 'scale(1.1)' }} backgroundColor={useColorModeValue('#e1e1e1', '#1b1b1b')}>
                 <Image
-                  src={useColorModeValue(`https://imagecropper-kul-sudo.vercel.app/?width=112&url=${Projects[key].icon}`, `https://imagecropper-kul-sudo.vercel.app/?width=112&url=${Projects[key]['icon-dark-mode']}`)} 
+                  src={useColorModeValue(Projects[key].icon, Projects[key]['icon-dark-mode'])}
+                  width="7rem"
                   height="auto"
                   loading="lazy"
                   style={{borderRadius: "5%", userSelect: "none"}}

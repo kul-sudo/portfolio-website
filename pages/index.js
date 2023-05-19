@@ -13,8 +13,8 @@ export default () => {
       </Head>
 
       <Center>
-        <Box backgroundColor="#525252" borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
-          <Text color="white" fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer. <br /> I love making the under-the-hood stuff!</Text>
+        <Box backgroundColor={useColorModeValue('#dedede','#525252')} borderRadius="0.75rem" paddingY="1rem" paddingX="1.8rem" mx={{ base: '1rem', '1100px': '0' }} id="upper-desc">
+          <Text color={useColorModeValue('#0a0a0a', 'white')} fontSize="1.8rem" fontWeight="600" textAlign="center">Hello! I am a backend developer. <br /> I love making the under-the-hood stuff!</Text>
         </Box>
       </Center>
 
