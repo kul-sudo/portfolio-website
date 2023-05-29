@@ -50,9 +50,9 @@ export default () => {
                 <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>My projects</Text>
                 <VStack spacing="0" style={{ transform: 'skew(-15deg)' }} pt="1.3rem" fontWeight="600" textAlign="center" textDecoration="none">
                   <Text color="black">Can be found in</Text>
-                  <NextLink href="/my_projects" target="_blank">
+                  <NextLink href="/playbook" target="_blank">
                     <HStack>
-                      <Link color="black" isExternal>my projects</Link> 
+                      <Link color="black" isExternal>playbook</Link>
                       <ExternalLinkIcon color="black" />
                     </HStack>
                   </NextLink>

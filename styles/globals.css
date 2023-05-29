@@ -35,6 +35,10 @@
   color: #000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   padding-bottom: 2rem;
