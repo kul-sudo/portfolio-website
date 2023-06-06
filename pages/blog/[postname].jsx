@@ -13,7 +13,7 @@ const commentInputAtom = atom('')
 
 const auth = getAuth()
 
-const Post = ({ snapshot, slug }) => {
+export default ({ snapshot, slug }) => {
   const [user] = useAuthState(auth)
 
   const [photoURL, setPhotoURL] = useState(undefined)
@@ -182,5 +182,3 @@ export async function getServerSideProps(context) {
     }
   }
 }
-
-export default Post
