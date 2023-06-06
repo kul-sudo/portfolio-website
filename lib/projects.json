@@ -22,5 +22,11 @@
     "icon": "https://media.discordapp.net/attachments/1096933168906522666/1101191198850420857/logo.jpg",
     "icon-dark-mode": "https://media.discordapp.net/attachments/1096933168906522666/1101191198850420857/logo.jpg",
     "link": "https://gyumri.bar/"
+  },
+  "lilac": {
+    "full-name": "lilac",
+    "icon": "https://media.discordapp.net/attachments/1096933168906522666/1115748534843613235/Untitled1.png",
+    "icon-dark-mode": "https://media.discordapp.net/attachments/1096933168906522666/1115748534843613235/Untitled1.png",
+    "link": "https://lilac-production.up.railway.app/"
   }
 }

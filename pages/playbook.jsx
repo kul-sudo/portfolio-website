@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
+import { memo } from 'react'
 import { Center, Text, Image, VStack, useColorModeValue, IconButton, Box, AbsoluteCenter } from '@chakra-ui/react'
 import Projects from '../lib/projects.json'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
-export default () => {
+export default memo(() => {
   return (
     <>
       <Head>
@@ -46,4 +47,4 @@ export default () => {
       </Center>
     </>
   )
-}
+})

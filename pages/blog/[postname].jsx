@@ -7,7 +7,7 @@ import { writeComment, retrieveComments, deleteComment, addReply } from '../../l
 import { useEffect, useState } from 'react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
-import app from '../../lib/firebase'
+import '../../lib/firebase'
 
 const commentInputAtom = atom('')
 

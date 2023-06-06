@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import { memo } from 'react'
 import { Center, Image, VStack, Text } from '@chakra-ui/react'
 import BlogItem from '../components/BlogItem'
 
-export default () => {
+export default memo(() => {
   return (
     <>
       <Head>
@@ -40,4 +41,4 @@ export default () => {
       </Center>
     </>
   )
-}
+})
