@@ -20,7 +20,7 @@ export default () => {
         <spotLight />
         <Suspense fallback={<Html center><Spinner boxSize={50} /></Html>}>
           <Model />
-          <Environment preset="city" />
+          <Environment path="/" files="potsdamer_platz_1k.hdr" />
         </Suspense>
         <OrbitControls autoRotate enableZoom={false} enablePan={false} />
       </Canvas>
