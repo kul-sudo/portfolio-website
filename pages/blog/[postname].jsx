@@ -120,7 +120,7 @@ export default ({ snapshot, slug }) => {
                           {(user && (user.uid === element)) && (
                             <IconButton
                               position="absolute"
-                              top="-0.5rem"
+                              top="0"
                               right="0"
                               icon={<DeleteIcon boxSize="1.2rem" />}
                               boxSize="2.5rem"
