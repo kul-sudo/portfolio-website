@@ -40,7 +40,7 @@ export default memo(() => {
           <BlogItem
             href="/blog/my_setup"
             photoSrc="https://ik.imagekit.io/gjvyoautg/geometrized_image.png?updatedAt=1687465406213"
-            text="Making my own setup"
+            text="Making my setup"
           />
         </VStack>
       </Center>
