@@ -63,6 +63,62 @@ export default ({ post, setPostExists }) => {
         </VStack>
       </VStack>
     )
+  } else if (post === 'my_setup') {
+    setPostExists(true)
+    return (
+      <VStack alignItems="left" width={{ base: '19rem', '330px': '20rem', '440px': '27rem', '540px': '32rem', '700px': '40rem' }}>
+        <Center>
+          <Image
+            src="https://ik.imagekit.io/gjvyoautg/geometrized_image.png?updatedAt=1687465406213"
+            width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
+            height="auto"
+            rounded="2xl"
+          />
+        </Center>
+        <VStack pl="1rem" alignItems="left">
+          <Heading mt="1rem">How it's all begun</Heading>
+          <Text fontSize="1.2rem">
+            It all began in 2020 when we all had to stay home, so I did obviously need to make the experience of spending
+            a ton of time in front of the monitor get my health worse as little as possible, so I little by little started upgrading my setup
+            by at first getting a better camera, then getting an even better phone stand, then getting a larger monitor, a wireless mouse and a more comfortable keyboard, by placing a big red lamp in front of me 
+            and eventually in 3 years by finishing the upgrade when I got a better GPU.
+          </Text>
+          <Heading pt="1rem">Which recommendations I would give and would you should give a care about my opinion</Heading>
+          <Text fontSize="1.2rem">
+            I had always strived for much better performace when I hadn't yet got all the good stuff for my computer by 
+            trying different operating systems, modifying the registry, a ton of different advanced stuff casual users are usually 
+            simply afraid of, and my recommendations are going to help you a lot if you do not want to suffer just like I did.
+
+            <br />
+            <br />
+
+            Well, first of all, remember that if your upgrade is supposed to resolve a performance issue, then changing something within 
+            the OS will never help you by more than about 10%. Getting rid of telemetry and worrying about every single value in the configuration is 
+            completely unnecessary, so do not even hope to make your computer very snappy by changing something within the OS; instead, modify the hardware of the PC, that is literally
+            the only fix.
+
+            <br />
+            <br />
+
+            If the goal of your upgrade is to make everything look gorgeous, then make sure you don't just go to the nearest market where you can find what you need and get it, but 
+            meticulously ask yourself what exactly you need, what the colour has to be, which shape it has to have. Image you have already got the device and are already using it and think what can be improved 
+            and what you might be unhappy with.
+            I know this tip might seem very obvious and banal, but people very often choose their dream device and then realise it is not good at all, so make sure you end up with this device being in your dream in which you are using it.
+          </Text>
+          <Heading pt="1rem">Always buy gaming devices</Heading>
+          <Text fontSize="1.2rem">
+            Yes, you read it right. Always buy gaming devices even if you are not a gamer, because gaming companies definitely know how to make the experience of using a computer as pleasant as possible.
+            It very often happens so that you get bored or tired of using a specific device not quite realising it, and "from gamers to gamers" companies just know how to make sure you are enjoying the process.
+            All of my devices are for gaming, they are all very comfortable even though I do not spend entire days on gaming.
+          </Text>
+          <Heading pt="1rem">Conclusion</Heading>
+          <Text fontSize="1.2rem">
+            Make sure you enjoy the devices and never buy anything just because everyone uses it. Do a deep research, make sure the brand is not completely unknown and ask many different people which devices they use.
+          </Text>
+        </VStack>
+      </VStack>
+
+    )
   } else {
     setPostExists(false)
     return <PageNotFound />

@@ -4,12 +4,6 @@ const nextConfig = {
   swcMinify: true,
   eslint: {
     ignoreDuringBuilds: true
-  },
-  images: {
-    domains: [
-      'res.cloudinary.com',
-      'media.discordapp.net'
-    ]
   }
 }
 

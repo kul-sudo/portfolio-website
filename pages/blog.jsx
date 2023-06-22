@@ -37,6 +37,11 @@ export default memo(() => {
             photoSrc="https://media.discordapp.net/attachments/1096933168906522666/1096933257418899506/IMG20230415015437.jpg"
             text="Reading Stephen King"
           />
+          <BlogItem
+            href="/blog/my_setup"
+            photoSrc="https://ik.imagekit.io/gjvyoautg/geometrized_image.png?updatedAt=1687465406213"
+            text="Making my own setup"
+          />
         </VStack>
       </Center>
     </>
