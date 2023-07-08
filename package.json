@@ -11,24 +11,24 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.2.2",
     "@chakra-ui/icons": "^2.0.10",
-    "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@react-three/drei": "^9.32.4",
-    "@react-three/fiber": "^8.10.0",
-    "firebase": "^9.15.0",
-    "framer-motion": "^7.5.1",
-    "jotai": "^1.12.1",
-    "next": "^13.4.1",
+    "@react-three/drei": "^9.78.1",
+    "@react-three/fiber": "^8.13.4",
+    "firebase": "^10.0.0",
+    "framer-motion": "^10.12.18",
+    "jotai": "^2.2.2",
+    "next": "^13.4.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
-    "three": "^0.148.0"
+    "three": "^0.154.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.24.0",
-    "eslint-config-next": "^13.4.1"
+    "eslint": "8.44.0",
+    "eslint-config-next": "^13.4.9"
   },
   "config": {
     "commitizen": {
