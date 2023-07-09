@@ -2251,9 +2251,9 @@ camera-controls@^2.4.2:
   integrity sha512-HONMoMYHieOCQOoweS639bdWHP/P/fvVGR08imnECGVUp04mqGfsX/zp1ZufLeiAA5hA6i1JhP6SrnOwh01C0w==
 
 caniuse-lite@^1.0.30001406:
-  version "1.0.30001513"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001513.tgz#382fe5fbfb0f7abbaf8c55ca3ac71a0307a752e9"
-  integrity sha512-pnjGJo7SOOjAGytZZ203Em95MRM8Cr6jhCXNF/FAXTpCTRTECnqQWLpiTRqrFtdYcth8hf4WECUpkezuYsMVww==
+  version "1.0.30001514"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001514.tgz#e2a7e184a23affc9367b7c8d734e7ec4628c1309"
+  integrity sha512-ENcIpYBmwAAOm/V2cXgM7rZUrKKaqisZl4ZAI520FIkqGXUxJjmaIssbRW5HVVR5tyV6ygTLIm15aU8LUmQSaQ==
 
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"
@@ -2559,9 +2559,9 @@ detect-file@^1.0.0:
   integrity sha512-DtCOLG98P007x7wiiOmfI0fi3eIKyWiLTGJ2MDnVi/E04lWGbf+JzrRHMm0rgIIZJGtHpKpbVgLWHrv8xXpc3Q==
 
 detect-gpu@^5.0.28:
-  version "5.0.31"
-  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-5.0.31.tgz#5749bea3aa56bc2ec41383b585f6cbd965619fee"
-  integrity sha512-+ZZr/deA5OvuBxod6kKFUvpZA9YR2r4fRYlAJGL7N5aUSLrY3Xgi+K4U5NHmeuk2mNC044n1YJwsq2Aw6hPmUw==
+  version "5.0.32"
+  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-5.0.32.tgz#ca03b5d943f5c3db18f0ef6afb326092012d0c49"
+  integrity sha512-Z310uSFzHnWoInT7czpgPH8yuragsoylzFTatKHSZ11UDSm+pTRnR8U2bkhwGn9AECjl72oYoJWD+G3P8RW2NQ==
   dependencies:
     webgl-constants "^1.1.1"
 
@@ -4362,9 +4362,9 @@ react-firebase-hooks@^5.1.1:
   integrity sha512-y2UpWs82xs+39q5Rc/wq316ca52QsC0n8m801V+yM4IC4hbfOL4yQPVSh7w+ydstdvjN9F+lvs1WrO2VYxpmdA==
 
 react-focus-lock@^2.9.4:
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.9.4.tgz#4753f6dcd167c39050c9d84f9c63c71b3ff8462e"
-  integrity sha512-7pEdXyMseqm3kVjhdVH18sovparAzLg5h6WvIx7/Ck3ekjhrrDMEegHSa3swwC8wgfdd7DIdUVRGeiHT9/7Sgg==
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.9.5.tgz#8a82f4f0128cccc27b9e77a4472e8a22f1b52189"
+  integrity sha512-h6vrdgUbsH2HeD5I7I3Cx1PPrmwGuKYICS+kB9m+32X/9xHRrAbxgvaBpG7BFBN9h3tO+C3qX1QAVESmi4CiIA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     focus-lock "^0.11.6"
