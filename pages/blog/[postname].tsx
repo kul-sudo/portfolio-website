@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import type { GetServerSideProps } from 'next'
+import type { ChangeEvent, FC } from 'react'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
@@ -9,14 +11,33 @@ import { DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
 import '../../lib/firebase'
 
+type ReplyProps = {
+  name: string;
+  photoURL: string;
+  text: string
+}
+
+type ItemProps = {
+  name: string;
+  photoURL: string;
+  text: string;
+  replies?: Record<string, Record<string, ReplyProps>>
+}
+
+type PostNamePage = {
+  snapshot: Record<string, Record<string, ItemProps>>;
+  slug: string
+}
+
 const commentInputAtom = atom('')
 
 const auth = getAuth()
 
-export default ({ snapshot, slug }) => {
+const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
   const [user] = useAuthState(auth)
 
   const [photoURL, setPhotoURL] = useState(undefined)
+  
   useEffect(() => {
     if (user) {
       auth.onAuthStateChanged(user => {
@@ -28,9 +49,10 @@ export default ({ snapshot, slug }) => {
   const [postExists, setPostExists] = useState(false)
 
   const [comment, setComment] = useAtom(commentInputAtom)
-  const handleMessageChange = e => setComment(e.target.value)
+  const handleMessageChange = (event: ChangeEvent<HTMLInputElement>) => setComment(event.target.value)
 
   const toast = useToast()
+  const backgroundColor = useColorModeValue('#e3e3e3', '')
 
   return (
     <>
@@ -41,14 +63,14 @@ export default ({ snapshot, slug }) => {
 
       <Center>
         <VStack spacing="2rem">
-          <PostContent post={slug} postExists={postExists} setPostExists={setPostExists} />
+          <PostContent post={slug} setPostExists={setPostExists} />
 
           {postExists && (
             <VStack>
               <Stack>
                 <HStack>
                   {user ? (
-                    <Image loading="lazy" src={photoURL} boxSize="2.5rem" rounded="xl" draggable={false} />
+                    <Image loading="lazy" src={photoURL} boxSize="2.5rem" rounded="xl" draggable={false} alt="user-pfp" />
                   ) : (
                       <Box backgroundColor="#2e2e2e" rounded="xl" p="0.2rem">
                         <Icon boxSize="2.2rem" viewBox="0 0 500 500" fill="#fff">
@@ -58,9 +80,9 @@ export default ({ snapshot, slug }) => {
                         </Icon>
                       </Box>
                     )}
-                  <Input placeholder="Type in English only" backgroundColor={useColorModeValue('#e3e3e3', '')} onChange={handleMessageChange} fontWeight="600" width={{ base: 'fit-content', '500px': '20rem' }} />
+                  <Input placeholder="Type in English only" backgroundColor={backgroundColor} onChange={handleMessageChange} fontWeight="600" width={{ base: 'fit-content', '500px': '20rem' }} />
                 </HStack>
-                <Button variant="outline" backgroundColor={useColorModeValue('#e3e3e3', '')} onClick={async () => {
+                <Button variant="outline" backgroundColor={backgroundColor} onClick={async () => {
                   if (!user) {
                     toast({
                       title: 'Error',
@@ -92,7 +114,7 @@ export default ({ snapshot, slug }) => {
                       <>
                         <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                           <HStack>
-                            <Image src={snapshot[element]?.[element_].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} />
+                            <Image src={snapshot[element]?.[element_].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
                             <Text fontSize="0.9rem" color="#fff">{snapshot[element]?.[element_].name}</Text>
                           </HStack>
                           <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
@@ -112,7 +134,7 @@ export default ({ snapshot, slug }) => {
                               borderTopLeftRadius="none"
                               borderBottomLeftRadius="none"
                               onClick={() => {
-                                addReply(element, slug, element_, document.getElementById(`reply-input-${element_}`).value, user.displayName, user.uid, user.photoURL) 
+                                addReply(element, slug, element_, (document.getElementById(`reply-input-${element_}`) as HTMLInputElement).value, user.displayName, user.uid, user.photoURL) 
                               }}
                             >
                               Reply</Button>
@@ -130,15 +152,16 @@ export default ({ snapshot, slug }) => {
                               onClick={() => {
                                 deleteComment(slug, element, element_)
                               }}
+                              aria-label="delete-comment"
                             />
                           )}
                         </VStack>
                         {typeof snapshot[element][element_].replies === 'object' && (
                           Object.keys(snapshot[element][element_].replies).map(uid => (
-                            Object.keys(snapshot[element][element_].replies[uid]).map(replyItem => (
-                              <VStack bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 200%)" p="1rem" width="15rem" rounded="xl">
+                            Object.keys(snapshot[element][element_].replies[uid]).map((replyItem, index) => (
+                              <VStack key={index} bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 200%)" p="1rem" width="15rem" rounded="xl">
                                 <HStack>
-                                  <Image src={snapshot[element][element_].replies[uid][replyItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} />
+                                  <Image src={snapshot[element][element_].replies[uid][replyItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
                                   <Text fontSize="0.9rem" color="#fff">{snapshot[element][element_].replies[uid][replyItem].name}</Text>
                                 </HStack>
                                 <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width="8rem" rounded="xl">
@@ -168,12 +191,11 @@ export default ({ snapshot, slug }) => {
   )
 }
 
-export async function getServerSideProps(context) {
-  const slug = context.query.postname
+export const getServerSideProps: GetServerSideProps = async context => {
+  const slug = context.query.postname as string
   const snapshot = await retrieveComments(slug).then(snapshot => {
     return snapshot
   })
-
 
   return {
     props: {
@@ -182,3 +204,5 @@ export async function getServerSideProps(context) {
     }
   }
 }
+
+export default PostNamePage

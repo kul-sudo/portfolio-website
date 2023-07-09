@@ -1,16 +1,17 @@
+import type { FC } from 'react'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls, useGLTF } from '@react-three/drei'
 import { Html } from '@react-three/drei'
 import { Stack, Spinner } from '@chakra-ui/react'
 
-const Model = () => {
+const Model: FC = () => {
   return (
     <primitive object={useGLTF('/computer_mouse.glb').scene} scale={0.3} />
   )
 }
 
-export default () => {
+const GraphicsMouse: FC = () => {
   useGLTF.preload('/computer_mouse.glb')
 
   return (
@@ -27,3 +28,5 @@ export default () => {
     </Stack>
   )
 }
+
+export default GraphicsMouse

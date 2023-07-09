@@ -1,3 +1,5 @@
+import type { AppProps } from 'next/app'
+import type { FC } from 'react'
 import { useState, useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
@@ -25,7 +27,7 @@ const progress = new ProgressBar({
   delay: 100
 })
 
-export default ({ Component, pageProps }) => {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter() 
 
   useEffect(() => {
@@ -51,3 +53,5 @@ export default ({ Component, pageProps }) => {
     </Hydrated>
   )
 }
+
+export default App

@@ -1,9 +1,9 @@
+import type { FC } from 'react'
 import Head from 'next/head'
-import { memo } from 'react'
 import { Center, Image, VStack, Text } from '@chakra-ui/react'
 import BlogItem from '../components/BlogItem'
 
-export default memo(() => {
+const Blog: FC = () => {
   return (
     <>
       <Head>
@@ -46,4 +46,6 @@ export default memo(() => {
       </Center>
     </>
   )
-})
+}
+
+export default Blog

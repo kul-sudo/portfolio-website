@@ -1,7 +1,13 @@
+import type { FC, Dispatch, SetStateAction } from 'react'
 import { Heading, Image, Text, VStack, Center } from '@chakra-ui/react'
 import PageNotFound from '../components/404Page'
 
-export default ({ post, setPostExists }) => {
+type PostContentProps = {
+  post: string;
+  setPostExists: Dispatch<SetStateAction<boolean>>
+}
+
+const PostContent: FC<PostContentProps> = ({ post, setPostExists }) => {
   if (post === 'reading_stephen_king') {
     setPostExists(true)
     return (
@@ -12,6 +18,7 @@ export default ({ post, setPostExists }) => {
             width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
             height="auto"
             rounded="2xl"
+            alt="reading_stephen_king"
           />
         </Center>
         <VStack pl="1rem" alignItems="left">
@@ -19,13 +26,13 @@ export default ({ post, setPostExists }) => {
           <Text fontSize="1.2rem">
             After having always read Harry Potter reading a book for genuine grown-ups was incredibly unusual. To enjoy every positive and negative aspect of reading such books I decided to read the very introduction of the very author to roughly get which type of language I can expect. And yes, it was worth it.
           </Text>
-          <Heading pt="1rem">After a few days of consuming "Pet Sematary"</Heading>
+          <Heading pt="1rem">After a few days of consuming {'"Pet Sematary"'}</Heading>
           <Text fontSize="1.2rem">
-            What initially appeared to be unusual was that King used bad and explicit words unlike Rowling. In layman's terms, Rowling would say "radius" or "in every direction", and King would say "in every fucking direction". As I kept reading the book, I realised that there were not too many bad words and a lot of action which got me restlessly focused on the book. Even when there is nothing essential happening in the book, it feels so nice to read it, and this is what proves that Stephen King is a high-class writer.
+            What initially appeared to be unusual was that King used bad and explicit words unlike Rowling. In {"layman's"} terms, Rowling would say {'"radius" or "in every direction", and King would say "in every fucking direction"'}. As I kept reading the book, I realised that there were not too many bad words and a lot of action which got me restlessly focused on the book. Even when there is nothing essential happening in the book, it feels so nice to read it, and this is what proves that Stephen King is a high-class writer.
           </Text>
           <Heading pt="1rem">Now that nearly a year since I started reading the book has elapsed</Heading>
           <Text fontSize="1.2rem">
-            Welp, over this long period I have many times gone back to Harry Potter, because at times "Pet Sematary" seemed to be very difficult and I thought I couldn't understand certain images and ideas Stephen King tried to make the reader think about. Initially, I supposed the book was about the dead being buried and other sombre topics, but now I believe it is about love, but I do not want to spoiler anything, so read the book and realise that as well. What I will hereafter always remember when reading books by Stephen King is that they are not about killing and running away from dead bodies, because this form merely transfers the main point which is mainly very deep.
+            Welp, over this long period I have many times gone back to Harry Potter, because at times {'"Pet Sematary"'} seemed to be very difficult and I thought I {"couldn't"} understand certain images and ideas Stephen King tried to make the reader think about. Initially, I supposed the book was about the dead being buried and other sombre topics, but now I believe it is about love, but I do not want to spoiler anything, so read the book and realise that as well. What I will hereafter always remember when reading books by Stephen King is that they are not about killing and running away from dead bodies, because this form merely transfers the main point which is mainly very deep.
           </Text>
         </VStack>
       </VStack>
@@ -40,6 +47,7 @@ export default ({ post, setPostExists }) => {
             width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
             height="auto"
             rounded="2xl"
+            alt="g_pro_wireless_image"
           />
         </Center>
         <VStack pl="1rem" alignItems="left">
@@ -57,7 +65,7 @@ export default ({ post, setPostExists }) => {
           </Text>
           <Heading pt="1rem">Now that I have used it for quite a long time</Heading>
           <Text fontSize="1.2rem">If you just want to use it and enjoy your computer experience, then I can tell you that this mouse is flawless, but if you are obsessed with computer mice,
-            then the problem you may dislike is that its bottom gathers dust in spots where it is not too easy to purge it out of. But that doesn't change anything in the computer experience,
+            then the problem you may dislike is that its bottom gathers dust in spots where it is not too easy to purge it out of. But that {"doesn't"} change anything in the computer experience,
             so there are no problems so far at all.
           </Text>
         </VStack>
@@ -73,10 +81,11 @@ export default ({ post, setPostExists }) => {
             width={{ base: '17rem', '369px': '18rem', '462px': '25rem' }}
             height="auto"
             rounded="2xl"
+            alt="geometrized-setup"
           />
         </Center>
         <VStack pl="1rem" alignItems="left">
-          <Heading mt="1rem">How it's all begun</Heading>
+          <Heading mt="1rem">How {"it's"} all begun</Heading>
           <Text fontSize="1.2rem">
             It all began in 2020 when we all had to stay home, so I did obviously need to make the experience of spending
             a ton of time in front of the monitor get my health worse as little as possible, so I little by little started upgrading my setup
@@ -85,7 +94,7 @@ export default ({ post, setPostExists }) => {
           </Text>
           <Heading pt="1rem">Which recommendations I would give and would you should give a care about my opinion</Heading>
           <Text fontSize="1.2rem">
-            I had always strived for much better performace when I hadn't yet got all the good stuff for my computer by 
+            I had always strived for much better performace when I {"hadn't"} yet got all the good stuff for my computer by 
             trying different operating systems, modifying the registry, a ton of different advanced stuff casual users are usually 
             simply afraid of, and my recommendations are going to help you a lot if you do not want to suffer just like I did.
 
@@ -100,7 +109,7 @@ export default ({ post, setPostExists }) => {
             <br />
             <br />
 
-            If the goal of your upgrade is to make everything look gorgeous, then make sure you don't just go to the nearest market where you can find what you need and get it, but 
+            If the goal of your upgrade is to make everything look gorgeous, then make sure you {"don't"} just go to the nearest market where you can find what you need and get it, but 
             meticulously ask yourself what exactly you need, what the colour has to be, which shape it has to have. Image you have already got the device and are already using it and think what can be improved 
             and what you might be unhappy with.
             I know this tip might seem very obvious and banal, but people very often choose their dream device and then realise it is not good at all, so make sure you end up with this device being in your dream in which you are using it.
@@ -108,7 +117,7 @@ export default ({ post, setPostExists }) => {
           <Heading pt="1rem">Always buy gaming devices</Heading>
           <Text fontSize="1.2rem">
             Yes, you read it right. Always buy gaming devices even if you are not a gamer, because gaming companies definitely know how to make the experience of using a computer as pleasant as possible.
-            It very often happens so that you get bored or tired of using a specific device not quite realising it, and "from gamers to gamers" companies just know how to make sure you are enjoying the process.
+            It very often happens so that you get bored or tired of using a specific device not quite realising it, and {'"from gamers to gamers"'} companies just know how to make sure you are enjoying the process.
             All of my devices are for gaming, they are all very comfortable even though I do not spend entire days on gaming.
           </Text>
           <Heading pt="1rem">Conclusion</Heading>
@@ -117,10 +126,11 @@ export default ({ post, setPostExists }) => {
           </Text>
         </VStack>
       </VStack>
-
     )
   } else {
     setPostExists(false)
     return <PageNotFound />
   }
 }
+
+export default PostContent

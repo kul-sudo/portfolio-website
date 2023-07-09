@@ -1,8 +1,9 @@
+import type { FC } from 'react'
 import { Box, Text, Button, VStack } from '@chakra-ui/react'
 import GraphicsMouse from './GraphicsMouse'
 import NextLink from 'next/link'
 
-export default () => {
+const Page404: FC = () => {
   return (
     <>
       <title>Cyril Tasman</title>
@@ -23,3 +24,5 @@ export default () => {
     </>
   )
 }
+
+export default Page404
