@@ -3,10 +3,11 @@ import './firebase'
 
 const db = getDatabase()
 
-export const writeComment = (postName: string, commentText: string, name: string, uid: string, photoURL: string) => {
+export const writeComment = async (postName: string, commentText: string, name: string, uid: string, photoURL: string) => {
   const commentListRef = ref(db, `${postName}/${uid}`)
   const newCommentRef = push(commentListRef)
-  set(newCommentRef, {
+  
+  await set(newCommentRef, {
     text: commentText,
     photoURL: photoURL,
     name: name
@@ -21,7 +22,7 @@ export const retrieveComments = async (postName: string) => {
 }
 
 export const deleteComment = async (postName: string, uid: string, itemName: string) => {
-  remove(ref(db, `${postName}/${uid}/${itemName}`)).then(() => {
+  await remove(ref(db, `${postName}/${uid}/${itemName}`)).then(() => {
     window.location.reload()
   })
 }
@@ -29,11 +30,18 @@ export const deleteComment = async (postName: string, uid: string, itemName: str
 export const addReply = async (commentUid: string, postName: string, commentItem: string, replyText: string, name: string, uid: string, photoURL: string) => {
   const replyListRef = ref(db, `${postName}/${commentUid}/${commentItem}/replies/${uid}`)
   const newReplyRef = push(replyListRef)
-  set(newReplyRef, {
+  
+  await set(newReplyRef, {
     text: replyText,
     photoURL: photoURL,
     name: name
   }).then(() => {
       window.location.reload()
     })
+}
+
+export const deleteReply = async (postName: string, commentUid: string, commentItem: string, replierUid: string, replyItem: string) => {
+  await remove(ref(db, `${postName}/${commentUid}/${commentItem}/replies/${replierUid}/${replyItem}`)).then(() => {
+    window.location.reload()
+  })
 }

@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
 import { atom, useAtom } from 'jotai'
-import { writeComment, retrieveComments, deleteComment, addReply } from '../../lib/firebaseComments'
+import { writeComment, retrieveComments, deleteComment, addReply, deleteReply } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
@@ -109,16 +109,16 @@ const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
 
               {snapshot !== null && (
                 <VStack pt="1rem" alignItems="end">
-                  {Object.keys(snapshot).map(element => (
-                    Object.keys(snapshot[element]).map(element_ => (
+                  {Object.keys(snapshot).map(userUid => (
+                    Object.keys(snapshot[userUid]).map(commentItem => (
                       <>
                         <VStack position="relative" bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" p="1rem" width={{ base: '15rem', '340px': '20rem', '440px': '25rem' }} rounded="xl">
                           <HStack>
-                            <Image src={snapshot[element]?.[element_].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
-                            <Text fontSize="0.9rem" color="#fff">{snapshot[element]?.[element_].name}</Text>
+                            <Image src={snapshot[userUid]?.[commentItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
+                            <Text fontSize="0.9rem" color="#fff">{snapshot[userUid]?.[commentItem].name}</Text>
                           </HStack>
                           <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width={{ base: '10rem', '340px': '17rem', '440px': '20rem' }} rounded="xl">
-                            <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element]?.[element_].text}</Text>
+                            <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[userUid]?.[commentItem].text}</Text>
                           </Box>
                           <HStack
                             spacing="0"
@@ -128,18 +128,18 @@ const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
                               borderTopRightRadius="none"
                               borderBottomRightRadius="none"
                               focusBorderColor="rgba(255, 255, 255, 0.24)"
-                              id={`reply-input-${element_}`}
-                              />
+                              id={`reply-input-${commentItem}`}
+                            />
                             <Button
                               borderTopLeftRadius="none"
                               borderBottomLeftRadius="none"
-                              onClick={() => {
-                                addReply(element, slug, element_, (document.getElementById(`reply-input-${element_}`) as HTMLInputElement).value, user.displayName, user.uid, user.photoURL) 
+                              onClick={async () => {
+                                await addReply(userUid, slug, commentItem, (document.getElementById(`reply-input-${commentItem}`) as HTMLInputElement).value, user.displayName, user.uid, user.photoURL) 
                               }}
                             >
                               Reply</Button>
                           </HStack>
-                          {(user && (user.uid === element)) && (
+                          {(user && (user.uid === userUid)) && (
                             <IconButton
                               position="absolute"
                               top="0"
@@ -149,23 +149,39 @@ const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
                               borderTopLeftRadius="none"
                               borderBottomRightRadius="none"
                               borderTopRightRadius="xl"
-                              onClick={() => {
-                                deleteComment(slug, element, element_)
+                              onClick={async () => {
+                                await deleteComment(slug, userUid, commentItem)
                               }}
                               aria-label="delete-comment"
                             />
                           )}
                         </VStack>
-                        {typeof snapshot[element][element_].replies === 'object' && (
-                          Object.keys(snapshot[element][element_].replies).map(uid => (
-                            Object.keys(snapshot[element][element_].replies[uid]).map((replyItem, index) => (
-                              <VStack key={index} bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 200%)" p="1rem" width="15rem" rounded="xl">
+                        {typeof snapshot[userUid][commentItem].replies === 'object' && (
+                          Object.keys(snapshot[userUid][commentItem].replies).map(replyUid => (
+                            Object.keys(snapshot[userUid][commentItem].replies[replyUid]).map((replyItem, index) => (
+                              <VStack position="relative" key={index} bgGradient="linear-gradient(160deg, #0093E9 0%, #80D0C7 200%)" p="1rem" width="15rem" rounded="xl">
+                                {(user && (user.uid === replyUid)) && (
+                                  <IconButton
+                                    position="absolute"
+                                    top="0"
+                                    right="0"
+                                    icon={<DeleteIcon boxSize="1.2rem" />}
+                                    boxSize="2.5rem"
+                                    borderTopLeftRadius="none"
+                                    borderBottomRightRadius="none"
+                                    borderTopRightRadius="xl"
+                                    onClick={async () => {
+                                      await deleteReply(slug, userUid, commentItem, replyUid, replyItem)
+                                    }}
+                                    aria-label="delete-comment"
+                                  />
+                                )}
                                 <HStack>
-                                  <Image src={snapshot[element][element_].replies[uid][replyItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
-                                  <Text fontSize="0.9rem" color="#fff">{snapshot[element][element_].replies[uid][replyItem].name}</Text>
+                                  <Image src={snapshot[userUid][commentItem].replies[replyUid][replyItem].photoURL} boxSize="2.5rem" loading="lazy" rounded="xl" draggable={false} alt="user-pfp" />
+                                  <Text fontSize="0.9rem" color="#fff">{snapshot[userUid][commentItem].replies[replyUid][replyItem].name}</Text>
                                 </HStack>
                                 <Box bgGradient="linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)" p="0.5rem" width="8rem" rounded="xl">
-                                  <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[element][element_].replies[uid][replyItem].text}</Text>
+                                  <Text color="#fff" style={{ hyphens: 'auto' }}>{snapshot[userUid][commentItem].replies[replyUid][replyItem].text}</Text>
                                 </Box>
                               </VStack>
                             ))
