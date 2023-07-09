@@ -7,13 +7,13 @@ import Projects from '../lib/projects.json'
 
 type LogoProps = {
   projects: Record<string, Record<string, string>>;
-  key: string
+  projectKey: string
 }
 
-const Logo: FC<LogoProps> = ({ projects, key }) => {
+const Logo: FC<LogoProps> = ({ projects, projectKey }) => {
   return (
     <Image
-      src={useColorModeValue(projects[key].icon, projects[key]['icon-dark-mode'])}
+      src={useColorModeValue(projects[projectKey].icon, projects[projectKey]['icon-dark-mode'])}
       width="3rem"
       height="auto"
       loading="lazy"
@@ -31,13 +31,19 @@ const Playbook: FC = () => {
       <Head>
         <title>Cyril Tasman - Playbook</title>
       </Head>
+     
+      <Center>
+        <Text textAlign="center" fontWeight="bold" fontSize="3rem" mb="1rem">
+          Playbook
+        </Text>
+      </Center>
 
       <Center mt="0.5%">
         <VStack spacing="1.5rem">
           {Object.keys(Projects).map((key, index) => {
             return (
               <NextLink key={index} href={Projects[key].link} target="_blank">
-                <VStack position="relative" rounded="xl" width="15rem" height="12rem" transition="transform 1s" _hover={{ transform: 'scale(1.1)' }} backgroundColor={backgroundColor}>
+                <VStack position="relative" rounded="xl" width="16rem" height="12rem" backgroundColor={backgroundColor}>
                   <VStack
                     position="absolute"
                     top="5"
@@ -46,7 +52,7 @@ const Playbook: FC = () => {
                       <AbsoluteCenter>
                         <Logo
                           projects={Projects}
-                          key={key}
+                          projectKey={key}
                         />
                       </AbsoluteCenter>
                     </Box>
@@ -55,7 +61,7 @@ const Playbook: FC = () => {
                   <IconButton
                     position="absolute"
                     bottom="5"
-                    colorScheme="teal"
+                    rounded="full"
                     icon={<ExternalLinkIcon boxSize="1.5rem" />}
                     aria-label="open-link"
                   />

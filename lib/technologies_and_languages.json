@@ -1,0 +1,26 @@
+{
+  "Frontend": {
+    "NextJS": {
+      "logo": "https://www.svgrepo.com/show/354113/nextjs-icon.svg"
+    },
+    "Svelte": {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png"
+    }
+  },
+  "Backend": {
+    "Firebase": {
+      "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png"
+    },
+    "Supabase": {
+      "logo": "https://supabase.com/favicon/favicon-196x196.png"
+    }
+  },
+  "Languages": {
+    "JavaScript": {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/640px-JavaScript-logo.png"
+    },
+    "Python": {
+      "logo": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png"
+    }
+  }
+}

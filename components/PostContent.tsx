@@ -1,13 +1,16 @@
-import type { FC, Dispatch, SetStateAction } from 'react'
+import type { FC } from 'react'
 import { Heading, Image, Text, VStack, Center } from '@chakra-ui/react'
 import PageNotFound from '../components/404Page'
+import { useAtom } from 'jotai'
+import { postExistsAtom } from '../lib/atoms'
 
 type PostContentProps = {
-  post: string;
-  setPostExists: Dispatch<SetStateAction<boolean>>
+  post: string
 }
 
-const PostContent: FC<PostContentProps> = ({ post, setPostExists }) => {
+const PostContent: FC<PostContentProps> = ({ post }) => {
+  const [postExists, setPostExists] = useAtom(postExistsAtom)
+
   if (post === 'reading_stephen_king') {
     setPostExists(true)
     return (

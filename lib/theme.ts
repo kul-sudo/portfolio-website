@@ -7,13 +7,13 @@ const font = Manrope({ preload: false })
 
 const breakpoints = {
   '1100px': '1100px',
-  '700px': '700px',
   '885px': '885px',
+  '700px': '700px',
   '540px': '540px',
   '500px': '500px',
   '462px': '462px',
-  '369px': '369px',
   '440px': '440px',
+  '369px': '369px',
   '356px': '356px',
   '340px': '340px',
   '330px': '330px'

@@ -4,11 +4,12 @@ import type { ChangeEvent, FC } from 'react'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { HStack, Center, Image, VStack, Box, Text, Input, Button, Icon, Stack, IconButton, useToast, useColorModeValue } from '@chakra-ui/react'
-import { atom, useAtom } from 'jotai'
+import { useAtom } from 'jotai'
 import { writeComment, retrieveComments, deleteComment, addReply, deleteReply } from '../../lib/firebaseComments'
 import { useEffect, useState } from 'react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import PostContent from '../../components/PostContent'
+import { postExistsAtom } from '../../lib/atoms'
 import '../../lib/firebase'
 
 type ReplyProps = {
@@ -29,8 +30,6 @@ type PostNamePage = {
   slug: string
 }
 
-const commentInputAtom = atom('')
-
 const auth = getAuth()
 
 const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
@@ -46,9 +45,9 @@ const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
     }
   })
 
-  const [postExists, setPostExists] = useState(false)
+  const [postExists, setPostExists] = useAtom(postExistsAtom)
 
-  const [comment, setComment] = useAtom(commentInputAtom)
+  const [comment, setComment] = useState('')
   const handleMessageChange = (event: ChangeEvent<HTMLInputElement>) => setComment(event.target.value)
 
   const toast = useToast()
@@ -63,7 +62,7 @@ const PostNamePage: FC<PostNamePage> = ({ snapshot, slug }) => {
 
       <Center>
         <VStack spacing="2rem">
-          <PostContent post={slug} setPostExists={setPostExists} />
+          <PostContent post={slug} />
 
           {postExists && (
             <VStack>

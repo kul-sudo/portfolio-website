@@ -1,7 +1,16 @@
 import type { FC } from 'react'
 import Head from 'next/head'
 import NextLink from 'next/link'
-import { VStack, Text, Link, Center, Box, Stack, HStack, useColorModeValue } from '@chakra-ui/react'
+import {
+  VStack,
+  Text,
+  Link,
+  Center,
+  Box,
+  Stack,
+  HStack,
+  useColorModeValue
+} from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import GraphicsMouse from '../components/GraphicsMouse'
 
@@ -29,8 +38,8 @@ const Home: FC = () => {
             <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #4dff03, #00d0ff)" borderRadius="0.3rem" w={{ base: '10.9rem', '356px': '13rem' }} h="16rem" style={{ transform: 'skew(15deg)' }}>
               <VStack backdropFilter="auto" backdropBlur="0.625rem" w={{ base: '14.5rem', '356px': '17.5rem' }} h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
                 <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Hard skills</Text>
-                <Box pt="1.5rem">
-                  <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Fluent English<br/>Stress tolerance</Text> 
+                <Box pt="1.1rem">
+                  <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Fluent English<br />Stress tolerance<br />Learn fast</Text> 
                 </Box>
               </VStack>
             </VStack>
@@ -40,7 +49,14 @@ const Home: FC = () => {
             <VStack display="flex" justifyContent="center" bgGradient="linear(to-r, #6366f1, #a855f7, #ec4899)" borderRadius="0.3rem" w={{ base: '10.9rem', '356px': '13rem' }} h="16rem" style={{ transform: 'skew(15deg)' }}>
               <VStack backdropFilter="auto" backdropBlur="0.625rem" w={{ base: '14.5rem', '356px': '17.5rem' }} h="12rem" borderRadius="0.3rem" backgroundColor="hsla(0, 0%, 100%, 0.05)" boxShadow={useColorModeValue('lg', 'none')}>
                 <Text mt="1.1rem" color="black" fontWeight="700" textAlign="center" style={{ transform: 'skew(-15deg)' }}>Technologies</Text>
-                <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>NextJS<br />React<br />JavaScript<br />Python<br />SQL</Text> 
+                <Text color="black" fontWeight="600" textAlign="center" style={{ transform: 'skew(-15deg)' }}>NextJS<br />TypeScript<br />Python<br />
+                  <NextLink href="/technologies_and_languages" target="_blank">
+                    <HStack>
+                      <Link color="black" isExternal>And more</Link>
+                      <ExternalLinkIcon color="black" />
+                    </HStack>
+                  </NextLink>
+                </Text> 
               </VStack>
             </VStack>
           </Center>

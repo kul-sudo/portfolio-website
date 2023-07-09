@@ -44,7 +44,7 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <Center top="0" position="sticky" py="1rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1" borderBottomColor={useColorModeValue('blackAlpha.400', 'whiteAlpha')} borderBottomWidth="1px">
+      <Center top="3" position="sticky" py="1rem" backdropFilter="auto" backdropBlur="12px" width="100%" zIndex="1">
         <HStack spacing={4} userSelect="none" fontWeight="600"> 
           <Menu>
             <MenuButton
@@ -62,6 +62,11 @@ const Navbar: FC = () => {
               <NextLink href="/playbook">
                 <NewMenuItem>
                   Playbook
+                </NewMenuItem>
+              </NextLink>
+              <NextLink href="/technologies_and_languages">
+                <NewMenuItem>
+                  Technologies and Languages
                 </NewMenuItem>
               </NextLink>
               <Link style={{ textDecoration: 'none' }} isExternal href="https://github.com/kul-sudo">
