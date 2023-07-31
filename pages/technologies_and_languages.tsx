@@ -78,7 +78,7 @@ const TechnologiesAndLanguagesComponent: FC = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <VStack spacing="1rem" justifyContent="left" alignItems="left">
+                  <VStack spacing="1rem" justifyContent="left" alignItems="left" height="8rem">
                     {Object.keys(TechnologiesAndLanguages[key]).map((item, index) => (
                       <HStack key={index}>
                         <HStack>
